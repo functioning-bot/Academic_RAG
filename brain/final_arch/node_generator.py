@@ -22,6 +22,13 @@ def _build_context_blocks(docs: list[dict]) -> str:
         section = metadata.get("section_header", "Unknown Section")
         page = metadata.get("page_number", "Unknown Page")
         score = doc.get("score", None)
+        
+        content_type = metadata.get("content_type", "text")
+        display_type = "Prose Text"
+        if content_type == "figure_description" or metadata.get("has_image_description"):
+            display_type = "AI-Generated Figure/Visual Description"
+        elif content_type == "table" or metadata.get("has_table"):
+            display_type = "Markdown Table"
 
         score_text = f"{score:.4f}" if isinstance(score, (int, float)) else "n/a"
 
@@ -30,6 +37,7 @@ def _build_context_blocks(docs: list[dict]) -> str:
             f"Source: {source}\n"
             f"Section: {section}\n"
             f"Page: {page}\n"
+            f"Content Type: {display_type}\n"
             f"Retrieval Score: {score_text}\n"
             f"Text:\n{doc.get('text', '')}"
         )

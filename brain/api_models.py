@@ -18,3 +18,9 @@ class QueryResponse(BaseModel):
     answer: str
     context_used: List[str]
     citations: List[CitationItem]
+    
+    # Tracking / Error Analysis
+    crag_retries: int = 0
+    verify_retries: int = 0
+    error_type: Optional[str] = None
+    prompt_version: str = "v1"

@@ -4,6 +4,7 @@ from typing import List, Dict, Any, TypedDict
 class GraphState(TypedDict):
     original_query: str
     search_query: str
+    search_queries: List[str]
 
     # Full ranked retrieval results in original order
     retrieved_docs: List[Dict[str, Any]]
@@ -19,5 +20,7 @@ class GraphState(TypedDict):
     # Retry / audit bookkeeping
     crag_retries: int
     verify_retries: int
+    retrieval_sufficient: bool
     citations_pass: bool
     auditor_feedback: str
+    supervisor_directive: str

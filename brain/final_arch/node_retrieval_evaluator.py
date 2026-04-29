@@ -90,12 +90,12 @@ Decision rule:
         return {
             "candidate_docs": candidate_docs,
             "weak_signal_docs": [],
-            "citations_pass": True,
+            "retrieval_sufficient": True,
         }
 
     print("[Final Combined] Retrieval judged INSUFFICIENT. Triggering rewrite.")
     return {
         "candidate_docs": candidate_docs,
         "weak_signal_docs": retrieved_docs[:WEAK_SIGNAL_TOP_K],
-        "citations_pass": False,
+        "retrieval_sufficient": False,
     }

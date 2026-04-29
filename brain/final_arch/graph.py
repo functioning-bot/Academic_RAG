@@ -15,32 +15,38 @@ from node_context_selector import select_best_context
 from node_grader import grade_documents
 from node_generator import generate
 from node_auditor import audit_answer
-from config import MAX_REWRITE_ROUNDS, MAX_AUDIT_RETRIES
+from node_supervisor import supervisor_agent
 
 
-def route_after_retrieval_eval(state: GraphState):
-    if state.get("citations_pass", False):
-        return "grade_documents"
-
-    if state.get("crag_retries", 0) < MAX_REWRITE_ROUNDS:
-        return "rewrite_query"
-
-    return "grade_documents"
-
-
-def route_after_audit(state: GraphState):
-    if state.get("citations_pass", False):
-        return "end"
-
-    if state.get("verify_retries", 0) <= MAX_AUDIT_RETRIES:
-        return "retry_generation"
-
-    return "end"
+def route_from_supervisor(state: GraphState):
+    """
+    Dynamic hub router reading the decision made by the supervisor LLM.
+    """
+    directive = state.get("supervisor_directive", "end")
+    
+    # Map the LLM's chosen string to the exact LangGraph node name
+    mapping = {
+        "retrieve_original": "retrieve_original",
+        "evaluate_retrieval": "evaluate_retrieval",
+        "rewrite_query": "rewrite_query",
+        "retrieve_rewritten": "retrieve_rewritten",
+        "select_best_context": "select_best_context",
+        "grade_documents": "grade_documents",
+        "generate": "generate",
+        "audit_answer": "audit_answer",
+        "end": END
+    }
+    
+    return mapping.get(directive, END)
 
 
 def build_graph():
     workflow = StateGraph(GraphState)
 
+    # 1. The Hub Node
+    workflow.add_node("supervisor", supervisor_agent)
+
+    # 2. The Spoke Nodes
     workflow.add_node("retrieve_original", retrieve_and_store)
     workflow.add_node("evaluate_retrieval", evaluate_retrieval)
     workflow.add_node("rewrite_query", rewrite_query)
@@ -50,31 +56,34 @@ def build_graph():
     workflow.add_node("generate", generate)
     workflow.add_node("audit_answer", audit_answer)
 
-    workflow.add_edge(START, "retrieve_original")
-    workflow.add_edge("retrieve_original", "evaluate_retrieval")
+    # 3. Entry Point
+    workflow.add_edge(START, "supervisor")
 
+    # 4. Hub-to-Spoke Routing
     workflow.add_conditional_edges(
-        "evaluate_retrieval",
-        route_after_retrieval_eval,
+        "supervisor",
+        route_from_supervisor,
         {
-            "grade_documents": "grade_documents",
+            "retrieve_original": "retrieve_original",
+            "evaluate_retrieval": "evaluate_retrieval",
             "rewrite_query": "rewrite_query",
+            "retrieve_rewritten": "retrieve_rewritten",
+            "select_best_context": "select_best_context",
+            "grade_documents": "grade_documents",
+            "generate": "generate",
+            "audit_answer": "audit_answer",
+            END: END,
         },
     )
 
-    workflow.add_edge("rewrite_query", "retrieve_rewritten")
-    workflow.add_edge("retrieve_rewritten", "select_best_context")
-    workflow.add_edge("select_best_context", "grade_documents")
-    workflow.add_edge("grade_documents", "generate")
-    workflow.add_edge("generate", "audit_answer")
-
-    workflow.add_conditional_edges(
-        "audit_answer",
-        route_after_audit,
-        {
-            "retry_generation": "generate",
-            "end": END,
-        },
-    )
+    # 5. Spoke-to-Hub Return
+    workflow.add_edge("retrieve_original", "supervisor")
+    workflow.add_edge("evaluate_retrieval", "supervisor")
+    workflow.add_edge("rewrite_query", "retrieve_rewritten") # specific internal sub-flow
+    workflow.add_edge("retrieve_rewritten", "select_best_context") # specific internal sub-flow
+    workflow.add_edge("select_best_context", "supervisor")
+    workflow.add_edge("grade_documents", "supervisor")
+    workflow.add_edge("generate", "supervisor")
+    workflow.add_edge("audit_answer", "supervisor")
 
     return workflow.compile()

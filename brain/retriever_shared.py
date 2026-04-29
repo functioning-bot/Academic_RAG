@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient, models
 from fastembed import SparseTextEmbedding
-from FlagEmbedding import BGEM3FlagModel
+from FlagEmbedding import BGEM3FlagModel, FlagReranker
 
 from state_shared import GraphState
 from qdrant_config import (
@@ -13,6 +13,8 @@ from qdrant_config import (
     DENSE_PREFETCH_LIMIT,
     SPARSE_PREFETCH_LIMIT,
     FINAL_FUSION_LIMIT,
+    RERANKER_MODEL,
+    RERANK_TOP_K,
 )
 
 load_dotenv()
@@ -25,6 +27,9 @@ dense_model = BGEM3FlagModel(
 )
 
 sparse_model = SparseTextEmbedding(model_name=SPARSE_EMBED_MODEL)
+
+print(f"[*] Loading cross-encoder reranker: {RERANKER_MODEL} ...")
+reranker_model = FlagReranker(RERANKER_MODEL, use_fp16=False)
 
 
 def _get_dense_query_embedding(query: str) -> list[float]:
@@ -93,25 +98,63 @@ def retrieve_docs(query: str) -> list[dict]:
             }
         )
 
+    # Cross-Encoder Reranking
+    if retrieved_docs:
+        pairs = [[query, doc["text"]] for doc in retrieved_docs]
+        
+        # compute_score returns float if len(pairs)==1, else list[float]
+        rerank_scores = reranker_model.compute_score(pairs, normalize=True)
+        if isinstance(rerank_scores, float):
+            rerank_scores = [rerank_scores]
+            
+        for idx, doc in enumerate(retrieved_docs):
+            doc["rerank_score"] = rerank_scores[idx]
+            
+        # Sort by rerank_score descending
+        retrieved_docs.sort(key=lambda x: x["rerank_score"], reverse=True)
+        
+        # Keep top K
+        retrieved_docs = retrieved_docs[:RERANK_TOP_K]
+
     return retrieved_docs
 
 
 def retrieve_and_store(state: GraphState):
     """
     Shared retriever node for simple baseline or other architectures.
-
-    It only retrieves and stores the full ranked result list.
-    Architecture-specific folders can decide later how to use it.
     """
-    query = state["search_query"]
-    print(f"\n[Shared Retriever] Retrieving context for query: '{query}'")
+    queries = state.get("search_queries")
+    if not queries:
+        queries = [state["search_query"]]
+        
+    print(f"\n[Shared Retriever] Retrieving context for {len(queries)} sub-queries: {queries}")
 
-    retrieved_docs = retrieve_docs(query)
+    all_docs = []
+    seen_texts = set()
 
-    print(f"[Shared Retriever] Retrieved {len(retrieved_docs)} docs.")
-    for idx, doc in enumerate(retrieved_docs[:10]):
-        print(f"  -> Doc {idx + 1}: score={doc['score']:.4f}")
+    for q in queries:
+        docs = retrieve_docs(q)
+        for d in docs:
+            text = d.get("text", "")
+            if text not in seen_texts:
+                seen_texts.add(text)
+                all_docs.append(d)
+
+    # Sort merged docs by rerank_score globally across all sub-queries
+    all_docs.sort(key=lambda x: x.get("rerank_score", 0.0), reverse=True)
+    
+    # Keep only the top K globally
+    all_docs = all_docs[:RERANK_TOP_K]
+
+    print(f"[Shared Retriever] Retrieved and merged {len(all_docs)} unique docs.")
+    for idx, doc in enumerate(all_docs[:10]):
+        original_score = doc.get("score", 0.0)
+        rerank_score = doc.get("rerank_score")
+        if rerank_score is not None:
+            print(f"  -> Doc {idx + 1}: rerank_score={rerank_score:.4f} (qdrant={original_score:.4f})")
+        else:
+            print(f"  -> Doc {idx + 1}: score={original_score:.4f}")
 
     return {
-        "retrieved_docs": retrieved_docs
+        "retrieved_docs": all_docs
     }

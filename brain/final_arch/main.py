@@ -101,6 +101,7 @@ def ask_question(request: QueryRequest):
     initial_state = {
         "original_query": request.query,
         "search_query": request.query,
+        "search_queries": [request.query],
 
         "retrieved_docs": [],
         "candidate_docs": [],
@@ -110,7 +111,8 @@ def ask_question(request: QueryRequest):
         "generation": "",
         "crag_retries": 0,
         "verify_retries": 0,
-        "citations_pass": True,
+        "retrieval_sufficient": False,
+        "citations_pass": False,
         "auditor_feedback": "",
     }
 
@@ -121,10 +123,23 @@ def ask_question(request: QueryRequest):
         contexts = build_contexts_from_docs(final_docs, prefix="[FINAL]")
         citations = build_citations_from_docs(final_docs)
 
+        # Identify granular error types
+        error_type = None
+        if not final_docs and not result.get("retrieved_docs"):
+            error_type = "retrieval_miss"
+        elif not final_docs and result.get("retrieved_docs"):
+            error_type = "all_docs_filtered"
+        elif not result.get("citations_pass", True):
+            error_type = "unsupported_claim_fallback"
+
         return QueryResponse(
             answer=result.get("generation", "Error: No answer generated."),
             context_used=contexts,
             citations=citations,
+            crag_retries=result.get("crag_retries", 0),
+            verify_retries=result.get("verify_retries", 0),
+            error_type=error_type,
+            prompt_version=ARCHITECTURE_NAME,
         )
 
     except HTTPException:

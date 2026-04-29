@@ -53,11 +53,11 @@ def select_best_context(state: GraphState):
 
     if not rewritten_docs:
         print("[Final Combined] No rewritten docs found. Falling back to original docs.")
-        return {"candidate_docs": original_docs}
+        return {"candidate_docs": original_docs, "retrieval_sufficient": True}
 
     if not original_docs:
         print("[Final Combined] No original candidate docs saved. Using rewritten docs.")
-        return {"candidate_docs": rewritten_docs}
+        return {"candidate_docs": rewritten_docs, "retrieval_sufficient": True}
 
     original_context = _build_context_group("ORIGINAL", original_docs)
     rewritten_context = _build_context_group("REWRITTEN", rewritten_docs)
@@ -80,6 +80,7 @@ Rewritten-query document set:
 Decision rule:
 - Choose ORIGINAL if the original-query set is more directly relevant, specific, and sufficient.
 - Choose REWRITTEN if the rewritten-query set is clearly better targeted to the question.
+- **CRITICAL MULTI-ENTITY RULE**: If the User Question asks about MULTIPLE distinct entities (e.g., two different papers, algorithms, or concepts), you MUST choose the set that covers ALL entities. If ORIGINAL misses an entity but REWRITTEN contains it, choose REWRITTEN.
 - Prefer the set that is more question-specific and less noisy.
 - Output only one word: ORIGINAL or REWRITTEN.
 """
@@ -89,7 +90,7 @@ Decision rule:
 
     if decision == "REWRITTEN":
         print("[Final Combined] Selected REWRITTEN context set.")
-        return {"candidate_docs": rewritten_docs}
+        return {"candidate_docs": rewritten_docs, "retrieval_sufficient": True}
 
     print("[Final Combined] Selected ORIGINAL context set.")
-    return {"candidate_docs": original_docs}
+    return {"candidate_docs": original_docs, "retrieval_sufficient": True}

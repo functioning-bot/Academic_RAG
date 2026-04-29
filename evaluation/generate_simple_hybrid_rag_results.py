@@ -56,6 +56,10 @@ def main():
                         "contexts": payload.get("context_used", []),
                         "citations": payload.get("citations", []),
                         "latency_sec": round(latency, 4),
+                        "crag_retries": payload.get("crag_retries", 0),
+                        "verify_retries": payload.get("verify_retries", 0),
+                        "error_type": payload.get("error_type"),
+                        "prompt_version": payload.get("prompt_version", "unknown"),
                         "status": "ok",
                         "error": None,
                     }

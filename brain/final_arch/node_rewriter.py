@@ -44,7 +44,7 @@ def rewrite_query(state: GraphState):
 
     weak_context = _build_weak_context(weak_docs) if weak_docs else "No weak documents available."
 
-    prompt = f"""You are rewriting a user question into a better retrieval query for academic document search.
+    prompt = f"""You are rewriting a user question into better retrieval queries for academic document search.
 
 Original user question:
 {original_query}
@@ -57,28 +57,46 @@ Weak or partial retrieved evidence:
 Instructions:
 - Rewrite ONLY for retrieval quality.
 - Preserve the original user intent exactly.
-- Make the query more specific, not broader.
+- If the question contains multiple distinct entities (e.g. comparing two different papers or algorithms), decompose the question into multiple distinct sub-queries (one for each entity).
+- If the question is about a single topic, just output one rewritten query.
 - Prefer short keyword-rich phrasing useful for hybrid search.
-- Include important entities, task names, mechanism names, dataset names, or paper terminology if helpful.
-- Remove filler words and conversational phrasing.
 - Do NOT answer the question.
 - Do NOT add commentary.
-- Output only one short retrieval query.
-- Keep it under 15 words if possible.
+- You MUST output ONLY a valid JSON array of strings. Example: ["query 1", "query 2"]
 
-Now output the rewritten retrieval query only.
+Now output the JSON array only.
 """
 
     response = llm.invoke([HumanMessage(content=prompt)])
-    rewritten_query = " ".join(response.content.strip().split())
+    content = response.content.strip()
 
-    if not rewritten_query:
-        rewritten_query = original_query
+    import json
+    try:
+        # Strip markdown code blocks if present
+        if content.startswith("```json"):
+            content = content.split("```json")[1].split("```")[0].strip()
+        elif content.startswith("```"):
+            content = content.split("```")[1].strip()
+            if content.endswith("```"):
+                content = content[:-3].strip()
+                
+        search_queries = json.loads(content)
+        if not isinstance(search_queries, list):
+            search_queries = [str(search_queries)]
+    except Exception as e:
+        print(f"[Final Combined] Failed to parse JSON ({e}). Falling back to string.")
+        search_queries = [content]
+
+    if not search_queries:
+        search_queries = [original_query]
+
+    rewritten_query = " | ".join(search_queries)
 
     print(f"[Final Combined] Original query:  {original_query}")
-    print(f"[Final Combined] Rewritten query: {rewritten_query}")
+    print(f"[Final Combined] Rewritten queries: {search_queries}")
 
     return {
         "search_query": rewritten_query,
+        "search_queries": search_queries,
         "crag_retries": retries + 1,
     }

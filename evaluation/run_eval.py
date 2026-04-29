@@ -34,6 +34,10 @@ def main():
         "ground_truth": [],
     }
     latencies = []
+    crag_retries = []
+    verify_retries = []
+    error_types = []
+    prompt_versions = []
 
     print(f"Querying the local LangGraph Brain for {len(gold_standard)} questions...")
     for item in gold_standard:
@@ -55,6 +59,10 @@ def main():
                 data_samples["contexts"].append(contexts)
                 data_samples["ground_truth"].append(ground_truth)
                 latencies.append(latency)
+                crag_retries.append(result.get("crag_retries", 0))
+                verify_retries.append(result.get("verify_retries", 0))
+                error_types.append(result.get("error_type", None))
+                prompt_versions.append(result.get("prompt_version", "unknown"))
                 print(f"  -> OK ({latency}s): {question[:50]}...")
             else:
                 print(f"  -> FAILED (HTTP {response.status_code}): {question[:50]}...")
@@ -99,6 +107,10 @@ def main():
     df = results.to_pandas()
     if len(latencies) == len(df):
         df["e2e_latency_seconds"] = latencies
+        df["crag_retries"] = crag_retries
+        df["verify_retries"] = verify_retries
+        df["error_type"] = error_types
+        df["prompt_version"] = prompt_versions
 
     df.to_csv("evaluation_results.csv", index=False)
     print("\nSaved results (including latency) to 'evaluation_results.csv'!")
