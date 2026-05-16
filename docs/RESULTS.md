@@ -7,24 +7,44 @@ Full experimental record, honestly reported. Read alongside `PROJECT_REVIEW.md`
 
 ## 1. Headline
 
-After an iterative diagnosis-and-fix cycle, the trained MADDPG-style controller
-reaches **answer quality statistically indistinguishable from a strong fixed
-baseline** (`simple_hybrid_rag`), and **wins the multi-chunk-synthesis category
-outright**, but does not beat the baseline on aggregate.
+The trained MADDPG-style controller (v4, 200 ep) was compared against four
+established fixed / heuristic RAG architectures on the **same 29-question test
+set**, same corpus, same LLM (`gpt-4o-mini`). **All systems land in a
+statistical dead heat on answer quality** — the learned controller is
+competitive with the whole family, neither best nor worst.
 
-| | MADDPG v4 (best, 200 ep) | `simple_hybrid_rag` |
-|---|---:|---:|
-| Token F1 (n=29) | 0.474 ± 0.028 | 0.487 ± 0.025 |
-| ROUGE-L | 0.344 | 0.367 |
-| Verification pass rate | 1.00 | 1.00 |
-| Failure rate | 0.00 | 0.00 |
-| Mean latency | 14.1 s | 1.7 s |
-| Mean LLM calls | 2.14 | 1.0 |
-| Categories won (of 8) | 2 | 6 |
+| System | Token F1 (n=29) | ROUGE-L | Pass rate | Failure rate | Mean latency |
+|---|---:|---:|---:|---:|---:|
+| `self_rag_grader` | 0.490 ± 0.028 | 0.390 | 1.00 | 0.00 | 4.3 s |
+| `simple_hybrid_rag` | 0.487 ± 0.025 | 0.367 | 1.00 | 0.00 | 1.7 s |
+| `final_arch` | 0.482 ± 0.027 | 0.354 | 1.00 | 0.00 | 32.8 s |
+| **MADDPG v4** | **0.474 ± 0.028** | 0.344 | 1.00 | 0.00 | 14.1 s |
+| `crag_rewrite` | 0.425 ± 0.039 † | 0.314 | 0.86 | 0.14 | 2.0 s |
 
-The −0.014 Token F1 gap is **smaller than one standard error** on either side
-(SE ≈ 0.026, n=29) — a statistical tie on answer quality. The controller is
-*competitive*, not *superior*.
+The four working systems span just **0.474 – 0.490 Token F1 — a 0.016 range,
+well inside one standard error** (SE ≈ 0.025–0.028, n=29). There is no
+statistically meaningful quality difference between MADDPG v4 and any other
+architecture. The controller is *competitive*, not *superior* — and not
+inferior either.
+
+† `crag_rewrite` crashed on 4 / 29 questions due to a bug in its own node code
+(`rewritten_query` referenced before assignment — not a harness fault). On the
+25 questions it completed it scores **0.493** — i.e. also in the same cluster;
+its 0.425 aggregate is dragged down by its own crashes.
+
+**The architectures compared:**
+- `simple_hybrid_rag` — hybrid retrieval → top-8 → one generation call.
+- `self_rag_grader` — Self-RAG style: retrieval + LLM relevance grading.
+- `crag_rewrite` — Corrective-RAG: retrieval evaluation + query rewrite loop.
+- `final_arch` — the full pipeline: grade + rerank + generate + claim-verify + retry.
+- `MADDPG v4` — the learned stage-conditioned continuous-control controller.
+
+**Reading this honestly:** MADDPG v4 does not win, but it is statistically
+indistinguishable from `simple_hybrid_rag`, `final_arch`, and `self_rag_grader`,
+and ahead of `crag_rewrite` as-run. It also matches every working system on
+pass rate (1.00) and failure rate (0.00), and **wins the `multi_chunk_synthesis`
+category** head-to-head vs `simple_hybrid_rag` (see §5). It is slower than the
+lightweight baselines but far faster than `final_arch` (14 s vs 33 s).
 
 ---
 
