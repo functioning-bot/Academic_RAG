@@ -68,21 +68,23 @@ GRAD_CLIP_NORM = 1.0
 CHECKPOINT_EVERY = 50   # save checkpoint every N episodes
 
 # ---------------------------------------------------------------------------
-# Cooperative reward weights  (positive terms sum to ~0.95)
+# Cooperative reward weights  (positive terms sum to 1.00)
 # ---------------------------------------------------------------------------
-# Rebalanced to disincentivise reward-hacking the verifier with minimal evidence:
-#   - Answer-quality (token F1 vs gold) is now the dominant signal.
-#   - Verification-pass weight cut from 0.20 → 0.10 so "verifier passed" is no
-#     longer worth more than a 0.4 F1 improvement.
-#   - Citation-support cut from 0.25 → 0.15 since the trained policy was
-#     trivially maxing it on 1-chunk answers.
-#   - Retrieval-F1 boosted 0.15 → 0.20 so picking the right sources matters more.
-W_ANSWER_QUALITY    = 0.50
-W_CITATION_SUPPORT  = 0.15
-W_VERIFICATION_PASS = 0.10
-W_RETRIEVAL_F1      = 0.20
-W_LATENCY_COST      = 0.05   # subtracted; applied once at terminal, capped at 1.0 normalized
-W_STEP_COST         = 0.02   # subtracted per step
+# v4 rebalance — directly attacks the persistent minimal-evidence reward-hack:
+#   - Answer-quality is now a blend of embedding similarity (semantic) and
+#     token F1 (lexical) — see reward.py — so the policy is no longer trained
+#     purely toward lexical overlap.
+#   - NEW W_EVIDENCE_UTILIZATION term: rewards using a substantial evidence
+#     pack (capped at 6 chunks) so the ~2-chunk strategy loses reward outright.
+#   - Answer-quality 0.50→0.45 and citation-support 0.15→0.10 to make budget
+#     room for the evidence term while keeping answer-quality dominant.
+W_ANSWER_QUALITY       = 0.45
+W_CITATION_SUPPORT     = 0.10
+W_VERIFICATION_PASS    = 0.10
+W_RETRIEVAL_F1         = 0.20
+W_EVIDENCE_UTILIZATION = 0.15   # NEW: reward for using min(evidence_count, 6) chunks
+W_LATENCY_COST         = 0.05   # subtracted; applied once at terminal, capped at 1.0 normalized
+W_STEP_COST            = 0.02   # subtracted per step
 
 # Penalty magnitudes (applied as negative rewards)
 PENALTY_HALLUCINATION        = -0.30

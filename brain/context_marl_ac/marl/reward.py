@@ -5,10 +5,10 @@ Cooperative reward function for the MARL system.
 """
 
 import re
-from typing import Dict, Any, Tuple
+from typing import Dict, Any, Optional, Tuple
 from context_marl_ac.config import (
     W_ANSWER_QUALITY, W_CITATION_SUPPORT, W_VERIFICATION_PASS, W_RETRIEVAL_F1,
-    W_LATENCY_COST, W_STEP_COST,
+    W_EVIDENCE_UTILIZATION, W_LATENCY_COST, W_STEP_COST,
     PENALTY_HALLUCINATION, PENALTY_UNSUPPORTED_CLAIM, PENALTY_REPEATED_ACTION,
     PENALTY_INVALID_ACTION, PENALTY_NO_ANSWER, PENALTY_MAX_STEPS
 )
@@ -16,7 +16,7 @@ from context_marl_ac.schemas.context_state import ContextState
 
 
 def _token_f1(pred: str, gold: str) -> float:
-    """Token-set F1 between predicted and gold answer. Used as a quality proxy."""
+    """Token-set F1 between predicted and gold answer (lexical overlap proxy)."""
     p = set(re.findall(r"\b\w+\b", (pred or "").lower()))
     g = set(re.findall(r"\b\w+\b", (gold or "").lower()))
     if not p or not g:
@@ -27,6 +27,57 @@ def _token_f1(pred: str, gold: str) -> float:
     prec = tp / len(p)
     rec  = tp / len(g)
     return 2 * prec * rec / (prec + rec)
+
+
+# Lazily-bound BGE-M3 encoder (reuses the model retriever_shared already loaded
+# during a live run — no second copy in memory, no extra Qdrant connection).
+_embedder = None
+
+
+def _embedding_similarity(pred: str, gold: str) -> Optional[float]:
+    """
+    Cosine similarity between BGE-M3 embeddings of the answer and gold answer.
+
+    Semantic, not lexical — credits an answer for being *about the right thing*
+    even when it uses different words. Returns None on any failure so the caller
+    can fall back to token F1.
+    """
+    global _embedder
+    if not pred or not gold:
+        return 0.0
+    try:
+        import numpy as np
+        if _embedder is None:
+            import retriever_shared  # already imported by the retriever adapter
+            _embedder = retriever_shared.dense_model
+        out = _embedder.encode(
+            [pred, gold], batch_size=2, max_length=2048,
+            return_dense=True, return_sparse=False, return_colbert_vecs=False,
+        )
+        vecs = out["dense_vecs"]
+        a, b = np.asarray(vecs[0], dtype=float), np.asarray(vecs[1], dtype=float)
+        denom = float(np.linalg.norm(a) * np.linalg.norm(b))
+        if denom == 0.0:
+            return 0.0
+        return max(0.0, min(1.0, float(np.dot(a, b) / denom)))
+    except Exception:
+        return None
+
+
+def _answer_quality(pred: str, gold: str) -> float:
+    """
+    Blended answer-quality score in [0, 1]:
+      0.5 * embedding similarity (semantic)  +  0.5 * token F1 (lexical).
+
+    The blend stops the policy from being trained purely toward lexical overlap
+    while keeping lexical precision pressure. Falls back to pure token F1 if the
+    embedder is unavailable.
+    """
+    tf1 = _token_f1(pred, gold)
+    esim = _embedding_similarity(pred, gold)
+    if esim is None:
+        return tf1
+    return 0.5 * esim + 0.5 * tf1
 
 def calculate_reward(
     state: ContextState, 
@@ -57,16 +108,24 @@ def calculate_reward(
 
     # 3. Terminal Rewards (Positive & Negative)
     if is_terminal:
-        # A. Answer Quality — token F1 against gold (not a constant!)
+        # A. Answer Quality — blended embedding-similarity + token-F1 vs gold.
         q_score = 0.0
         if state.generated_answer:
             if "DRY-RUN" in state.generated_answer:
                 q_score = 0.85
             elif gold_answer:
-                q_score = _token_f1(state.generated_answer, gold_answer)
+                q_score = _answer_quality(state.generated_answer, gold_answer)
 
         reward += W_ANSWER_QUALITY * q_score
         components["answer_quality"] = float(W_ANSWER_QUALITY * q_score)
+
+        # A1. Evidence utilization — reward using a substantial evidence pack.
+        # Directly counteracts the policy's tendency to collapse to ~2 chunks:
+        # the score saturates at 6 chunks so it cannot be gamed by over-retrieval.
+        ev_count = len(state.selected_evidence or [])
+        ev_score = min(ev_count, 6) / 6.0
+        reward += W_EVIDENCE_UTILIZATION * ev_score
+        components["evidence_utilization"] = float(W_EVIDENCE_UTILIZATION * ev_score)
 
         # A2. Latency cost — charged once at episode end, normalized to [0, 1]
         # by 120 s reference (typical Groq budget). Caps prevent latency dominating

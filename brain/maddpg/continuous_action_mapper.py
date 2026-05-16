@@ -15,7 +15,7 @@ Param-wiring contract (see docs/MADDPG_EXTENSION.md for the full table):
 | retriever | source_diversity      | yes (post-filter)  | retriever_agent.py post-filters retrieved chunks             |
 | rewriter  | rewrite_strength      | yes (selector)     | _sel_rewriter() picks aggressive vs simple rewrite mode      |
 | rewriter  | query_expansion_weight| yes (selector)     | _sel_rewriter() picks expanded vs multi_query rewrite        |
-| grader    | evidence_keep_ratio   | yes [0.5, 1.0]     | grader_agent.py trims filtered chunks to top-N fraction      |
+| grader    | evidence_keep_ratio   | yes [0.7, 1.0]     | grader_agent.py trims filtered chunks to top-N fraction      |
 | grader    | relevance_threshold   | yes (post-filter)  | grader_agent.py drops chunks with score < threshold          |
 | grader    | strictness_score      | yes (selector)     | _sel_grader() picks strict/medium/loose filter mode          |
 | generator | temperature           | yes                | generator_agent.py -> generate_answer(temperature=...)       |
@@ -53,10 +53,10 @@ JOINT_ACTION_DIM: int = sum(AGENT_ACTION_DIMS[n] for n in ORDERED_AGENTS)  # 14
 
 # ── Safe defaults ──────────────────────────────────────────────────────────────
 AGENT_DEFAULTS: Dict[str, Dict[str, Any]] = {
-    "retriever": {"dense_sparse_weight": 0.5, "top_k": 7,
+    "retriever": {"dense_sparse_weight": 0.5, "top_k": 12,
                   "rerank_threshold": 0.5, "source_diversity": 0.5},
     "rewriter":  {"rewrite_strength": 0.5, "query_expansion_weight": 0.5},
-    "grader":    {"relevance_threshold": 0.0, "evidence_keep_ratio": 0.75,
+    "grader":    {"relevance_threshold": 0.0, "evidence_keep_ratio": 0.85,
                   "strictness_score": 0.5},
     "generator": {"temperature": 0.3, "citation_strictness": 0.7,
                   "max_tokens": 512, "answer_detail_level": 0.5},
@@ -85,11 +85,12 @@ def _safe(raw: Optional[np.ndarray], idx: int, fallback: float) -> float:
 
 def _map_retriever(raw: np.ndarray) -> Dict[str, Any]:
     r = np.clip(np.asarray(raw, dtype=np.float32), -1.0, 1.0)
-    # top_k range 3..12 (was 5..30) — keeps Groq grading from blowing the rate
-    # limit when the grader runs in LLM modes. Default raw≈0 → top_k≈7.
+    # top_k range 5..20. The earlier 3..12 cap was a Groq rate-limit workaround;
+    # on OpenAI there is no such limit, and synthesis/cross-paper questions need
+    # broader retrieval than a fixed top-8 baseline. Default raw≈0 → top_k≈12.
     return {
         "dense_sparse_weight":   _clamp(_u(_safe(r, 0, 0.0)), 0.0, 1.0),
-        "top_k":                 int(_clamp(3 + _u(_safe(r, 1, 0.0)) * 9, 3, 12)),
+        "top_k":                 int(_clamp(5 + _u(_safe(r, 1, 0.0)) * 15, 5, 20)),
         "rerank_threshold":      _clamp(_u(_safe(r, 2, 0.0)), 0.0, 1.0),
         "source_diversity":      _clamp(_u(_safe(r, 3, 0.0)), 0.0, 1.0),
     }
@@ -105,10 +106,11 @@ def _map_rewriter(raw: np.ndarray) -> Dict[str, Any]:
 
 def _map_grader(raw: np.ndarray) -> Dict[str, Any]:
     r = np.clip(np.asarray(raw, dtype=np.float32), -1.0, 1.0)
-    # evidence_keep_ratio range raised to [0.5, 1.0] (was [0.1, 1.0]) so the
-    # actor cannot reward-hack the verifier by stripping evidence to ~1 chunk.
-    # Maps raw [-1, 1] → [0.5, 1.0] linearly; default raw≈0 → ratio≈0.75.
-    keep_ratio = _clamp(0.5 + 0.5 * _u(_safe(r, 1, 0.0)), 0.5, 1.0)
+    # evidence_keep_ratio range raised to [0.7, 1.0] (was [0.5, 1.0], originally
+    # [0.1, 1.0]). Synthesis/cross-paper questions need most of the graded
+    # evidence retained; the actor still cannot strip below 70%.
+    # Maps raw [-1, 1] → [0.7, 1.0] linearly; default raw≈0 → ratio≈0.85.
+    keep_ratio = _clamp(0.7 + 0.3 * _u(_safe(r, 1, 0.0)), 0.7, 1.0)
     return {
         "relevance_threshold": _clamp(_u(_safe(r, 0, 0.0)), 0.0, 1.0),
         "evidence_keep_ratio": keep_ratio,

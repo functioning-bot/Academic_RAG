@@ -1,0 +1,39 @@
+{
+  "run_name": "maddpg_ceb_openai_200ep_v3",
+  "architecture": "maddpg_style_continuous_control",
+  "critic_type": "stage_conditioned",
+  "use_ceb": true,
+  "state_dim": 20,
+  "episodes": 200,
+  "total_env_steps": 818,
+  "total_gradient_updates": 378,
+  "trained": true,
+  "best_reward": 0.8135,
+  "mean_reward": 0.39737900000000004,
+  "verification_pass_rate": 0.985,
+  "mean_citation_support": 0.896003,
+  "mean_latency": 14.834105,
+  "failure_rate": 0.015,
+  "last_losses": {
+    "critic_loss": 0.005792655050754547,
+    "actor_loss_retriever": -0.4824976921081543,
+    "actor_loss_grader": -0.3589273691177368,
+    "actor_loss_generator": -0.467810720205307,
+    "actor_loss_verifier": -0.5628970861434937
+  },
+  "hyperparameters": {
+    "batch_size": 64,
+    "warmup_steps": 32,
+    "update_every": 2,
+    "min_updates": 100,
+    "gamma": 0.99,
+    "tau": 0.005,
+    "actor_lr": 0.001,
+    "critic_lr": 0.001,
+    "noise_sigma": 0.15,
+    "grad_clip": 1.0,
+    "error_penalty": -1.0,
+    "seed": 42,
+    "hidden_dim": 128
+  }
+}

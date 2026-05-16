@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "architecture": "maddpg_style_continuous_control",
+    "critic_type": "stage_conditioned",
+    "checkpoint_path": "maddpg/results/maddpg_v4/checkpoints/best_reward.pt",
+    "checkpoint_exists": true,
+    "trained": false,
+    "total_gradient_updates": 0,
+    "state_dim": 20,
+    "use_ceb": true,
+    "allow_random_policy": false
+  },
+  "modes": {
+    "maddpg_ceb": {
+      "n_questions": 29,
+      "verification_pass_rate": 1.0,
+      "mean_citation_support": 0.9729068965517242,
+      "mean_unsupported_claims": 0.13793103448275862,
+      "mean_steps": 4.344827586206897,
+      "mean_llm_calls": 2.1379310344827585,
+      "mean_latency": 14.13936551724138,
+      "mean_token_usage": 1606.9310344827586,
+      "mean_evidence_count": 4.448275862068965,
+      "failure_rate": 0.0
+    }
+  }
+}
