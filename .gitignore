@@ -14,6 +14,9 @@ n8n_data/
 ingest_folder/
 *.pdf
 
+# Large datasets (download / rebuild locally — exceeds GitHub's 100 MB limit)
+brain/arc/data/*.zip
+
 # Evaluation Data (Optional to ignore, but good so large CSVs aren't pushed excessively)
 # evaluation/*.csv
 evaluation/temp.txt

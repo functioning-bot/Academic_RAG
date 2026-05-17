@@ -498,36 +498,44 @@ because the expanded gold answers are longer):
 |---|---|---:|
 | v1–v3 | First trained policy + evidence-floor / reward-rebalance fixes | −11 to −14% |
 | v3-exp | Un-throttled `top_k`; retrained on expanded benchmark | −8.6% |
-| **v4** | **Reward redesign (200 ep)** | **−2.8%** |
-| v4-500 | Same reward, 500 ep | −14.0% (overfit) |
+| **v4 (trained `ep_0200.pt`)** | **Reward redesign (200 ep)** | **−10.9%** |
+| v4-500 | Same reward, 500 ep | −14.0% |
+
+> **Checkpoint-selection correction.** Earlier drafts read MADDPG numbers from
+> `best_reward.pt`, which is saved at the highest *single-episode training
+> reward* — for the v4 200-ep run, an early episode with **0 gradient updates**:
+> an untrained policy. All numbers below are from the verified-trained periodic
+> checkpoint `ep_0200.pt` (392 gradient updates). See `docs/RESULTS.md` §2.1.
 
 **The recurring failure mode.** Through v1–v3-exp the policy reward-hacked by
 using only ~1–2 evidence chunks — enough to satisfy the verifier, too little
-for a good answer. The fix that worked (v4) was a **reward redesign**: a
-semantic embedding-similarity blend for answer quality, a new
-evidence-utilization reward term, and a higher `evidence_keep_ratio` floor.
-That broke the minimal-evidence optimum (evidence count 2.1 → 4.5) and closed
-the gap to −2.8%.
+for a good answer. The v4 **reward redesign** (a semantic embedding-similarity
+blend for answer quality, a new evidence-utilization reward term, a higher
+`evidence_keep_ratio` floor) broke the minimal-evidence optimum (evidence count
+2.1 → 5.3). But it fixed the *behaviour* without improving the *outcome* — see
+the training curve below.
 
-**Final result (v4, 200 ep — the recommended checkpoint):** Token F1
-0.474 ± 0.028 vs the baseline's 0.487 ± 0.025 (n=29) — **a statistical tie**
-(gap < 1 SE). MADDPG **wins 2 of 8 categories**, including the flagship
-`multi_chunk_synthesis` (n=7). It matches the baseline on pass rate (100%) and
-failure rate (0%) but is **slower and more LLM-expensive** (14 s / 2.1 calls vs
-2 s / 1 call) — its value is adaptivity and parity, not efficiency.
+**Final result (v4, trained `ep_0200.pt`):** Token F1 0.434 ± 0.031 vs the
+baseline's 0.487 ± 0.025 (n=29) — the trained controller scores **below** every
+working fixed baseline (0.482–0.490) and roughly level with the crashed
+`crag_rewrite`. It wins only 1 of 8 categories. It is also slower and more
+LLM-expensive (22.7 s / 2.7 calls vs 2 s / 1 call).
 
-**The training-budget finding.** v4 at 500 episodes scored *worse* than at 200
-(Token F1 0.419 vs 0.474) — **proxy-reward over-optimization**: with 1,062
-updates on 88 questions the policy kept improving the reward while the held-out
-metric fell. 200 episodes is near the optimal budget.
+**The training curve — the decisive finding.** Held-out Token F1 against
+gradient updates, same 29-q test set: 0 → 0.474, 69 → 0.439, 170 → 0.432,
+286 → 0.445, 392 → 0.434, 986 → 0.419. The curve is **flat-to-slightly-declining**:
+training the controller on the v4 proxy reward never lifts Token F1 above its
+untrained starting point. The proxy reward shaped behaviour (evidence use) but
+did not transfer to answer quality.
 
 **Defensible thesis claim:** *"A stage-conditioned MADDPG-style continuous-control
-controller, with early stopping, reaches answer quality statistically
-indistinguishable from a strong fixed-pipeline baseline (Token F1 0.474 vs
-0.487, n=29) and wins the multi-chunk-synthesis category outright. The project
-also identifies and fixes a reward-hacking failure mode and demonstrates
-proxy-reward over-optimization via a training-budget curve."* It is **parity,
-not superiority** — claiming a clean win would be dishonest.
+controller trains stably end-to-end on live LLM calls, but training it on a
+hand-designed proxy reward did not improve held-out answer quality: the trained
+controller scores below strong fixed-pipeline baselines and no better than its
+untrained initialisation. The project diagnoses why — a reward-hacking failure
+mode, and a proxy reward that, even after redesign, does not transfer to the
+true objective."* This is an honest **negative result**, not parity and not a
+win — claiming either would be dishonest.
 
 ---
 
@@ -575,27 +583,31 @@ motivated by the stage-gated RAG environment. We call it "MADDPG-style" for
 exactly that reason.
 
 **Q: Why not just hard-code good RAG parameters?**
-A: That is exactly the baseline (`simple_hybrid_rag`). The question is whether
-per-query learned control matches or beats a fixed configuration. Our result:
-after reward redesign the learned controller reaches a statistical tie on
-answer quality (Token F1 0.474 vs 0.487, n=29, gap < 1 SE) and wins the
-multi-chunk-synthesis category — parity with a strong fixed baseline.
+A: That is exactly the baseline (`simple_hybrid_rag`). The question we set out
+to answer is whether per-query learned control can match or beat a fixed
+configuration. Our honest result: on this architecture, reward, and benchmark,
+it does **not** — the trained controller (Token F1 0.434) scored below the
+fixed baseline (0.487). The contribution is the working architecture plus a
+clean diagnosis of *why* learned control did not help.
 
 **Q: Does the trained policy beat the baseline?**
-A: Honestly, no — not on aggregate. The best result (v4, 200 ep) is a
-*statistical tie* on Token F1 and a win on 2 of 8 categories. We claim parity,
-not superiority. The baseline is also faster and cheaper. The contribution is
-(a) showing learned continuous control reaches parity with a strong fixed
-pipeline, (b) winning synthesis-heavy queries, and (c) the methodological
-findings — diagnosing a reward-hacking failure mode and demonstrating
-proxy-reward over-optimization. See `docs/RESULTS.md`.
+A: No. The trained controller (v4, `ep_0200.pt`, 392 updates) scores 0.434
+Token F1 — below every working fixed baseline (0.482–0.490) and no better than
+its own untrained initialisation (0.474). This is a negative result, and we
+report it as one. The contribution is (a) a stage-conditioned MADDPG-style
+architecture that trains stably end-to-end on live LLM calls, and (b) the
+methodological findings — a diagnosed reward-hacking failure mode and a flat
+training curve showing the proxy reward does not transfer. See `docs/RESULTS.md`.
 
-**Q: Why did 500 training episodes do worse than 200?**
-A: Proxy-reward over-optimization. The reward is a proxy for answer quality.
-With 1,062 gradient updates on 88 training questions the policy kept improving
-the *reward* (evidence count climbed) while Token F1 on the held-out set fell —
-the proxy and the true metric diverged. 200 episodes is near the optimal
-budget; this U-shaped budget curve is itself a reported result.
+**Q: Did training the controller help at all?**
+A: No — that is the key finding. Held-out Token F1 is flat across the whole
+training run: 0.474 untrained, 0.434 at 200 episodes (392 updates), 0.419 at
+500 episodes (986 updates). Every trained checkpoint is within ~1 SE of the
+others and none beats the untrained policy. The v4 proxy reward shaped the
+policy's *behaviour* (evidence use rose 2.1 → 5.3) but did not improve the
+*answers*. The mild drop at 500 episodes is consistent with light over-
+optimisation but is within sampling noise — we do not claim a clean
+"early-stopping" result.
 
 **Q: Why dense AND sparse retrieval?**
 A: Complementary failure modes. Dense matches paraphrase but blurs rare terms;
@@ -612,10 +624,12 @@ slots as zero — a wasteful, diluted gradient. Stage-conditioning gives every
 training sample the same informative shape.
 
 **Q: How do you know training actually happened?**
-A: `total_gradient_updates` is logged (378 for the 200-ep run); critic loss
-converged from 0.16 → 0.005; actor losses are stable and negative; the trained
-actor's parameter distributions are coherent and clearly non-random. The
-`trained` flag in the aggregate JSON is true.
+A: `total_gradient_updates` is logged — 392 for the `ep_0200.pt` checkpoint;
+critic loss converged from 0.16 → 0.005; actor losses are stable and negative.
+This is also exactly why we evaluate `ep_0200.pt` and not `best_reward.pt`:
+the latter, for the 200-ep run, was saved at an early high-reward episode with
+**0** gradient updates — an untrained policy. The checkpoint's recorded
+`total_gradient_updates` is the audit trail for "is this policy trained."
 
 **Q: Is 38 training questions enough?**
 A: It is enough to demonstrate the architecture trains and to show a trade-off

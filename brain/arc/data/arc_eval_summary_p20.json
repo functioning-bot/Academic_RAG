@@ -1,0 +1,22 @@
+{
+  "retrieval": {
+    "mode": "retrieval",
+    "n": 1172,
+    "accuracy": 0.9206484641638225,
+    "accuracy_by_split": {
+      "ARC-Challenge": 0.9206484641638225
+    }
+  },
+  "closed-book": {
+    "mode": "closed-book",
+    "n": 1172,
+    "accuracy": 0.9325938566552902,
+    "accuracy_by_split": {
+      "ARC-Challenge": 0.9325938566552902
+    }
+  },
+  "comparison": {
+    "retrieval_minus_closed_book": -0.0119,
+    "note": "On full ARC-Challenge (n=1172), retrieval underperforms closed-book by 1.19 points."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "run_name": "maddpg_v4_noceb",
+  "architecture": "maddpg_style_continuous_control",
+  "critic_type": "stage_conditioned",
+  "use_ceb": false,
+  "state_dim": 14,
+  "episodes": 200,
+  "total_env_steps": 995,
+  "total_gradient_updates": 233,
+  "trained": true,
+  "best_reward": 0.7854,
+  "mean_reward": 0.4406525,
+  "verification_pass_rate": 0.96,
+  "mean_citation_support": 0.8843585,
+  "mean_latency": 26.21806,
+  "failure_rate": 0.04,
+  "last_losses": {
+    "critic_loss": 0.017925908789038658,
+    "actor_loss_retriever": -0.5240582227706909,
+    "actor_loss_grader": -0.4265749156475067,
+    "actor_loss_generator": -0.5417328476905823,
+    "actor_loss_verifier": -0.5882404446601868
+  },
+  "hyperparameters": {
+    "batch_size": 64,
+    "warmup_steps": 50,
+    "update_every": 4,
+    "min_updates": 1,
+    "gamma": 0.99,
+    "tau": 0.005,
+    "actor_lr": 0.001,
+    "critic_lr": 0.001,
+    "noise_sigma": 0.15,
+    "grad_clip": 1.0,
+    "error_penalty": -1.0,
+    "seed": 42,
+    "hidden_dim": 128
+  }
+}

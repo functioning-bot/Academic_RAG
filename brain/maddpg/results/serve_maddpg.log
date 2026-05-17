@@ -1,0 +1,57 @@
+INFO:     Started server process [12844]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+[serve_maddpg] loaded C:\Users\juand\Documents\Academic_RAG\brain\maddpg\results\maddpg_v4\checkpoints\ep_0200.pt
+[serve_maddpg]   state_dim=20 (CEB=True)  gradient_updates=392  trained=True
+[serve_maddpg] starting on http://127.0.0.1:8000  (frontend: open web_app/index.html)
+INFO:     127.0.0.1:63945 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63946 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63947 - "GET / HTTP/1.1" 200 OK
+Fetching 30 files:   0%|          | 0/30 [00:00<?, ?it/s]Fetching 30 files: 100%|##########| 30/30 [00:00<00:00, 476625.45it/s]
+[32m2026-05-17 02:32:36.586[0m | [33m[1mWARNING [0m | [36mfastembed.common.model_management[0m:[36mdownload_files_from_huggingface[0m:[36m225[0m - [33m[1mLocal file sizes do not match the metadata.[0m
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: RELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: RELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: RELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: RELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: RELEVANT
+[Final Combined] Kept 7 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 4
+INFO:     127.0.0.1:55454 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56463 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56648 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63120 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61094 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53673 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51726 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62580 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53391 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62808 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63925 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59528 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59527 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52101 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58617 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55252 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62032 - "GET /health HTTP/1.1" 200 OK

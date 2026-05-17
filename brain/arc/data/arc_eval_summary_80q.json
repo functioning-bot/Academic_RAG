@@ -1,0 +1,20 @@
+{
+  "closed-book": {
+    "mode": "closed-book",
+    "n": 80,
+    "accuracy": 0.95,
+    "accuracy_by_split": {
+      "ARC-Challenge": 0.925,
+      "ARC-Easy": 0.975
+    }
+  },
+  "retrieval": {
+    "mode": "retrieval",
+    "n": 80,
+    "accuracy": 0.9625,
+    "accuracy_by_split": {
+      "ARC-Challenge": 0.95,
+      "ARC-Easy": 0.975
+    }
+  }
+}

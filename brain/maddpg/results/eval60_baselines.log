@@ -1,0 +1,13 @@
+### shr ###
+
+[eval] simple_hybrid_rag: wrote 60 rows -> maddpg\results\eval60_compare\eval_simple_hybrid_rag.jsonl
+[eval] mean token_f1=0.4602  mean rouge_l=0.3355  failures=0/60
+### fa ###
+
+[eval] final_arch: wrote 60 rows -> maddpg\results\eval60_compare\eval_final_arch.jsonl
+[eval] mean token_f1=0.4494  mean rouge_l=0.3254  failures=0/60
+### ceb ###
+
+-- Summary ---------------------------------------------------------
+  maddpg_ceb                pass=95.0%  cit=0.89  steps=4.5  latency=26.8s
+### EVALS DONE ###

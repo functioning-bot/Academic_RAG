@@ -1,0 +1,29 @@
+{
+  "closed_book": {
+    "mode": "closed-book",
+    "n": 1172,
+    "accuracy": 0.9325938566552902
+  },
+  "retrieval_depth20": {
+    "mode": "retrieval",
+    "per_question": 20,
+    "n": 1172,
+    "accuracy": 0.9206484641638225,
+    "subset_sentences": 20775
+  },
+  "retrieval_depth80": {
+    "mode": "retrieval",
+    "n": 1172,
+    "accuracy": 0.9163822525597269,
+    "accuracy_by_split": {
+      "ARC-Challenge": 0.9163822525597269
+    },
+    "per_question": 80,
+    "subset_sentences": 76029
+  },
+  "comparison": {
+    "note": "4x more evidence (depth 20->80) did NOT help ARC-Challenge retrieval; it slightly hurt. Both retrieval depths trail closed-book. Confirms retrieval underperformance is not a corpus-depth problem.",
+    "depth80_minus_depth20": -0.0042,
+    "best_retrieval_minus_closed_book": -0.012
+  }
+}

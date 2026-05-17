@@ -441,6 +441,18 @@ def train(argv: Optional[List[str]] = None) -> int:
                     extra={"run_name": args.run_name, "episode": ep_idx, "metrics": ep_metrics},
                 )
 
+        # final.pt — the fully-trained policy at the end of the run. This is the
+        # checkpoint to evaluate and serve. (best_reward.pt tracks the highest
+        # single-episode TRAINING reward, which is noisy and can land on an
+        # early, barely-trained episode — do not evaluate that one.)
+        trainer.save_checkpoint(
+            ckpt_dir / "final.pt",
+            extra={"run_name": args.run_name, "episode": args.episodes,
+                   "metrics": all_episode_metrics[-1] if all_episode_metrics else {}},
+        )
+        print(f"  [ckpt] final policy -> {ckpt_dir / 'final.pt'}  "
+              f"({trainer.total_gradient_updates} gradient updates)")
+
         _write_aggregate(
             agg_path, args, tcfg, trainer, all_episode_metrics, best_reward, last_losses,
         )

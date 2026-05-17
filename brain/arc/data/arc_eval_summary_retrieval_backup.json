@@ -1,0 +1,10 @@
+{
+  "retrieval": {
+    "mode": "retrieval",
+    "n": 1172,
+    "accuracy": 0.9206484641638225,
+    "accuracy_by_split": {
+      "ARC-Challenge": 0.9206484641638225
+    }
+  }
+}
