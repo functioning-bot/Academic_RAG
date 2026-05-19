@@ -181,9 +181,13 @@ def main() -> int:
     ap = argparse.ArgumentParser("Evaluate the system on ARC multiple-choice questions")
     ap.add_argument("--mode", default="both",
                     choices=["retrieval", "closed-book", "both"])
+    ap.add_argument("--benchmark", default=str(_DATA / "arc_benchmark.jsonl"),
+                    help="Path to the ARC benchmark .jsonl")
+    ap.add_argument("--suffix", default="",
+                    help="Suffix for output files (e.g. _60q) to avoid clobbering")
     args = ap.parse_args()
 
-    bench = _DATA / "arc_benchmark.jsonl"
+    bench = Path(args.benchmark)
     with open(bench, encoding="utf-8") as fh:   # line iteration, not splitlines()
         questions = [json.loads(l) for l in fh if l.strip()]
     print(f"[arc-eval] {len(questions)} questions  | model: {current_model()}")
@@ -194,13 +198,13 @@ def main() -> int:
         print(f"\n{'-'*60}\n  Mode: {mode}\n{'-'*60}")
         results = _evaluate(questions, mode)
         summary[mode] = _report(results, mode)
-        out = _DATA / f"arc_eval_{mode.replace('-', '_')}.jsonl"
+        out = _DATA / f"arc_eval_{mode.replace('-', '_')}{args.suffix}.jsonl"
         with open(out, "w", encoding="utf-8") as f:
             for r in results:
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
         print(f"  -> {out}")
 
-    with open(_DATA / "arc_eval_summary.json", "w", encoding="utf-8") as f:
+    with open(_DATA / f"arc_eval_summary{args.suffix}.json", "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2)
     return 0
 

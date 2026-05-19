@@ -39,6 +39,48 @@ function renderMarkdownSafe(markdownText) {
         : parsedHtml;
 }
 
+// Tidy the inline [n] citation markers the model emits:
+//  - merge an adjacent run like "[1][2]" into a single "[1, 2]" (also avoids
+//    `marked` misreading "[1][2]" as reference-link syntax)
+//  - collapse consecutive runs that cite the exact same set down to the last
+//    one, so a marker isn't repeated after every sentence
+// Collapsing stops at paragraph breaks, so each paragraph keeps its citation.
+function normalizeCitations(text) {
+    if (!text) return text;
+
+    const runRegex = /\[\d+\](?!\()(?:\s*\[\d+\](?!\())*/g;
+    const runs = [];
+    let match;
+    while ((match = runRegex.exec(text)) !== null) {
+        const nums = [...new Set(match[0].match(/\d+/g).map(Number))].sort((a, b) => a - b);
+        runs.push({ start: match.index, end: match.index + match[0].length, nums });
+    }
+    if (runs.length === 0) return text;
+
+    const keep = runs.map(() => true);
+    for (let i = 0; i < runs.length - 1; i++) {
+        const a = runs[i];
+        const b = runs[i + 1];
+        const sameSet = a.nums.length === b.nums.length &&
+            a.nums.every((n, idx) => n === b.nums[idx]);
+        const crossesParagraph = /\n\s*\n/.test(text.slice(a.end, b.start));
+        if (sameSet && !crossesParagraph) keep[i] = false;
+    }
+
+    let result = text;
+    for (let i = runs.length - 1; i >= 0; i--) {
+        const run = runs[i];
+        const replacement = keep[i] ? `[${run.nums.join(", ")}]` : "";
+        result = result.slice(0, run.start) + replacement + result.slice(run.end);
+    }
+
+    // Clean up gaps left where markers were removed.
+    return result
+        .replace(/ {2,}/g, " ")
+        .replace(/ ([.,;:!?])/g, "$1")
+        .replace(/[ \t]+\n/g, "\n");
+}
+
 function updateSendButtonState() {
     const hasText = userInput.value.trim().length > 0;
     sendBtn.disabled = isProcessing || !hasText;
@@ -52,7 +94,7 @@ function addMessage(text, role) {
     contentDiv.className = "message-content";
 
     if (role === "assistant") {
-        contentDiv.innerHTML = renderMarkdownSafe(text);
+        contentDiv.innerHTML = renderMarkdownSafe(normalizeCitations(text));
     } else {
         contentDiv.textContent = text ?? "";
     }

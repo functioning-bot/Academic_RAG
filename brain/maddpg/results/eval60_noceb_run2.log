@@ -1,0 +1,69 @@
+
+------------------------------------------------------------
+  Mode: maddpg_no_ceb  (CEB=False, state_dim=14)
+  Checkpoint: maddpg/results/maddpg_v4_noceb_run2/checkpoints/ep_0200.pt  exists=True  trained_updates=215
+------------------------------------------------------------
+maddpg_no_ceb:   0%|          | 0/60 [00:00<?, ?it/s]
+Fetching 30 files:   0%|          | 0/30 [00:00<?, ?it/s][AFetching 30 files: 100%|##########| 30/30 [00:00<00:00, 254714.82it/s]
+[32m2026-05-17 16:51:20.549[0m | [33m[1mWARNING [0m | [36mfastembed.common.model_management[0m:[36mdownload_files_from_huggingface[0m:[36m225[0m - [33m[1mLocal file sizes do not match the metadata.[0m
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 1269.85it/s]
+You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.19it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.17it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+[*] Loading reranker model: BAAI/bge-reranker-v2-m3 ...
+[OK] Reranker loaded.
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][AYou're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+pre tokenize: 100%|##########| 3/3 [00:00<00:00, 630.79it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:04<00:08,  4.10s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:08<00:04,  4.21s/it][A
+Compute Scores: 100%|##########| 3/3 [00:10<00:00,  3.04s/it][ACompute Scores: 100%|##########| 3/3 [00:10<00:00,  3.34s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.125 | rerank_score=4.7110
+  -> Doc 2: retrieval_score=0.8333334 | rerank_score=3.5288
+  -> Doc 3: retrieval_score=0.5714286 | rerank_score=3.4770
+  -> Doc 4: retrieval_score=0.16666667 | rerank_score=3.4099
+  -> Doc 5: retrieval_score=0.38333336 | rerank_score=1.2488
+  -> Doc 6: retrieval_score=0.1 | rerank_score=1.1092
+  -> Doc 7: retrieval_score=0.25 | rerank_score=1.0507
+  -> Doc 8: retrieval_score=0.25 | rerank_score=0.6971
+  -> Doc 9: retrieval_score=0.09090909 | rerank_score=0.5211
+  -> Doc 10: retrieval_score=0.25555557 | rerank_score=0.4569
+
+[Final Combined] Grading 10 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: RELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: RELEVANT
+  -> Doc 7: RELEVANT
+  -> Doc 8: RELEVANT
+  -> Doc 9: RELEVANT
+  -> Doc 10: IRRELEVANT
+[Final Combined] Kept 8 / 10 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 6
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 867.49it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  1.62it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  1.62it/s]
+maddpg_no_ceb:   2%|1         | 1/60 [00:56<55:28, 56.41s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3466.37it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.95it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.94it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 499.82it/s]

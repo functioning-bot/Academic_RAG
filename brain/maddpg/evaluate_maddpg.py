@@ -27,6 +27,7 @@ import argparse
 import csv
 import json
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -56,6 +57,52 @@ from context_marl_ac.schemas.actions import AGENT_ACTIONS
 from .context_engineering_block import CEB_STATE_DIM, build_ceb_features
 from .stage_utils import find_active_agent_and_valid_actions
 from .trainer import StageConditionedMADDPGTrainer, TrainerConfig
+
+# ── Inline metric helpers ────────────────────────────────────────────────────
+def _tok(text: str) -> List[str]:
+    return re.findall(r"\b\w+\b", (text or "").lower())
+
+def _token_f1(pred: str, gold: str) -> float:
+    p, g = set(_tok(pred)), set(_tok(gold))
+    if not p or not g: return 0.0
+    tp = len(p & g)
+    if tp == 0: return 0.0
+    prec, rec = tp / len(p), tp / len(g)
+    return 2 * prec * rec / (prec + rec)
+
+def _rouge_l(pred: str, gold: str) -> float:
+    p, g = _tok(pred), _tok(gold)
+    m, n = len(p), len(g)
+    if not m or not n: return 0.0
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            dp[i][j] = dp[i-1][j-1]+1 if p[i-1]==g[j-1] else max(dp[i-1][j], dp[i][j-1])
+    lcs = dp[m][n]
+    prec, rec = lcs / m, lcs / n
+    return 2 * prec * rec / (prec + rec) if (prec + rec) else 0.0
+
+def _src_stem(fname: str) -> str:
+    return fname.split("_p")[0].strip().lower()
+
+def _src_precision_recall(chunks: List[Any], expected: List[str]):
+    """Compute source precision and recall from retrieved evidence chunks."""
+    retrieved_stems: set = set()
+    for c in (chunks or []):
+        if isinstance(c, dict):
+            meta = c.get("metadata", {})
+            sf = (meta.get("source_file", "") if isinstance(meta, dict) else "") or c.get("source_file", "") or c.get("source", "")
+        else:
+            sf = getattr(c, "source_file", "") or getattr(c, "source", "") or ""
+        if sf:
+            retrieved_stems.add(_src_stem(str(sf)))
+    exp_stems = {_src_stem(s) for s in (expected or []) if s}
+    if not exp_stems:
+        return 0.0, 0.0
+    tp = len(retrieved_stems & exp_stems)
+    prec = tp / len(retrieved_stems) if retrieved_stems else 0.0
+    rec  = tp / len(exp_stems)
+    return prec, rec
 
 # Fixed (un-trained) action choices used for the discrete_smoke_policy baseline.
 _SMOKE_POLICY: Dict[str, str] = {
@@ -118,15 +165,24 @@ def _state_features(env: Any, use_ceb: bool) -> np.ndarray:
 
 def _build_result(state: Any, q_dict: Dict[str, Any],
                   trace: List[Dict], policy_mode: str) -> Dict[str, Any]:
+    answer  = state.generated_answer or ""
+    gold    = q_dict.get("ground_truth", "") or ""
+    exp_src = q_dict.get("source_file", [])
+    if isinstance(exp_src, str):
+        exp_src = [exp_src]
+    evidence = getattr(state, "selected_evidence", []) or []
+    src_p, src_r = _src_precision_recall(evidence, exp_src)
+    tf1 = _token_f1(answer, gold)
+    rl  = _rouge_l(answer, gold)
     return {
         "question_id":             state.question_id,
         "question":                q_dict.get("question", ""),
-        "ground_truth":            q_dict.get("ground_truth", ""),
+        "ground_truth":            gold,
         "category":                q_dict.get("category"),
         "difficulty":              q_dict.get("difficulty"),
         "policy_mode":             policy_mode,
         "final_status":            state.final_status,
-        "final_answer":            state.generated_answer,
+        "final_answer":            answer,
         "verification_pass":       int(state.final_status == "accepted"),
         "citation_support":        state.citation_support_rate,
         "num_unsupported_claims":  len(state.unsupported_claims),
@@ -134,8 +190,12 @@ def _build_result(state: Any, q_dict: Dict[str, Any],
         "num_llm_calls":           state.num_llm_calls,
         "latency_seconds":         state.latency_so_far,
         "token_usage":             state.token_usage,
-        "selected_evidence_count": len(state.selected_evidence),
+        "selected_evidence_count": len(evidence),
         "verifier_decision":       (state.verification_result or {}).get("decision", "N/A"),
+        "token_f1":                round(tf1, 4),
+        "rouge_l_f1":              round(rl,  4),
+        "source_precision":        round(src_p, 4),
+        "source_recall":           round(src_r, 4),
         "trace":                   trace,
     }
 
@@ -231,6 +291,10 @@ def _aggregate(results: List[Dict]) -> Dict[str, Any]:
         "mean_token_usage":        sum(r["token_usage"]             for r in results) / n,
         "mean_evidence_count":     sum(r["selected_evidence_count"] for r in results) / n,
         "failure_rate":            sum(1 for r in results if r["final_status"] in fail_statuses) / n,
+        "mean_token_f1":           sum(r.get("token_f1", 0.0)       for r in results) / n,
+        "mean_rouge_l_f1":         sum(r.get("rouge_l_f1", 0.0)     for r in results) / n,
+        "mean_source_precision":   sum(r.get("source_precision", 0.0) for r in results) / n,
+        "mean_source_recall":      sum(r.get("source_recall", 0.0)  for r in results) / n,
     }
 
 
@@ -339,7 +403,12 @@ def evaluate(argv: Optional[List[str]] = None) -> int:
         print(f"  {mode:24s}  pass={agg['verification_pass_rate']:.1%}  "
               f"cit={agg['mean_citation_support']:.2f}  "
               f"steps={agg['mean_steps']:.1f}  latency={agg['mean_latency']:.1f}s")
+        print(f"  {'':24s}  token_f1={agg.get('mean_token_f1',0):.4f}  "
+              f"rouge_l={agg.get('mean_rouge_l_f1',0):.4f}  "
+              f"src_prec={agg.get('mean_source_precision',0):.4f}  "
+              f"src_rec={agg.get('mean_source_recall',0):.4f}")
     return 0
+
 
 
 if __name__ == "__main__":

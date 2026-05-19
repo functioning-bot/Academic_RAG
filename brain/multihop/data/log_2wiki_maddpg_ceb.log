@@ -1,0 +1,1434 @@
+
+------------------------------------------------------------
+  Mode: maddpg_ceb  (CEB=True, state_dim=20)
+  Checkpoint: maddpg/results/maddpg_v4/checkpoints/ep_0200.pt  exists=True  trained_updates=392
+------------------------------------------------------------
+maddpg_ceb:   0%|          | 0/30 [00:00<?, ?it/s]
+Fetching 30 files:   0%|          | 0/30 [00:00<?, ?it/s][AFetching 30 files: 100%|##########| 30/30 [00:00<00:00, 467766.25it/s]
+[32m2026-05-18 01:51:38.434[0m | [33m[1mWARNING [0m | [36mfastembed.common.model_management[0m:[36mdownload_files_from_huggingface[0m:[36m225[0m - [33m[1mLocal file sizes do not match the metadata.[0m
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 0 / 19 docs.
+[Final Combined] Fallback: grader rejected all docs, keeping original candidates.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 484.67it/s]
+You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.25it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.25it/s]
+maddpg_ceb:   3%|3         | 1/30 [00:25<12:10, 25.18s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2141.04it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.30it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.28it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 5...
+[*] Loading reranker model: BAAI/bge-reranker-v2-m3 ...
+[OK] Reranker loaded.
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][AYou're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+pre tokenize: 100%|##########| 3/3 [00:00<00:00, 419.65it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:08<00:16,  8.04s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:08<00:03,  3.86s/it][A
+Compute Scores: 100%|##########| 3/3 [00:09<00:00,  2.22s/it][ACompute Scores: 100%|##########| 3/3 [00:09<00:00,  3.08s/it]
+[Reranker] Kept 5 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=6.2014
+  -> Doc 2: retrieval_score=0.6666667 | rerank_score=4.7384
+  -> Doc 3: retrieval_score=0.31111112 | rerank_score=-5.9449
+  -> Doc 4: retrieval_score=0.16666667 | rerank_score=-6.5269
+  -> Doc 5: retrieval_score=0.12698413 | rerank_score=-6.5846
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 1708.47it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.23it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.22it/s]
+maddpg_ceb:   7%|6         | 2/30 [01:05<15:52, 34.00s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: RELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: RELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 5 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 4190.11it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.01it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.99it/s]
+maddpg_ceb:  10%|#         | 3/30 [01:19<11:11, 24.86s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: RELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: RELEVANT
+  -> Doc 11: RELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: RELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: RELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: RELEVANT
+  -> Doc 18: RELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 8 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2313.46it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.73it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.72it/s]
+maddpg_ceb:  13%|#3        | 4/30 [01:36<09:23, 21.66s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 2 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2186.81it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.60it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.59it/s]
+maddpg_ceb:  17%|#6        | 5/30 [01:52<08:10, 19.64s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: RELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: RELEVANT
+  -> Doc 19: RELEVANT
+[Final Combined] Kept 5 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 1500.11it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  2.69it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  2.69it/s]
+maddpg_ceb:  20%|##        | 6/30 [02:07<07:19, 18.32s/it]
+[Final Combined] Grading 17 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: RELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+[Final Combined] Kept 2 / 17 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3106.89it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.78it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.78it/s]
+maddpg_ceb:  23%|##3       | 7/30 [02:20<06:21, 16.58s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2796.20it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.52it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.52it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 5...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 639.86it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:06<00:12,  6.43s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:07<00:03,  3.48s/it][A
+Compute Scores: 100%|##########| 3/3 [00:08<00:00,  2.10s/it][ACompute Scores: 100%|##########| 3/3 [00:08<00:00,  2.77s/it]
+[Reranker] Kept 5 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=8.1710
+  -> Doc 2: retrieval_score=0.6666667 | rerank_score=5.0174
+  -> Doc 3: retrieval_score=0.31666666 | rerank_score=-3.8426
+  -> Doc 4: retrieval_score=0.2 | rerank_score=-5.3973
+  -> Doc 5: retrieval_score=0.4166667 | rerank_score=-5.9553
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 867.85it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  2.79it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  2.79it/s]
+maddpg_ceb:  27%|##6       | 8/30 [02:55<08:11, 22.35s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: RELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 1 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2781.37it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.52it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.52it/s]
+maddpg_ceb:  30%|###       | 9/30 [03:11<07:07, 20.35s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 0 / 19 docs.
+[Final Combined] Fallback: grader rejected all docs, keeping original candidates.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3423.92it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.02it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.00it/s]
+
+[Final Combined] Grading 25 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: RELEVANT
+  -> Doc 21: IRRELEVANT
+  -> Doc 22: IRRELEVANT
+  -> Doc 23: IRRELEVANT
+  -> Doc 24: IRRELEVANT
+  -> Doc 25: IRRELEVANT
+[Final Combined] Kept 1 / 25 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2863.01it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.58it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.57it/s]
+maddpg_ceb:  33%|###3      | 10/30 [03:45<08:09, 24.46s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: RELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 3 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3463.50it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.76it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.75it/s]
+
+[Final Combined] Grading 25 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: RELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: RELEVANT
+  -> Doc 21: IRRELEVANT
+  -> Doc 22: IRRELEVANT
+  -> Doc 23: IRRELEVANT
+  -> Doc 24: IRRELEVANT
+  -> Doc 25: IRRELEVANT
+[Final Combined] Kept 4 / 25 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 5343.06it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.48it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.47it/s]
+maddpg_ceb:  37%|###6      | 11/30 [04:44<11:08, 35.17s/it]
+[Final Combined] Grading 27 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: RELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: RELEVANT
+  -> Doc 21: IRRELEVANT
+  -> Doc 22: IRRELEVANT
+  -> Doc 23: IRRELEVANT
+  -> Doc 24: IRRELEVANT
+  -> Doc 25: IRRELEVANT
+  -> Doc 26: IRRELEVANT
+  -> Doc 27: RELEVANT
+[Final Combined] Kept 5 / 27 docs.
+
+[Final Combined] Grading 15 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: RELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+[Final Combined] Kept 3 / 15 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 4310.69it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.04it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.03it/s]
+
+[Final Combined] Grading 20 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: RELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: IRRELEVANT
+[Final Combined] Kept 3 / 20 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 4624.37it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.47it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.44it/s]
+maddpg_ceb:  40%|####      | 12/30 [05:27<11:12, 37.35s/it]
+[Final Combined] Grading 20 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: RELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: IRRELEVANT
+[Final Combined] Kept 3 / 20 docs.
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: RELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 2 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 3
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 503.34it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.19it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.19it/s]
+maddpg_ceb:  43%|####3     | 13/30 [05:44<08:52, 31.34s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 1 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2714.76it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.65it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.65it/s]
+maddpg_ceb:  47%|####6     | 14/30 [06:02<07:16, 27.26s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: RELEVANT
+  -> Doc 12: RELEVANT
+  -> Doc 13: RELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: RELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 4 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3472.11it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.94it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.93it/s]
+maddpg_ceb:  50%|#####     | 15/30 [06:17<05:53, 23.55s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: RELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 3 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2345.81it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.00it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.99it/s]
+maddpg_ceb:  53%|#####3    | 16/30 [06:34<05:04, 21.76s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: RELEVANT
+  -> Doc 7: RELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: RELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: RELEVANT
+  -> Doc 12: RELEVANT
+  -> Doc 13: RELEVANT
+  -> Doc 14: RELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: RELEVANT
+  -> Doc 18: RELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 10 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 5289.16it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 12.94it/s]
+
+[Final Combined] Grading 25 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: RELEVANT
+  -> Doc 7: RELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: RELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: RELEVANT
+  -> Doc 12: RELEVANT
+  -> Doc 13: RELEVANT
+  -> Doc 14: RELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: RELEVANT
+  -> Doc 18: RELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: IRRELEVANT
+  -> Doc 21: IRRELEVANT
+  -> Doc 22: IRRELEVANT
+  -> Doc 23: IRRELEVANT
+  -> Doc 24: IRRELEVANT
+  -> Doc 25: IRRELEVANT
+[Final Combined] Kept 10 / 25 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 7133.17it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.84it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.83it/s]
+maddpg_ceb:  57%|#####6    | 17/30 [07:31<07:00, 32.35s/it]
+[Final Combined] Grading 25 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: RELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: RELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: RELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: RELEVANT
+  -> Doc 14: RELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: RELEVANT
+  -> Doc 18: RELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: IRRELEVANT
+  -> Doc 21: IRRELEVANT
+  -> Doc 22: IRRELEVANT
+  -> Doc 23: IRRELEVANT
+  -> Doc 24: IRRELEVANT
+  -> Doc 25: IRRELEVANT
+[Final Combined] Kept 8 / 25 docs.
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2671.53it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.64it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.63it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 5...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 469.70it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:09<00:18,  9.22s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:11<00:05,  5.26s/it][A
+Compute Scores: 100%|##########| 3/3 [00:12<00:00,  3.09s/it][ACompute Scores: 100%|##########| 3/3 [00:12<00:00,  4.07s/it]
+[Reranker] Kept 5 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=9.1324
+  -> Doc 2: retrieval_score=0.53333336 | rerank_score=4.4512
+  -> Doc 3: retrieval_score=0.30952382 | rerank_score=-1.4847
+  -> Doc 4: retrieval_score=0.35 | rerank_score=-2.0835
+  -> Doc 5: retrieval_score=0.3611111 | rerank_score=-2.7310
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3095.43it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.89it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.89it/s]
+maddpg_ceb:  60%|######    | 18/30 [08:14<07:06, 35.57s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2291.97it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.12it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.10it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 5...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 430.21it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:08<00:17,  8.59s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:09<00:04,  4.07s/it][A
+Compute Scores: 100%|##########| 3/3 [00:09<00:00,  2.38s/it][ACompute Scores: 100%|##########| 3/3 [00:09<00:00,  3.29s/it]
+[Reranker] Kept 5 reranked docs.
+  -> Doc 1: retrieval_score=0.75 | rerank_score=8.2721
+  -> Doc 2: retrieval_score=0.8333334 | rerank_score=5.5232
+  -> Doc 3: retrieval_score=0.4 | rerank_score=3.7444
+  -> Doc 4: retrieval_score=0.5 | rerank_score=1.4994
+  -> Doc 5: retrieval_score=0.4166667 | rerank_score=-5.1942
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3788.89it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.09it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.08it/s]
+maddpg_ceb:  63%|######3   | 19/30 [08:45<06:15, 34.15s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: RELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 1 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2888.64it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.73it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.72it/s]
+maddpg_ceb:  67%|######6   | 20/30 [09:01<04:45, 28.54s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 0 / 19 docs.
+[Final Combined] Fallback: grader rejected all docs, keeping original candidates.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 5607.36it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 14.42it/s]
+
+[Final Combined] Grading 25 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: IRRELEVANT
+  -> Doc 21: IRRELEVANT
+  -> Doc 22: IRRELEVANT
+  -> Doc 23: IRRELEVANT
+  -> Doc 24: IRRELEVANT
+  -> Doc 25: IRRELEVANT
+[Final Combined] Kept 0 / 25 docs.
+[Final Combined] Fallback: grader rejected all docs, keeping original candidates.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 5249.44it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.61it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.59it/s]
+maddpg_ceb:  70%|#######   | 21/30 [09:57<05:31, 36.86s/it]
+[Final Combined] Grading 25 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: IRRELEVANT
+  -> Doc 21: IRRELEVANT
+  -> Doc 22: IRRELEVANT
+  -> Doc 23: IRRELEVANT
+  -> Doc 24: IRRELEVANT
+  -> Doc 25: IRRELEVANT
+[Final Combined] Kept 0 / 25 docs.
+[Final Combined] Fallback: grader rejected all docs, keeping original candidates.
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 1 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3986.98it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 10.72it/s]
+
+[Final Combined] Grading 24 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: IRRELEVANT
+  -> Doc 21: IRRELEVANT
+  -> Doc 22: IRRELEVANT
+  -> Doc 23: IRRELEVANT
+  -> Doc 24: IRRELEVANT
+[Final Combined] Kept 1 / 24 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 5857.97it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 11.90it/s]
+maddpg_ceb:  73%|#######3  | 22/30 [10:53<05:39, 42.50s/it]
+[Final Combined] Grading 24 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: IRRELEVANT
+  -> Doc 21: IRRELEVANT
+  -> Doc 22: IRRELEVANT
+  -> Doc 23: IRRELEVANT
+  -> Doc 24: IRRELEVANT
+[Final Combined] Kept 1 / 24 docs.
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: RELEVANT
+  -> Doc 12: RELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 5 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 1353.00it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.04it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.04it/s]
+maddpg_ceb:  77%|#######6  | 23/30 [11:29<04:43, 40.56s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: RELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 1 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 3
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2910.69it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.45it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.44it/s]
+maddpg_ceb:  80%|########  | 24/30 [11:51<03:30, 35.07s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: RELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 3 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3545.48it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.81it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.80it/s]
+
+[Final Combined] Grading 23 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: RELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: IRRELEVANT
+  -> Doc 21: IRRELEVANT
+  -> Doc 22: IRRELEVANT
+  -> Doc 23: IRRELEVANT
+[Final Combined] Kept 3 / 23 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3751.61it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.85it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.84it/s]
+maddpg_ceb:  83%|########3 | 25/30 [12:29<02:59, 35.90s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 4 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 4
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 1847.71it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  2.51it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  2.51it/s]
+maddpg_ceb:  87%|########6 | 26/30 [12:52<02:08, 32.02s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3153.61it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.46it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.46it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 5...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 591.33it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:06<00:12,  6.18s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:07<00:03,  3.47s/it][A
+Compute Scores: 100%|##########| 3/3 [00:08<00:00,  2.04s/it][ACompute Scores: 100%|##########| 3/3 [00:08<00:00,  2.70s/it]
+[Reranker] Kept 5 reranked docs.
+  -> Doc 1: retrieval_score=0.64285713 | rerank_score=8.8280
+  -> Doc 2: retrieval_score=0.8333334 | rerank_score=6.8964
+  -> Doc 3: retrieval_score=0.43333334 | rerank_score=-0.3549
+  -> Doc 4: retrieval_score=0.3026316 | rerank_score=-1.4754
+  -> Doc 5: retrieval_score=0.1625 | rerank_score=-5.0198
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 3
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 1249.05it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  2.06it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  2.06it/s]
+maddpg_ceb:  90%|######### | 27/30 [13:29<01:40, 33.45s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: RELEVANT
+  -> Doc 14: RELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: RELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 4 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3509.88it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.20it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.19it/s]
+maddpg_ceb:  93%|#########3| 28/30 [13:43<00:55, 27.69s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: RELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: RELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 3 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3578.76it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.07it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.06it/s]
+maddpg_ceb:  97%|#########6| 29/30 [14:03<00:25, 25.58s/it]
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: RELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: RELEVANT
+  -> Doc 10: RELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: RELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: RELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: RELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 6 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 5384.22it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 10.78it/s]
+
+[Final Combined] Grading 24 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: RELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: RELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: RELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: RELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: RELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: IRRELEVANT
+  -> Doc 21: IRRELEVANT
+  -> Doc 22: IRRELEVANT
+  -> Doc 23: IRRELEVANT
+  -> Doc 24: IRRELEVANT
+[Final Combined] Kept 5 / 24 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3371.63it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.75it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.74it/s]
+maddpg_ceb: 100%|##########| 30/30 [14:44<00:00, 29.97s/it]maddpg_ceb: 100%|##########| 30/30 [14:44<00:00, 29.47s/it]
+  -> 30 questions evaluated.
+
+Aggregate metrics -> multihop\data\eval_2wiki_maddpg_ceb\aggregate_metrics.json
+
+-- Summary ---------------------------------------------------------
+  maddpg_ceb                pass=66.7%  cit=0.62  steps=6.8  latency=29.1s

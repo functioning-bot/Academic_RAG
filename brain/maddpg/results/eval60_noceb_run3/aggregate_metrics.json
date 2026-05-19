@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "architecture": "maddpg_style_continuous_control",
+    "critic_type": "stage_conditioned",
+    "checkpoint_path": "maddpg/results/maddpg_v4_noceb/checkpoints/ep_0200.pt",
+    "checkpoint_exists": true,
+    "trained": true,
+    "total_gradient_updates": 233,
+    "state_dim": 14,
+    "use_ceb": false,
+    "allow_random_policy": false
+  },
+  "modes": {
+    "maddpg_no_ceb": {
+      "n_questions": 60,
+      "verification_pass_rate": 0.9666666666666667,
+      "mean_citation_support": 0.8809933333333333,
+      "mean_unsupported_claims": 0.4666666666666667,
+      "mean_steps": 4.316666666666666,
+      "mean_llm_calls": 2.2,
+      "mean_latency": 28.323786666666667,
+      "mean_token_usage": 2114.6833333333334,
+      "mean_evidence_count": 5.7,
+      "failure_rate": 0.03333333333333333
+    }
+  }
+}

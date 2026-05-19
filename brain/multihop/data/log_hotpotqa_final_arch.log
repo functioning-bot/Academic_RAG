@@ -1,0 +1,1947 @@
+Fetching 30 files:   0%|          | 0/30 [00:00<?, ?it/s]Fetching 30 files: 100%|██████████| 30/30 [00:00<00:00, 218833.25it/s]
+[32m2026-05-18 01:29:19.106[0m | [33m[1mWARNING [0m | [36mfastembed.common.model_management[0m:[36mdownload_files_from_huggingface[0m:[36m225[0m - [33m[1mLocal file sizes do not match the metadata.[0m
+[eval] arch=final_arch  on 30 questions
+
+[Shared Retriever] Retrieving context for query: 'In what year was the university where Sergei Aleksandrovich Tokarev was a professor founded?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 1477.39it/s]
+You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 11.42it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.4167
+  -> Doc 3: score=0.3500
+  -> Doc 4: score=0.3333
+  -> Doc 5: score=0.3214
+  -> Doc 6: score=0.2255
+  -> Doc 7: score=0.2019
+  -> Doc 8: score=0.2000
+  -> Doc 9: score=0.2000
+  -> Doc 10: score=0.1736
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+[*] Loading reranker model: BAAI/bge-reranker-v2-m3 ...
+[OK] Reranker loaded.
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 726.12it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:03<00:06,  3.24s/it]Compute Scores:  67%|██████▋   | 2/3 [00:04<00:02,  2.34s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.48s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.80s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=9.2982
+  -> Doc 2: retrieval_score=0.4166667 | rerank_score=0.7945
+  -> Doc 3: retrieval_score=0.32142857 | rerank_score=-0.6106
+  -> Doc 4: retrieval_score=0.083333336 | rerank_score=-2.3655
+  -> Doc 5: retrieval_score=0.09090909 | rerank_score=-2.6899
+  -> Doc 6: retrieval_score=0.07692308 | rerank_score=-5.0668
+  -> Doc 7: retrieval_score=0.14285715 | rerank_score=-5.4864
+  -> Doc 8: retrieval_score=0.125 | rerank_score=-6.1368
+  -> Doc 9: retrieval_score=0.14646465 | rerank_score=-6.9021
+  -> Doc 10: retrieval_score=0.1736111 | rerank_score=-6.9681
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 2 / 6 docs.
+
+[Final Combined] Generating answer using 2 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q001  accepted          tf1=0.000  lat=16.7s
+
+[Shared Retriever] Retrieving context for query: 'Black Book starred the actress and writer of what heritage?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2981.03it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.74it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.73it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.6429
+  -> Doc 2: score=0.5000
+  -> Doc 3: score=0.4333
+  -> Doc 4: score=0.4242
+  -> Doc 5: score=0.3500
+  -> Doc 6: score=0.2917
+  -> Doc 7: score=0.2667
+  -> Doc 8: score=0.2500
+  -> Doc 9: score=0.2159
+  -> Doc 10: score=0.2143
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 523.44it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:03<00:06,  3.33s/it]Compute Scores:  67%|██████▋   | 2/3 [00:05<00:02,  2.44s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.61s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.92s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.64285713 | rerank_score=7.1973
+  -> Doc 2: retrieval_score=0.42424244 | rerank_score=1.2909
+  -> Doc 3: retrieval_score=0.35 | rerank_score=-1.5905
+  -> Doc 4: retrieval_score=0.26666668 | rerank_score=-1.6470
+  -> Doc 5: retrieval_score=0.0625 | rerank_score=-2.3925
+  -> Doc 6: retrieval_score=0.19444445 | rerank_score=-2.8553
+  -> Doc 7: retrieval_score=0.16666667 | rerank_score=-4.1512
+  -> Doc 8: retrieval_score=0.116666675 | rerank_score=-4.6015
+  -> Doc 9: retrieval_score=0.083333336 | rerank_score=-4.8242
+  -> Doc 10: retrieval_score=0.43333334 | rerank_score=-4.8901
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: RELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 3 / 6 docs.
+
+[Final Combined] Generating answer using 3 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q002  accepted          tf1=0.182  lat=16.5s
+
+[Shared Retriever] Retrieving context for query: 'Which actor does American Beauty and American Beauty have in common?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3095.43it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.81it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.79it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.6429
+  -> Doc 3: score=0.4000
+  -> Doc 4: score=0.3667
+  -> Doc 5: score=0.3611
+  -> Doc 6: score=0.3429
+  -> Doc 7: score=0.3333
+  -> Doc 8: score=0.2667
+  -> Doc 9: score=0.2500
+  -> Doc 10: score=0.1825
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 741.96it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:02<00:05,  2.78s/it]Compute Scores:  67%|██████▋   | 2/3 [00:04<00:02,  2.12s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.41s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.67s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.64285713 | rerank_score=7.9377
+  -> Doc 2: retrieval_score=0.8333334 | rerank_score=7.5061
+  -> Doc 3: retrieval_score=0.36666667 | rerank_score=5.1398
+  -> Doc 4: retrieval_score=0.26666668 | rerank_score=-0.1987
+  -> Doc 5: retrieval_score=0.33333334 | rerank_score=-0.2448
+  -> Doc 6: retrieval_score=0.25 | rerank_score=-1.8423
+  -> Doc 7: retrieval_score=0.34285715 | rerank_score=-2.6536
+  -> Doc 8: retrieval_score=0.4 | rerank_score=-3.2244
+  -> Doc 9: retrieval_score=0.3611111 | rerank_score=-4.8608
+  -> Doc 10: retrieval_score=0.13942307 | rerank_score=-6.1755
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged INSUFFICIENT. Triggering rewrite.
+
+[Final Combined] Rewriting retrieval query...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Original query:  Which actor does American Beauty and American Beauty have in common?
+[Final Combined] Rewritten query: "Common actor in American Beauty 1999 and American Beauty 1927 films"
+
+[Shared Retriever] Retrieving context for query: '"Common actor in American Beauty 1999 and American Beauty 1927 films"'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 4832.15it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 12.54it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.7500
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.6667
+  -> Doc 4: score=0.4167
+  -> Doc 5: score=0.4000
+  -> Doc 6: score=0.2540
+  -> Doc 7: score=0.2262
+  -> Doc 8: score=0.1964
+  -> Doc 9: score=0.1944
+  -> Doc 10: score=0.1806
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 1151.75it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:02<00:05,  2.93s/it]Compute Scores:  67%|██████▋   | 2/3 [00:04<00:02,  2.17s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.44s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.71s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.4 | rerank_score=7.9377
+  -> Doc 2: retrieval_score=0.75 | rerank_score=7.5061
+  -> Doc 3: retrieval_score=0.6666667 | rerank_score=5.1398
+  -> Doc 4: retrieval_score=0.4166667 | rerank_score=-0.1987
+  -> Doc 5: retrieval_score=0.6666667 | rerank_score=-0.2448
+  -> Doc 6: retrieval_score=0.25396827 | rerank_score=-1.8423
+  -> Doc 7: retrieval_score=0.15757576 | rerank_score=-2.6536
+  -> Doc 8: retrieval_score=0.07692308 | rerank_score=-3.2244
+  -> Doc 9: retrieval_score=0.19642857 | rerank_score=-4.8608
+  -> Doc 10: retrieval_score=0.18055555 | rerank_score=-6.1755
+
+[Final Combined] Selecting best context set between original (6) and rewritten (6)...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Selected ORIGINAL context set.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 0 / 6 docs.
+[Final Combined] Fallback: grader rejected all docs, keeping original candidates.
+
+[Final Combined] Generating answer using 6 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - The actor that 'American Beauty' (1999) and 'American Beauty' (1927) have in common is Billie Dove, who starred in the 1927 film.
+       feedback: Billie Dove is not mentioned in the 1999 film documents.
+
+[Final Combined] Generating answer using 6 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 1
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - The actor that 'American Beauty' (1999) and 'American Beauty' (1927) have in common is Billie Dove.
+       feedback: Billie Dove starred in the 1927 film, but there is no mention of her in the 1999 film.
+  Q003  accepted          tf1=0.000  lat=29.2s
+
+[Shared Retriever] Retrieving context for query: 'Ken Pruitt  was a Republican member of an upper house of the legislature with how many members ?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2379.07it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  7.22it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  7.21it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.4167
+  -> Doc 4: score=0.4167
+  -> Doc 5: score=0.4000
+  -> Doc 6: score=0.2500
+  -> Doc 7: score=0.2429
+  -> Doc 8: score=0.2429
+  -> Doc 9: score=0.2020
+  -> Doc 10: score=0.2020
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 509.72it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:04<00:08,  4.43s/it]Compute Scores:  67%|██████▋   | 2/3 [00:06<00:03,  3.19s/it]Compute Scores: 100%|██████████| 3/3 [00:07<00:00,  2.06s/it]Compute Scores: 100%|██████████| 3/3 [00:07<00:00,  2.49s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=4.9502
+  -> Doc 2: retrieval_score=0.4166667 | rerank_score=2.6430
+  -> Doc 3: retrieval_score=0.4166667 | rerank_score=2.0205
+  -> Doc 4: retrieval_score=0.4 | rerank_score=1.9687
+  -> Doc 5: retrieval_score=0.6666667 | rerank_score=1.2488
+  -> Doc 6: retrieval_score=0.24285716 | rerank_score=0.1919
+  -> Doc 7: retrieval_score=0.25 | rerank_score=-1.1446
+  -> Doc 8: retrieval_score=0.2020202 | rerank_score=-3.8389
+  -> Doc 9: retrieval_score=0.2020202 | rerank_score=-4.8962
+  -> Doc 10: retrieval_score=0.07692308 | rerank_score=-6.6623
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: RELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: RELEVANT
+[Final Combined] Kept 5 / 6 docs.
+
+[Final Combined] Generating answer using 5 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q004  accepted          tf1=0.250  lat=20.2s
+
+[Shared Retriever] Retrieving context for query: 'Between Greyia and Calibanus, which genus contains more species?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3778.65it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 12.24it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.4167
+  -> Doc 4: score=0.3750
+  -> Doc 5: score=0.3667
+  -> Doc 6: score=0.3250
+  -> Doc 7: score=0.2540
+  -> Doc 8: score=0.2338
+  -> Doc 9: score=0.2020
+  -> Doc 10: score=0.1833
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 808.93it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:04<00:08,  4.49s/it]Compute Scores:  67%|██████▋   | 2/3 [00:07<00:03,  3.63s/it]Compute Scores: 100%|██████████| 3/3 [00:08<00:00,  2.37s/it]Compute Scores: 100%|██████████| 3/3 [00:08<00:00,  2.80s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.6666667 | rerank_score=7.6122
+  -> Doc 2: retrieval_score=1.0 | rerank_score=5.9644
+  -> Doc 3: retrieval_score=0.375 | rerank_score=-6.5973
+  -> Doc 4: retrieval_score=0.2020202 | rerank_score=-6.9415
+  -> Doc 5: retrieval_score=0.36666667 | rerank_score=-7.2084
+  -> Doc 6: retrieval_score=0.23376624 | rerank_score=-7.3130
+  -> Doc 7: retrieval_score=0.18333334 | rerank_score=-7.4440
+  -> Doc 8: retrieval_score=0.325 | rerank_score=-7.8974
+  -> Doc 9: retrieval_score=0.25396827 | rerank_score=-8.2521
+  -> Doc 10: retrieval_score=0.4166667 | rerank_score=-8.4412
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 1 / 6 docs.
+
+[Final Combined] Generating answer using 1 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 4
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - Therefore, it cannot be determined if Greyia or Calibanus contains more species.
+       feedback: This conclusion is too broad; it assumes no information about Calibanus.
+
+[Final Combined] Generating answer using 1 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 1
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 4
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - Therefore, it cannot be determined which genus contains more species.
+       feedback: The conclusion is too broad without information on Calibanus.
+  Q005  accepted          tf1=0.067  lat=30.6s
+
+[Shared Retriever] Retrieving context for query: 'Did John Updike and Tom Clancy both publish more than 15 bestselling novels?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2406.37it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  7.61it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  7.60it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.8333
+  -> Doc 3: score=0.4500
+  -> Doc 4: score=0.3500
+  -> Doc 5: score=0.3111
+  -> Doc 6: score=0.3095
+  -> Doc 7: score=0.2679
+  -> Doc 8: score=0.2667
+  -> Doc 9: score=0.2361
+  -> Doc 10: score=0.1576
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 583.76it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:04<00:08,  4.42s/it]Compute Scores:  67%|██████▋   | 2/3 [00:06<00:02,  2.75s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  1.69s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  2.14s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=3.6910
+  -> Doc 2: retrieval_score=0.8333334 | rerank_score=2.7768
+  -> Doc 3: retrieval_score=0.35 | rerank_score=-6.0455
+  -> Doc 4: retrieval_score=0.15757576 | rerank_score=-7.5868
+  -> Doc 5: retrieval_score=0.31111112 | rerank_score=-7.7863
+  -> Doc 6: retrieval_score=0.26666668 | rerank_score=-7.7863
+  -> Doc 7: retrieval_score=0.45 | rerank_score=-7.7863
+  -> Doc 8: retrieval_score=0.30952382 | rerank_score=-7.7863
+  -> Doc 9: retrieval_score=0.26785713 | rerank_score=-7.7863
+  -> Doc 10: retrieval_score=0.2361111 | rerank_score=-7.7863
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 2 / 6 docs.
+
+[Final Combined] Generating answer using 2 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - No, only Tom Clancy published more than 15 bestselling novels, as he had seventeen bestsellers, while there is no mention of John Updike's novels being bestsellers.
+       feedback: The claim about Updike's bestsellers is unsupported.
+
+[Final Combined] Generating answer using 2 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 1
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - Tom Clancy published more than 15 bestselling novels, but it is unclear if John Updike published any bestsellers, as the retrieved documents do not provide that information.
+       feedback: Tom Clancy's claim is supported, but Updike's bestseller status is not addressed in the documents.
+  Q006  accepted          tf1=0.000  lat=23.0s
+
+[Shared Retriever] Retrieving context for query: 'Who was hung for assisting the attempted surrender of a defector from the American Continental Army to the British Army?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2939.25it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  9.86it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  9.84it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.4500
+  -> Doc 4: score=0.4500
+  -> Doc 5: score=0.2857
+  -> Doc 6: score=0.2667
+  -> Doc 7: score=0.2667
+  -> Doc 8: score=0.2500
+  -> Doc 9: score=0.1880
+  -> Doc 10: score=0.1818
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 859.78it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:05<00:11,  5.73s/it]Compute Scores:  67%|██████▋   | 2/3 [00:09<00:04,  4.64s/it]Compute Scores: 100%|██████████| 3/3 [00:11<00:00,  3.19s/it]Compute Scores: 100%|██████████| 3/3 [00:11<00:00,  3.69s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=6.2266
+  -> Doc 2: retrieval_score=0.45 | rerank_score=1.4694
+  -> Doc 3: retrieval_score=0.45 | rerank_score=-0.1056
+  -> Doc 4: retrieval_score=0.6666667 | rerank_score=-0.3403
+  -> Doc 5: retrieval_score=0.26666668 | rerank_score=-1.9874
+  -> Doc 6: retrieval_score=0.2857143 | rerank_score=-3.3906
+  -> Doc 7: retrieval_score=0.25 | rerank_score=-4.6388
+  -> Doc 8: retrieval_score=0.18181819 | rerank_score=-5.4685
+  -> Doc 9: retrieval_score=0.26666668 | rerank_score=-5.4696
+  -> Doc 10: retrieval_score=0.071428575 | rerank_score=-6.1623
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 2 / 6 docs.
+
+[Final Combined] Generating answer using 2 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q007  accepted          tf1=0.190  lat=31.5s
+
+[Shared Retriever] Retrieving context for query: 'which Mexican and American film actress is Ethel Houbiers  French voice of '
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 989.46it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  1.52it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  1.52it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5833
+  -> Doc 3: score=0.4333
+  -> Doc 4: score=0.3429
+  -> Doc 5: score=0.3333
+  -> Doc 6: score=0.3111
+  -> Doc 7: score=0.2778
+  -> Doc 8: score=0.2500
+  -> Doc 9: score=0.2429
+  -> Doc 10: score=0.2222
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 467.18it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:04<00:09,  4.55s/it]Compute Scores:  67%|██████▋   | 2/3 [00:08<00:04,  4.04s/it]Compute Scores: 100%|██████████| 3/3 [00:08<00:00,  2.42s/it]Compute Scores: 100%|██████████| 3/3 [00:08<00:00,  2.91s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=7.5273
+  -> Doc 2: retrieval_score=0.5833334 | rerank_score=4.5917
+  -> Doc 3: retrieval_score=0.083333336 | rerank_score=-4.4445
+  -> Doc 4: retrieval_score=0.07692308 | rerank_score=-5.3217
+  -> Doc 5: retrieval_score=0.11929825 | rerank_score=-6.0254
+  -> Doc 6: retrieval_score=0.124060154 | rerank_score=-6.0988
+  -> Doc 7: retrieval_score=0.24285716 | rerank_score=-6.2575
+  -> Doc 8: retrieval_score=0.2777778 | rerank_score=-6.3681
+  -> Doc 9: retrieval_score=0.14973262 | rerank_score=-6.6625
+  -> Doc 10: retrieval_score=0.33333334 | rerank_score=-6.7418
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 2 / 6 docs.
+
+[Final Combined] Generating answer using 2 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q008  accepted          tf1=0.333  lat=21.6s
+
+[Shared Retriever] Retrieving context for query: 'Which major international airport in south-east England ranks as the 8th busiest airport in Europe and replaced Croydon Airport?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2129.09it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  6.39it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  6.38it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.7500
+  -> Doc 3: score=0.4444
+  -> Doc 4: score=0.4167
+  -> Doc 5: score=0.3429
+  -> Doc 6: score=0.3000
+  -> Doc 7: score=0.2917
+  -> Doc 8: score=0.2540
+  -> Doc 9: score=0.2250
+  -> Doc 10: score=0.1818
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 544.53it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:11<00:23, 11.93s/it]Compute Scores:  67%|██████▋   | 2/3 [00:14<00:06,  6.25s/it]Compute Scores: 100%|██████████| 3/3 [00:14<00:00,  3.73s/it]Compute Scores: 100%|██████████| 3/3 [00:14<00:00,  4.98s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=9.7599
+  -> Doc 2: retrieval_score=0.75 | rerank_score=6.5352
+  -> Doc 3: retrieval_score=0.4166667 | rerank_score=1.3731
+  -> Doc 4: retrieval_score=0.34285715 | rerank_score=-4.0984
+  -> Doc 5: retrieval_score=0.25396827 | rerank_score=-4.2295
+  -> Doc 6: retrieval_score=0.44444445 | rerank_score=-4.2527
+  -> Doc 7: retrieval_score=0.3 | rerank_score=-4.5980
+  -> Doc 8: retrieval_score=0.2916667 | rerank_score=-5.4300
+  -> Doc 9: retrieval_score=0.06666667 | rerank_score=-5.4470
+  -> Doc 10: retrieval_score=0.18181819 | rerank_score=-6.0544
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 1 / 6 docs.
+
+[Final Combined] Generating answer using 1 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q009  accepted          tf1=0.222  lat=34.7s
+
+[Shared Retriever] Retrieving context for query: 'Isabella Kelly was born at a ruined castle characterized as one of the most isolated fortifications in Britain by who?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2947.51it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 11.05it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.8333
+  -> Doc 3: score=0.4000
+  -> Doc 4: score=0.3929
+  -> Doc 5: score=0.3500
+  -> Doc 6: score=0.2917
+  -> Doc 7: score=0.2540
+  -> Doc 8: score=0.2500
+  -> Doc 9: score=0.2159
+  -> Doc 10: score=0.1667
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 911.34it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:03<00:07,  3.81s/it]Compute Scores:  67%|██████▋   | 2/3 [00:05<00:02,  2.63s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  1.66s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  2.04s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=7.7714
+  -> Doc 2: retrieval_score=0.8333334 | rerank_score=7.3106
+  -> Doc 3: retrieval_score=0.35 | rerank_score=-1.5528
+  -> Doc 4: retrieval_score=0.39285713 | rerank_score=-2.0952
+  -> Doc 5: retrieval_score=0.4 | rerank_score=-2.8647
+  -> Doc 6: retrieval_score=0.2916667 | rerank_score=-4.0070
+  -> Doc 7: retrieval_score=0.09090909 | rerank_score=-4.7572
+  -> Doc 8: retrieval_score=0.25396827 | rerank_score=-5.3095
+  -> Doc 9: retrieval_score=0.2159091 | rerank_score=-5.7665
+  -> Doc 10: retrieval_score=0.16666667 | rerank_score=-6.2906
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 1 / 6 docs.
+
+[Final Combined] Generating answer using 1 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q010  accepted          tf1=0.276  lat=16.6s
+
+[Shared Retriever] Retrieving context for query: 'The facility where Robert Croft worked as a navy instructor was also known as?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3685.68it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 11.63it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5000
+  -> Doc 3: score=0.4583
+  -> Doc 4: score=0.3667
+  -> Doc 5: score=0.3500
+  -> Doc 6: score=0.2500
+  -> Doc 7: score=0.2095
+  -> Doc 8: score=0.2000
+  -> Doc 9: score=0.1667
+  -> Doc 10: score=0.1623
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 803.66it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:04<00:08,  4.01s/it]Compute Scores:  67%|██████▋   | 2/3 [00:05<00:02,  2.63s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  1.66s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  2.06s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=3.6255
+  -> Doc 2: retrieval_score=0.5 | rerank_score=1.4476
+  -> Doc 3: retrieval_score=0.35 | rerank_score=0.6933
+  -> Doc 4: retrieval_score=0.45833334 | rerank_score=-1.0903
+  -> Doc 5: retrieval_score=0.13596492 | rerank_score=-2.2887
+  -> Doc 6: retrieval_score=0.16666667 | rerank_score=-2.6525
+  -> Doc 7: retrieval_score=0.36666667 | rerank_score=-3.1818
+  -> Doc 8: retrieval_score=0.11111111 | rerank_score=-3.9365
+  -> Doc 9: retrieval_score=0.2 | rerank_score=-4.6811
+  -> Doc 10: retrieval_score=0.071428575 | rerank_score=-5.4688
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 2 / 6 docs.
+
+[Final Combined] Generating answer using 2 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q011  accepted          tf1=0.182  lat=18.7s
+
+[Shared Retriever] Retrieving context for query: 'Who released the song "With or Without You" first, Jai McDowall or U2?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 4112.06it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 10.62it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.8333
+  -> Doc 3: score=0.4500
+  -> Doc 4: score=0.3750
+  -> Doc 5: score=0.3095
+  -> Doc 6: score=0.2714
+  -> Doc 7: score=0.2667
+  -> Doc 8: score=0.2361
+  -> Doc 9: score=0.2338
+  -> Doc 10: score=0.1699
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 946.08it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:03<00:06,  3.49s/it]Compute Scores:  67%|██████▋   | 2/3 [00:05<00:02,  2.57s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  1.73s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  2.05s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=9.6758
+  -> Doc 2: retrieval_score=0.8333334 | rerank_score=2.5792
+  -> Doc 3: retrieval_score=0.30952382 | rerank_score=-2.7776
+  -> Doc 4: retrieval_score=0.2361111 | rerank_score=-3.8058
+  -> Doc 5: retrieval_score=0.375 | rerank_score=-4.7623
+  -> Doc 6: retrieval_score=0.13574661 | rerank_score=-6.4493
+  -> Doc 7: retrieval_score=0.27142859 | rerank_score=-7.0095
+  -> Doc 8: retrieval_score=0.16993465 | rerank_score=-7.5793
+  -> Doc 9: retrieval_score=0.09090909 | rerank_score=-8.2658
+  -> Doc 10: retrieval_score=0.083333336 | rerank_score=-8.3840
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 2 / 6 docs.
+
+[Final Combined] Generating answer using 2 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q012  accepted          tf1=0.143  lat=21.1s
+
+[Shared Retriever] Retrieving context for query: 'Which "Roseanne" star is in Scream 2?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 5249.44it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 13.32it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.7500
+  -> Doc 2: score=0.7500
+  -> Doc 3: score=0.5000
+  -> Doc 4: score=0.4583
+  -> Doc 5: score=0.3111
+  -> Doc 6: score=0.3111
+  -> Doc 7: score=0.2667
+  -> Doc 8: score=0.2338
+  -> Doc 9: score=0.2338
+  -> Doc 10: score=0.2250
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 1031.47it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:02<00:05,  2.93s/it]Compute Scores:  67%|██████▋   | 2/3 [00:04<00:02,  2.21s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.43s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.71s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.75 | rerank_score=6.6019
+  -> Doc 2: retrieval_score=0.75 | rerank_score=4.2426
+  -> Doc 3: retrieval_score=0.5 | rerank_score=3.1249
+  -> Doc 4: retrieval_score=0.31111112 | rerank_score=1.7544
+  -> Doc 5: retrieval_score=0.23376624 | rerank_score=1.4517
+  -> Doc 6: retrieval_score=0.26666668 | rerank_score=0.2519
+  -> Doc 7: retrieval_score=0.225 | rerank_score=0.1733
+  -> Doc 8: retrieval_score=0.45833334 | rerank_score=-0.2422
+  -> Doc 9: retrieval_score=0.23376624 | rerank_score=-1.6842
+  -> Doc 10: retrieval_score=0.1388889 | rerank_score=-4.3816
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 1 / 6 docs.
+
+[Final Combined] Generating answer using 1 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q013  accepted          tf1=0.211  lat=17.0s
+
+[Shared Retriever] Retrieving context for query: 'In what city is the company that Fastjet Tanzania was originally founded as a part of prior to rebranding based?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3264.05it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 11.53it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.4000
+  -> Doc 3: score=0.3929
+  -> Doc 4: score=0.3667
+  -> Doc 5: score=0.3333
+  -> Doc 6: score=0.2526
+  -> Doc 7: score=0.2500
+  -> Doc 8: score=0.2255
+  -> Doc 9: score=0.1964
+  -> Doc 10: score=0.1603
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 834.85it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:09<00:19,  9.61s/it]Compute Scores:  67%|██████▋   | 2/3 [00:11<00:05,  5.08s/it]Compute Scores: 100%|██████████| 3/3 [00:12<00:00,  3.11s/it]Compute Scores: 100%|██████████| 3/3 [00:12<00:00,  4.09s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=7.3395
+  -> Doc 2: retrieval_score=0.07692308 | rerank_score=-2.6111
+  -> Doc 3: retrieval_score=0.4 | rerank_score=-3.4129
+  -> Doc 4: retrieval_score=0.14285715 | rerank_score=-3.4666
+  -> Doc 5: retrieval_score=0.19642857 | rerank_score=-3.5577
+  -> Doc 6: retrieval_score=0.33333334 | rerank_score=-3.6907
+  -> Doc 7: retrieval_score=0.2254902 | rerank_score=-3.9014
+  -> Doc 8: retrieval_score=0.11111111 | rerank_score=-3.9250
+  -> Doc 9: retrieval_score=0.1 | rerank_score=-4.6950
+  -> Doc 10: retrieval_score=0.25263157 | rerank_score=-4.7417
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 1 / 6 docs.
+
+[Final Combined] Generating answer using 1 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q014  accepted          tf1=0.000  lat=29.4s
+
+[Shared Retriever] Retrieving context for query: 'What is the name of the Australian specialist electronic music magazine that features avant-rock, experimental sound art, and experimental hip hop?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2639.59it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  9.93it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  9.91it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5333
+  -> Doc 3: score=0.5000
+  -> Doc 4: score=0.4762
+  -> Doc 5: score=0.3333
+  -> Doc 6: score=0.2909
+  -> Doc 7: score=0.2338
+  -> Doc 8: score=0.2111
+  -> Doc 9: score=0.1880
+  -> Doc 10: score=0.1750
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 789.39it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:03<00:07,  3.86s/it]Compute Scores:  67%|██████▋   | 2/3 [00:05<00:02,  2.61s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  1.66s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  2.04s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=8.8672
+  -> Doc 2: retrieval_score=0.53333336 | rerank_score=-0.4535
+  -> Doc 3: retrieval_score=0.175 | rerank_score=-3.6201
+  -> Doc 4: retrieval_score=0.4761905 | rerank_score=-5.0681
+  -> Doc 5: retrieval_score=0.33333334 | rerank_score=-5.2122
+  -> Doc 6: retrieval_score=0.23376624 | rerank_score=-5.5221
+  -> Doc 7: retrieval_score=0.18803419 | rerank_score=-5.8553
+  -> Doc 8: retrieval_score=0.2909091 | rerank_score=-6.0144
+  -> Doc 9: retrieval_score=0.5 | rerank_score=-6.0622
+  -> Doc 10: retrieval_score=0.1 | rerank_score=-8.3239
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 1 / 6 docs.
+
+[Final Combined] Generating answer using 1 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q015  accepted          tf1=0.174  lat=17.2s
+
+[Shared Retriever] Retrieving context for query: 'What is the population of the city that Munsonville is in the northwest corner of?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 4240.95it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 11.51it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.6667
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.6667
+  -> Doc 4: score=0.4500
+  -> Doc 5: score=0.3929
+  -> Doc 6: score=0.3429
+  -> Doc 7: score=0.2250
+  -> Doc 8: score=0.2159
+  -> Doc 9: score=0.1625
+  -> Doc 10: score=0.1255
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 742.44it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:13<00:27, 13.69s/it]Compute Scores:  67%|██████▋   | 2/3 [00:15<00:06,  6.89s/it]Compute Scores: 100%|██████████| 3/3 [00:16<00:00,  3.95s/it]Compute Scores: 100%|██████████| 3/3 [00:16<00:00,  5.42s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.6666667 | rerank_score=6.7328
+  -> Doc 2: retrieval_score=0.45 | rerank_score=-0.9617
+  -> Doc 3: retrieval_score=0.39285713 | rerank_score=-1.4531
+  -> Doc 4: retrieval_score=0.6666667 | rerank_score=-2.4965
+  -> Doc 5: retrieval_score=0.6666667 | rerank_score=-3.7948
+  -> Doc 6: retrieval_score=0.1625 | rerank_score=-5.1209
+  -> Doc 7: retrieval_score=0.225 | rerank_score=-5.6489
+  -> Doc 8: retrieval_score=0.1254902 | rerank_score=-5.8106
+  -> Doc 9: retrieval_score=0.34285715 | rerank_score=-5.8477
+  -> Doc 10: retrieval_score=0.07692308 | rerank_score=-6.1546
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 2 / 6 docs.
+
+[Final Combined] Generating answer using 2 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q016  accepted          tf1=0.500  lat=35.2s
+
+[Shared Retriever] Retrieving context for query: 'A Pair of Brown Eyes and Wild Mountain Thyme is based from what artists song?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3640.89it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 14.40it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.3929
+  -> Doc 4: score=0.3750
+  -> Doc 5: score=0.3667
+  -> Doc 6: score=0.3429
+  -> Doc 7: score=0.2917
+  -> Doc 8: score=0.2222
+  -> Doc 9: score=0.1667
+  -> Doc 10: score=0.1000
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 826.14it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:07<00:14,  7.19s/it]Compute Scores:  67%|██████▋   | 2/3 [00:09<00:04,  4.44s/it]Compute Scores: 100%|██████████| 3/3 [00:10<00:00,  2.73s/it]Compute Scores: 100%|██████████| 3/3 [00:10<00:00,  3.47s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=8.4230
+  -> Doc 2: retrieval_score=0.6666667 | rerank_score=7.4447
+  -> Doc 3: retrieval_score=0.36666667 | rerank_score=3.2828
+  -> Doc 4: retrieval_score=0.34285715 | rerank_score=1.2620
+  -> Doc 5: retrieval_score=0.22222222 | rerank_score=-1.2420
+  -> Doc 6: retrieval_score=0.09090909 | rerank_score=-3.3904
+  -> Doc 7: retrieval_score=0.0625 | rerank_score=-3.9712
+  -> Doc 8: retrieval_score=0.06666667 | rerank_score=-4.4568
+  -> Doc 9: retrieval_score=0.375 | rerank_score=-4.7624
+  -> Doc 10: retrieval_score=0.07692308 | rerank_score=-5.1176
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 2 / 6 docs.
+
+[Final Combined] Generating answer using 2 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q017  accepted          tf1=0.211  lat=25.3s
+
+[Shared Retriever] Retrieving context for query: 'Armageddon in Retrospect was written by the author who was best known for what 1969 satire novel?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2809.31it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.92it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.91it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.4762
+  -> Doc 3: score=0.4500
+  -> Doc 4: score=0.4000
+  -> Doc 5: score=0.3500
+  -> Doc 6: score=0.3000
+  -> Doc 7: score=0.2778
+  -> Doc 8: score=0.2679
+  -> Doc 9: score=0.2576
+  -> Doc 10: score=0.2083
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 518.14it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:04<00:08,  4.34s/it]Compute Scores:  67%|██████▋   | 2/3 [00:06<00:02,  2.86s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  1.91s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  2.32s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=9.6837
+  -> Doc 2: retrieval_score=0.4761905 | rerank_score=5.6722
+  -> Doc 3: retrieval_score=0.45 | rerank_score=-3.5852
+  -> Doc 4: retrieval_score=0.25757575 | rerank_score=-4.0822
+  -> Doc 5: retrieval_score=0.2777778 | rerank_score=-4.4671
+  -> Doc 6: retrieval_score=0.083333336 | rerank_score=-5.1939
+  -> Doc 7: retrieval_score=0.20833334 | rerank_score=-5.2037
+  -> Doc 8: retrieval_score=0.35 | rerank_score=-5.2115
+  -> Doc 9: retrieval_score=0.26785713 | rerank_score=-5.2657
+  -> Doc 10: retrieval_score=0.13247864 | rerank_score=-5.5520
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: RELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 3 / 6 docs.
+
+[Final Combined] Generating answer using 3 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q018  accepted          tf1=0.190  lat=19.8s
+
+[Shared Retriever] Retrieving context for query: 'What class of instrument does Apatim Majumdar play?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 4378.19it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 14.95it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.6667
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.4500
+  -> Doc 4: score=0.4103
+  -> Doc 5: score=0.3500
+  -> Doc 6: score=0.3429
+  -> Doc 7: score=0.3333
+  -> Doc 8: score=0.2429
+  -> Doc 9: score=0.2159
+  -> Doc 10: score=0.1699
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 970.75it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:03<00:07,  3.57s/it]Compute Scores:  67%|██████▋   | 2/3 [00:05<00:02,  2.58s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  1.71s/it]Compute Scores: 100%|██████████| 3/3 [00:06<00:00,  2.04s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.6666667 | rerank_score=4.6031
+  -> Doc 2: retrieval_score=0.34285715 | rerank_score=-3.2353
+  -> Doc 3: retrieval_score=0.41025642 | rerank_score=-3.8407
+  -> Doc 4: retrieval_score=0.16993465 | rerank_score=-3.8509
+  -> Doc 5: retrieval_score=0.45 | rerank_score=-4.2832
+  -> Doc 6: retrieval_score=0.35 | rerank_score=-4.4528
+  -> Doc 7: retrieval_score=0.2159091 | rerank_score=-5.4616
+  -> Doc 8: retrieval_score=0.24285716 | rerank_score=-5.5786
+  -> Doc 9: retrieval_score=0.33333334 | rerank_score=-6.1608
+  -> Doc 10: retrieval_score=0.06666667 | rerank_score=-6.7826
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 1 / 6 docs.
+
+[Final Combined] Generating answer using 1 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q019  accepted          tf1=0.000  lat=17.3s
+
+[Shared Retriever] Retrieving context for query: ' Which movie did Disney produce first,  The Many Adventures of Winnie the Pooh or Ride a Wild Pony?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3560.53it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 10.40it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.7500
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.6250
+  -> Doc 4: score=0.3750
+  -> Doc 5: score=0.3667
+  -> Doc 6: score=0.3429
+  -> Doc 7: score=0.3095
+  -> Doc 8: score=0.2111
+  -> Doc 9: score=0.2020
+  -> Doc 10: score=0.1909
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 874.72it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:06<00:12,  6.47s/it]Compute Scores:  67%|██████▋   | 2/3 [00:08<00:04,  4.05s/it]Compute Scores: 100%|██████████| 3/3 [00:09<00:00,  2.52s/it]Compute Scores: 100%|██████████| 3/3 [00:09<00:00,  3.18s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.75 | rerank_score=9.0390
+  -> Doc 2: retrieval_score=0.6666667 | rerank_score=8.9736
+  -> Doc 3: retrieval_score=0.625 | rerank_score=1.6035
+  -> Doc 4: retrieval_score=0.34285715 | rerank_score=0.6613
+  -> Doc 5: retrieval_score=0.36666667 | rerank_score=0.5314
+  -> Doc 6: retrieval_score=0.2020202 | rerank_score=0.1387
+  -> Doc 7: retrieval_score=0.21111111 | rerank_score=-0.3256
+  -> Doc 8: retrieval_score=0.30952382 | rerank_score=-1.9667
+  -> Doc 9: retrieval_score=0.375 | rerank_score=-3.1240
+  -> Doc 10: retrieval_score=0.15476191 | rerank_score=-4.8722
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 2 / 6 docs.
+
+[Final Combined] Generating answer using 2 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q020  accepted          tf1=0.320  lat=28.0s
+
+[Shared Retriever] Retrieving context for query: 'Pandikona and Berger Blanc Suisse are both what kinds of animals?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3563.55it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.06it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.05it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.4333
+  -> Doc 3: score=0.4242
+  -> Doc 4: score=0.4167
+  -> Doc 5: score=0.2500
+  -> Doc 6: score=0.2000
+  -> Doc 7: score=0.2000
+  -> Doc 8: score=0.1667
+  -> Doc 9: score=0.1458
+  -> Doc 10: score=0.1429
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 755.10it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:09<00:18,  9.02s/it]Compute Scores:  67%|██████▋   | 2/3 [00:11<00:05,  5.04s/it]Compute Scores: 100%|██████████| 3/3 [00:11<00:00,  3.00s/it]Compute Scores: 100%|██████████| 3/3 [00:11<00:00,  3.95s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=8.7712
+  -> Doc 2: retrieval_score=0.42424244 | rerank_score=8.0012
+  -> Doc 3: retrieval_score=0.43333334 | rerank_score=-6.2904
+  -> Doc 4: retrieval_score=0.4166667 | rerank_score=-6.8019
+  -> Doc 5: retrieval_score=0.125 | rerank_score=-7.8529
+  -> Doc 6: retrieval_score=0.125 | rerank_score=-8.0162
+  -> Doc 7: retrieval_score=0.2 | rerank_score=-8.4651
+  -> Doc 8: retrieval_score=0.25 | rerank_score=-9.1095
+  -> Doc 9: retrieval_score=0.14285715 | rerank_score=-9.1833
+  -> Doc 10: retrieval_score=0.1 | rerank_score=-9.2399
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 2 / 6 docs.
+
+[Final Combined] Generating answer using 2 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q021  accepted          tf1=0.182  lat=29.4s
+
+[Shared Retriever] Retrieving context for query: 'The Prussian General Carl von Clausewitz is associated with what type of realism?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3679.21it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 10.73it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5333
+  -> Doc 3: score=0.4167
+  -> Doc 4: score=0.3889
+  -> Doc 5: score=0.3750
+  -> Doc 6: score=0.3095
+  -> Doc 7: score=0.3000
+  -> Doc 8: score=0.2679
+  -> Doc 9: score=0.2111
+  -> Doc 10: score=0.2020
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 1019.85it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:03<00:07,  3.60s/it]Compute Scores:  67%|██████▋   | 2/3 [00:05<00:02,  2.39s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.55s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.90s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=4.6143
+  -> Doc 2: retrieval_score=0.53333336 | rerank_score=3.3940
+  -> Doc 3: retrieval_score=0.30952382 | rerank_score=-1.1231
+  -> Doc 4: retrieval_score=0.4166667 | rerank_score=-2.9485
+  -> Doc 5: retrieval_score=0.3 | rerank_score=-3.5206
+  -> Doc 6: retrieval_score=0.26785713 | rerank_score=-3.9083
+  -> Doc 7: retrieval_score=0.375 | rerank_score=-4.1423
+  -> Doc 8: retrieval_score=0.2020202 | rerank_score=-4.1863
+  -> Doc 9: retrieval_score=0.3888889 | rerank_score=-5.5003
+  -> Doc 10: retrieval_score=0.21111111 | rerank_score=-7.1467
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 2 / 6 docs.
+
+[Final Combined] Generating answer using 2 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q022  accepted          tf1=0.667  lat=16.8s
+
+[Shared Retriever] Retrieving context for query: 'What where both Hawker Hurricane and No. 1455 Flight apart of?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 4559.03it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 11.92it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.4762
+  -> Doc 3: score=0.4242
+  -> Doc 4: score=0.3750
+  -> Doc 5: score=0.3500
+  -> Doc 6: score=0.3429
+  -> Doc 7: score=0.3333
+  -> Doc 8: score=0.3111
+  -> Doc 9: score=0.2361
+  -> Doc 10: score=0.1909
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 1176.30it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:02<00:04,  2.49s/it]Compute Scores:  67%|██████▋   | 2/3 [00:04<00:02,  2.09s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.46s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.67s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=4.2213
+  -> Doc 2: retrieval_score=0.42424244 | rerank_score=3.7519
+  -> Doc 3: retrieval_score=0.375 | rerank_score=-1.4254
+  -> Doc 4: retrieval_score=0.35 | rerank_score=-1.6616
+  -> Doc 5: retrieval_score=0.2361111 | rerank_score=-2.6849
+  -> Doc 6: retrieval_score=0.33333334 | rerank_score=-3.5374
+  -> Doc 7: retrieval_score=0.071428575 | rerank_score=-3.6977
+  -> Doc 8: retrieval_score=0.34285715 | rerank_score=-4.4360
+  -> Doc 9: retrieval_score=0.31111112 | rerank_score=-4.8702
+  -> Doc 10: retrieval_score=0.4761905 | rerank_score=-5.1471
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 1 / 6 docs.
+
+[Final Combined] Generating answer using 1 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 2
+     - Both the Hawker Hurricanes and No.
+       feedback: Claim verification output was incomplete.
+     - 1455 Flight were part of operations at RAF Tangmere, where they cooperated during missions.
+       feedback: Claim verification output was incomplete.
+
+[Final Combined] Generating answer using 1 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 1
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 2
+     - Both the Hawker Hurricane and No.
+       feedback: Claim verification output was incomplete.
+     - 1455 Flight were part of operations at RAF Tangmere, where they cooperated during missions.
+       feedback: Claim verification output was incomplete.
+  Q023  accepted          tf1=0.000  lat=18.4s
+
+[Shared Retriever] Retrieving context for query: 'what language did the ethnic group which Torstein Ellingsen was its drumer  speaks '
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3898.05it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 10.05it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.7000
+  -> Doc 2: score=0.6250
+  -> Doc 3: score=0.5833
+  -> Doc 4: score=0.5333
+  -> Doc 5: score=0.2778
+  -> Doc 6: score=0.2540
+  -> Doc 7: score=0.2500
+  -> Doc 8: score=0.2500
+  -> Doc 9: score=0.2250
+  -> Doc 10: score=0.1929
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 904.46it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:08<00:16,  8.41s/it]Compute Scores:  67%|██████▋   | 2/3 [00:10<00:04,  4.55s/it]Compute Scores: 100%|██████████| 3/3 [00:10<00:00,  2.71s/it]Compute Scores: 100%|██████████| 3/3 [00:10<00:00,  3.59s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.625 | rerank_score=4.9887
+  -> Doc 2: retrieval_score=0.53333336 | rerank_score=-0.4172
+  -> Doc 3: retrieval_score=0.25 | rerank_score=-1.3778
+  -> Doc 4: retrieval_score=0.5833334 | rerank_score=-1.4937
+  -> Doc 5: retrieval_score=0.225 | rerank_score=-2.9240
+  -> Doc 6: retrieval_score=0.7 | rerank_score=-3.0129
+  -> Doc 7: retrieval_score=0.2777778 | rerank_score=-3.9691
+  -> Doc 8: retrieval_score=0.25396827 | rerank_score=-4.7466
+  -> Doc 9: retrieval_score=0.25 | rerank_score=-5.3558
+  -> Doc 10: retrieval_score=0.09090909 | rerank_score=-5.7069
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: RELEVANT
+[Final Combined] Kept 3 / 6 docs.
+
+[Final Combined] Generating answer using 3 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - Therefore, I cannot determine the language spoken by that ethnic group based on the provided documents.
+       feedback: The conclusion about not determining the language is unsupported as it is too broad.
+
+[Final Combined] Generating answer using 3 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 1
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - Therefore, I cannot determine the language spoken by that ethnic group based on the available evidence.
+       feedback: The claim is unsupported as it assumes a conclusion without evidence.
+  Q024  accepted          tf1=0.062  lat=32.6s
+
+[Shared Retriever] Retrieving context for query: 'From March 631 to April 631, Farrukhzad Khosrau V was the king of an empire that succeeded which empire?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3734.91it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  9.94it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  9.93it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5333
+  -> Doc 3: score=0.4583
+  -> Doc 4: score=0.4167
+  -> Doc 5: score=0.3929
+  -> Doc 6: score=0.2909
+  -> Doc 7: score=0.2778
+  -> Doc 8: score=0.2338
+  -> Doc 9: score=0.2111
+  -> Doc 10: score=0.1875
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 1060.69it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:02<00:05,  2.55s/it]Compute Scores:  67%|██████▋   | 2/3 [00:04<00:02,  2.08s/it]Compute Scores: 100%|██████████| 3/3 [00:04<00:00,  1.39s/it]Compute Scores: 100%|██████████| 3/3 [00:04<00:00,  1.62s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=8.2752
+  -> Doc 2: retrieval_score=0.2909091 | rerank_score=2.3770
+  -> Doc 3: retrieval_score=0.4166667 | rerank_score=-0.2626
+  -> Doc 4: retrieval_score=0.071428575 | rerank_score=-1.4795
+  -> Doc 5: retrieval_score=0.53333336 | rerank_score=-2.4551
+  -> Doc 6: retrieval_score=0.2777778 | rerank_score=-3.4039
+  -> Doc 7: retrieval_score=0.21111111 | rerank_score=-3.4369
+  -> Doc 8: retrieval_score=0.17692308 | rerank_score=-4.0349
+  -> Doc 9: retrieval_score=0.16666667 | rerank_score=-4.7357
+  -> Doc 10: retrieval_score=0.23376624 | rerank_score=-5.1899
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: RELEVANT
+[Final Combined] Kept 4 / 6 docs.
+
+[Final Combined] Generating answer using 4 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q025  accepted          tf1=0.400  lat=15.3s
+
+[Shared Retriever] Retrieving context for query: 'Beer Wars covers the differences between large corporate breweries, and small breweries, such as what brewery that is headquartered in Escondido, california?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2176.60it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  6.58it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  6.57it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.7500
+  -> Doc 3: score=0.5333
+  -> Doc 4: score=0.4500
+  -> Doc 5: score=0.2917
+  -> Doc 6: score=0.2778
+  -> Doc 7: score=0.2679
+  -> Doc 8: score=0.2540
+  -> Doc 9: score=0.2000
+  -> Doc 10: score=0.1742
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 473.22it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:02<00:05,  2.81s/it]Compute Scores:  67%|██████▋   | 2/3 [00:04<00:02,  2.36s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.56s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.82s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=10.6906
+  -> Doc 2: retrieval_score=0.75 | rerank_score=8.1049
+  -> Doc 3: retrieval_score=0.53333336 | rerank_score=0.2204
+  -> Doc 4: retrieval_score=0.45 | rerank_score=-1.4700
+  -> Doc 5: retrieval_score=0.2916667 | rerank_score=-3.6167
+  -> Doc 6: retrieval_score=0.25396827 | rerank_score=-4.4658
+  -> Doc 7: retrieval_score=0.2777778 | rerank_score=-5.5162
+  -> Doc 8: retrieval_score=0.26785713 | rerank_score=-6.4792
+  -> Doc 9: retrieval_score=0.17424244 | rerank_score=-7.1986
+  -> Doc 10: retrieval_score=0.2 | rerank_score=-7.2994
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 2 / 6 docs.
+
+[Final Combined] Generating answer using 2 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q026  accepted          tf1=0.235  lat=19.3s
+
+[Shared Retriever] Retrieving context for query: 'Which head coach has led their team for a longer period of time, Tim Cluess or Steve Prohm?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3744.91it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 10.71it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.6667
+  -> Doc 2: score=0.6000
+  -> Doc 3: score=0.4242
+  -> Doc 4: score=0.4000
+  -> Doc 5: score=0.3500
+  -> Doc 6: score=0.2500
+  -> Doc 7: score=0.2000
+  -> Doc 8: score=0.2000
+  -> Doc 9: score=0.1929
+  -> Doc 10: score=0.1667
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 930.55it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:03<00:06,  3.12s/it]Compute Scores:  67%|██████▋   | 2/3 [00:05<00:02,  2.41s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.59s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.88s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.42424244 | rerank_score=1.3246
+  -> Doc 2: retrieval_score=0.6 | rerank_score=0.0814
+  -> Doc 3: retrieval_score=0.4 | rerank_score=-0.0030
+  -> Doc 4: retrieval_score=0.19285715 | rerank_score=-0.1172
+  -> Doc 5: retrieval_score=0.2 | rerank_score=-0.3487
+  -> Doc 6: retrieval_score=0.16666667 | rerank_score=-0.4366
+  -> Doc 7: retrieval_score=0.6666667 | rerank_score=-0.4847
+  -> Doc 8: retrieval_score=0.11111111 | rerank_score=-0.4958
+  -> Doc 9: retrieval_score=0.125 | rerank_score=-0.5007
+  -> Doc 10: retrieval_score=0.35 | rerank_score=-1.2016
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: RELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: RELEVANT
+[Final Combined] Kept 3 / 6 docs.
+
+[Final Combined] Generating answer using 3 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - Tim Cluess has led his team for a longer period of time, serving as head coach for seven years, while Steve Prohm's tenure is not mentioned in the retrieved documents.
+       feedback: Steve Prohm's tenure is not addressed in the documents.
+
+[Final Combined] Generating answer using 3 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 1
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - Tim Cluess has led the Iona Gaels men's basketball team for a longer period of time, serving as head coach for seven years, while the tenure of Steve Prohm is not mentioned in the retrieved documents.
+       feedback: The tenure of Steve Prohm is not addressed in the documents.
+  Q027  accepted          tf1=0.114  lat=22.2s
+
+[Shared Retriever] Retrieving context for query: 'During what war were the Russia-United Kingdom relations in a state of rivalry after the abdication of Emperor Nicholas II? '
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3116.12it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 10.57it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5833
+  -> Doc 3: score=0.5333
+  -> Doc 4: score=0.4500
+  -> Doc 5: score=0.3095
+  -> Doc 6: score=0.2778
+  -> Doc 7: score=0.2679
+  -> Doc 8: score=0.2250
+  -> Doc 9: score=0.2111
+  -> Doc 10: score=0.1742
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 1130.13it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:02<00:05,  2.96s/it]Compute Scores:  67%|██████▋   | 2/3 [00:04<00:02,  2.32s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.58s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.85s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=7.0266
+  -> Doc 2: retrieval_score=0.5833334 | rerank_score=3.3143
+  -> Doc 3: retrieval_score=0.45 | rerank_score=-0.7903
+  -> Doc 4: retrieval_score=0.53333336 | rerank_score=-2.2977
+  -> Doc 5: retrieval_score=0.17424244 | rerank_score=-2.8730
+  -> Doc 6: retrieval_score=0.071428575 | rerank_score=-3.9801
+  -> Doc 7: retrieval_score=0.06666667 | rerank_score=-4.6532
+  -> Doc 8: retrieval_score=0.12698413 | rerank_score=-4.9867
+  -> Doc 9: retrieval_score=0.21111111 | rerank_score=-5.1357
+  -> Doc 10: retrieval_score=0.07692308 | rerank_score=-5.1419
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged INSUFFICIENT. Triggering rewrite.
+
+[Final Combined] Rewriting retrieval query...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Original query:  During what war were the Russia-United Kingdom relations in a state of rivalry after the abdication of Emperor Nicholas II? 
+[Final Combined] Rewritten query: Russia-United Kingdom relations rivalry after Nicholas II abdication during which war?
+
+[Shared Retriever] Retrieving context for query: 'Russia-United Kingdom relations rivalry after Nicholas II abdication during which war?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 5322.72it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 11.71it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5833
+  -> Doc 3: score=0.5333
+  -> Doc 4: score=0.4500
+  -> Doc 5: score=0.2857
+  -> Doc 6: score=0.2778
+  -> Doc 7: score=0.2667
+  -> Doc 8: score=0.2500
+  -> Doc 9: score=0.2111
+  -> Doc 10: score=0.1818
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 1158.33it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:02<00:05,  2.99s/it]Compute Scores:  67%|██████▋   | 2/3 [00:04<00:02,  2.29s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.57s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.84s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=7.0266
+  -> Doc 2: retrieval_score=0.5833334 | rerank_score=3.3143
+  -> Doc 3: retrieval_score=0.45 | rerank_score=-0.7903
+  -> Doc 4: retrieval_score=0.53333336 | rerank_score=-2.2977
+  -> Doc 5: retrieval_score=0.18181819 | rerank_score=-2.8730
+  -> Doc 6: retrieval_score=0.06666667 | rerank_score=-3.9801
+  -> Doc 7: retrieval_score=0.06666667 | rerank_score=-4.6532
+  -> Doc 8: retrieval_score=0.15476191 | rerank_score=-4.9867
+  -> Doc 9: retrieval_score=0.21111111 | rerank_score=-5.1357
+  -> Doc 10: retrieval_score=0.07692308 | rerank_score=-5.1419
+
+[Final Combined] Selecting best context set between original (6) and rewritten (6)...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Selected ORIGINAL context set.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 1 / 6 docs.
+
+[Final Combined] Generating answer using 1 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - The Russia-United Kingdom relations were in a state of rivalry during the Cold War after the abdication of Emperor Nicholas II.
+       feedback: The Cold War occurred long after Nicholas II's abdication in 1917.
+
+[Final Combined] Generating answer using 1 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 1
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - The Russia-United Kingdom relations were in a state of rivalry during the Crimean War of the 1850s after the abdication of Emperor Nicholas II.
+       feedback: The Crimean War occurred before Nicholas II's abdication in 1917.
+  Q028  accepted          tf1=0.160  lat=27.4s
+
+[Shared Retriever] Retrieving context for query: 'How far from Sacramento is the flight school in Atwater?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 4148.67it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 12.18it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.4500
+  -> Doc 4: score=0.3929
+  -> Doc 5: score=0.3667
+  -> Doc 6: score=0.2917
+  -> Doc 7: score=0.2540
+  -> Doc 8: score=0.2159
+  -> Doc 9: score=0.1769
+  -> Doc 10: score=0.1736
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 1020.51it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:03<00:06,  3.10s/it]Compute Scores:  67%|██████▋   | 2/3 [00:04<00:02,  2.37s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.50s/it]Compute Scores: 100%|██████████| 3/3 [00:05<00:00,  1.81s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=3.0470
+  -> Doc 2: retrieval_score=0.6666667 | rerank_score=-1.3462
+  -> Doc 3: retrieval_score=0.083333336 | rerank_score=-5.7603
+  -> Doc 4: retrieval_score=0.45 | rerank_score=-6.3952
+  -> Doc 5: retrieval_score=0.2159091 | rerank_score=-6.4248
+  -> Doc 6: retrieval_score=0.2916667 | rerank_score=-6.8336
+  -> Doc 7: retrieval_score=0.25396827 | rerank_score=-6.8556
+  -> Doc 8: retrieval_score=0.39285713 | rerank_score=-7.0270
+  -> Doc 9: retrieval_score=0.06666667 | rerank_score=-7.2768
+  -> Doc 10: retrieval_score=0.17692308 | rerank_score=-7.7196
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 1 / 6 docs.
+
+[Final Combined] Generating answer using 1 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit PASS.
+  Q029  accepted          tf1=0.526  lat=17.2s
+
+[Shared Retriever] Retrieving context for query: 'Baraki Barak District is situated in the western part of a province whose capital is what?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3572.66it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 12.18it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5833
+  -> Doc 3: score=0.5833
+  -> Doc 4: score=0.4000
+  -> Doc 5: score=0.2679
+  -> Doc 6: score=0.2679
+  -> Doc 7: score=0.2667
+  -> Doc 8: score=0.2576
+  -> Doc 9: score=0.1944
+  -> Doc 10: score=0.1880
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 3/3 [00:00<00:00, 873.57it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|███▎      | 1/3 [00:08<00:16,  8.40s/it]Compute Scores:  67%|██████▋   | 2/3 [00:10<00:04,  4.62s/it]Compute Scores: 100%|██████████| 3/3 [00:10<00:00,  2.75s/it]Compute Scores: 100%|██████████| 3/3 [00:10<00:00,  3.63s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=9.6288
+  -> Doc 2: retrieval_score=0.5833334 | rerank_score=6.9285
+  -> Doc 3: retrieval_score=0.5833334 | rerank_score=4.3000
+  -> Doc 4: retrieval_score=0.4 | rerank_score=2.8618
+  -> Doc 5: retrieval_score=0.25757575 | rerank_score=1.1355
+  -> Doc 6: retrieval_score=0.19444445 | rerank_score=-0.6297
+  -> Doc 7: retrieval_score=0.26666668 | rerank_score=-1.5028
+  -> Doc 8: retrieval_score=0.26785713 | rerank_score=-1.7707
+  -> Doc 9: retrieval_score=0.18803419 | rerank_score=-3.3154
+  -> Doc 10: retrieval_score=0.18333334 | rerank_score=-4.5777
+
+[Final Combined] Evaluating retrieval quality on 5 docs...
+  -> Groq model: gpt-4o-mini
+[Final Combined] Retrieval judged SUFFICIENT.
+
+[Final Combined] Grading 6 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+[Final Combined] Kept 3 / 6 docs.
+
+[Final Combined] Generating answer using 3 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 0
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - Baraki Barak District is situated in the western part of Logar Province, whose capital is Pul-i-Alam.
+       feedback: The capital of Logar Province is not clearly stated as Pul-i-Alam in the retrieved documents.
+
+[Final Combined] Generating answer using 3 graded docs...
+  -> Groq model: gpt-4o-mini
+  -> Audit retry count: 1
+[Final Combined] Answer generation complete.
+
+[Final Combined] Auditing generated answer...
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+[Final Combined] Audit FAIL.
+  -> Unsupported claims: 1
+     - Baraki Barak District is situated in the western part of Logar Province, whose capital is Pul-i-Alam.
+       feedback: The capital of Logar Province is not mentioned as Pul-i-Alam in the retrieved documents.
+  Q030  accepted          tf1=0.105  lat=32.7s
+
+[eval] final_arch: wrote 30 rows -> multihop\data\eval_hotpotqa_final_arch.jsonl
+[eval] mean token_f1=0.1968  mean rouge_l=0.1758  failures=0/30

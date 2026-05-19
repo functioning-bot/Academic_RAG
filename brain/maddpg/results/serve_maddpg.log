@@ -1,15 +1,649 @@
-INFO:     Started server process [12844]
+INFO:     Started server process [33336]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 [serve_maddpg] loaded C:\Users\juand\Documents\Academic_RAG\brain\maddpg\results\maddpg_v4\checkpoints\ep_0200.pt
 [serve_maddpg]   state_dim=20 (CEB=True)  gradient_updates=392  trained=True
 [serve_maddpg] starting on http://127.0.0.1:8000  (frontend: open web_app/index.html)
-INFO:     127.0.0.1:63945 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63946 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63947 - "GET / HTTP/1.1" 200 OK
-Fetching 30 files:   0%|          | 0/30 [00:00<?, ?it/s]Fetching 30 files: 100%|##########| 30/30 [00:00<00:00, 476625.45it/s]
-[32m2026-05-17 02:32:36.586[0m | [33m[1mWARNING [0m | [36mfastembed.common.model_management[0m:[36mdownload_files_from_huggingface[0m:[36m225[0m - [33m[1mLocal file sizes do not match the metadata.[0m
+INFO:     127.0.0.1:54894 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54899 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65402 - "GET /health HTTP/1.1" 200 OK
+Fetching 30 files:   0%|          | 0/30 [00:00<?, ?it/s]Fetching 30 files: 100%|##########| 30/30 [00:00<00:00, 433893.52it/s]
+[32m2026-05-17 23:21:08.195[0m | [33m[1mWARNING [0m | [36mfastembed.common.model_management[0m:[36mdownload_files_from_huggingface[0m:[36m225[0m - [33m[1mLocal file sizes do not match the metadata.[0m
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|##########| 1/1 [00:00<00:00, 1121.77it/s]
+You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.40it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.39it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 5...
+[*] Loading reranker model: BAAI/bge-reranker-v2-m3 ...
+[OK] Reranker loaded.
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+pre tokenize: 100%|##########| 3/3 [00:00<00:00, 643.27it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]INFO:     127.0.0.1:58255 - "GET /health HTTP/1.1" 200 OK
+Compute Scores:  33%|###3      | 1/3 [00:04<00:09,  4.90s/it]Compute Scores:  67%|######6   | 2/3 [00:08<00:03,  3.93s/it]Compute Scores: 100%|##########| 3/3 [00:09<00:00,  2.63s/it]Compute Scores: 100%|##########| 3/3 [00:09<00:00,  3.07s/it]
+[Reranker] Kept 5 reranked docs.
+  -> Doc 1: retrieval_score=0.75 | rerank_score=0.7127
+  -> Doc 2: retrieval_score=0.64285713 | rerank_score=-1.1283
+  -> Doc 3: retrieval_score=0.25757575 | rerank_score=-1.6123
+  -> Doc 4: retrieval_score=0.33333334 | rerank_score=-1.6353
+  -> Doc 5: retrieval_score=0.1 | rerank_score=-1.9278
+INFO:     127.0.0.1:55943 - "GET /health HTTP/1.1" 200 OK
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 6
+INFO:     127.0.0.1:65075 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54900 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61983 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56979 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62074 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51484 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63794 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63645 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64990 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60224 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58537 - "OPTIONS /ask HTTP/1.1" 200 OK
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|##########| 1/1 [00:00<00:00, 1874.97it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.18it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.17it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 5...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|##########| 3/3 [00:00<00:00, 582.19it/s]
+INFO:     127.0.0.1:51221 - "GET /health HTTP/1.1" 200 OK
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|###3      | 1/3 [00:05<00:10,  5.03s/it]INFO:     127.0.0.1:49286 - "GET /health HTTP/1.1" 200 OK
+Compute Scores:  67%|######6   | 2/3 [00:08<00:04,  4.17s/it]Compute Scores: 100%|##########| 3/3 [00:09<00:00,  2.85s/it]Compute Scores: 100%|##########| 3/3 [00:09<00:00,  3.29s/it]
+[Reranker] Kept 5 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=5.7233
+  -> Doc 2: retrieval_score=0.34285715 | rerank_score=3.3422
+  -> Doc 3: retrieval_score=0.5909091 | rerank_score=2.5629
+  -> Doc 4: retrieval_score=0.39285713 | rerank_score=2.0753
+  -> Doc 5: retrieval_score=0.4166667 | rerank_score=1.8083
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 5
+INFO:     127.0.0.1:55978 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58537 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56139 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49519 - "GET /health HTTP/1.1" 200 OK
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|##########| 1/1 [00:00<00:00, 4405.78it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.37it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.36it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 5...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|##########| 3/3 [00:00<00:00, 818.24it/s]
+INFO:     127.0.0.1:51229 - "GET /health HTTP/1.1" 200 OK
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|###3      | 1/3 [00:04<00:09,  4.94s/it]Compute Scores:  67%|######6   | 2/3 [00:08<00:03,  3.92s/it]INFO:     127.0.0.1:56299 - "GET /health HTTP/1.1" 200 OK
+Compute Scores: 100%|##########| 3/3 [00:09<00:00,  2.69s/it]Compute Scores: 100%|##########| 3/3 [00:09<00:00,  3.12s/it]
+[Reranker] Kept 5 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=5.7233
+  -> Doc 2: retrieval_score=0.34285715 | rerank_score=3.3422
+  -> Doc 3: retrieval_score=0.5909091 | rerank_score=2.5629
+  -> Doc 4: retrieval_score=0.39285713 | rerank_score=2.0753
+  -> Doc 5: retrieval_score=0.4166667 | rerank_score=1.8083
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 7
+INFO:     127.0.0.1:62825 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62825 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53976 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61668 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53307 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60937 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58253 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51606 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61614 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62024 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62185 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59470 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57928 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62830 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63527 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51096 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56969 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50597 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54173 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53656 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62143 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49982 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53739 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49597 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52701 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50160 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64857 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52417 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59272 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49185 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55130 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54408 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49976 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50641 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51232 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56340 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50187 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51612 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55894 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62908 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51474 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51474 - "OPTIONS /ask HTTP/1.1" 200 OK
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: RELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: RELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: RELEVANT
+  -> Doc 13: RELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: RELEVANT
+INFO:     127.0.0.1:51217 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 18: RELEVANT
+  -> Doc 19: RELEVANT
+[Final Combined] Kept 11 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 4
+INFO:     127.0.0.1:60027 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51474 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63848 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64990 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61504 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50999 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62942 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50237 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57864 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65463 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59692 - "GET /health HTTP/1.1" 200 OK
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+INFO:     127.0.0.1:56310 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 5: RELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: RELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: RELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: RELEVANT
+  -> Doc 13: RELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: RELEVANT
+  -> Doc 18: RELEVANT
+  -> Doc 19: RELEVANT
+[Final Combined] Kept 11 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 4
+INFO:     127.0.0.1:63296 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63844 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63844 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57217 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61903 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59744 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65323 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64392 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54469 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59059 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56858 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52363 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53281 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64990 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60329 - "GET /health HTTP/1.1" 200 OK
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|##########| 1/1 [00:00<00:00, 1591.16it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.87it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.87it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 5...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|##########| 3/3 [00:00<00:00, 536.54it/s]
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]INFO:     127.0.0.1:63656 - "GET /health HTTP/1.1" 200 OK
+Compute Scores:  33%|###3      | 1/3 [00:06<00:13,  6.64s/it]Compute Scores:  67%|######6   | 2/3 [00:09<00:04,  4.63s/it]Compute Scores: 100%|##########| 3/3 [00:11<00:00,  3.15s/it]Compute Scores: 100%|##########| 3/3 [00:11<00:00,  3.75s/it]
+[Reranker] Kept 5 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=2.3510
+  -> Doc 2: retrieval_score=0.32142857 | rerank_score=1.4811
+  -> Doc 3: retrieval_score=0.33333334 | rerank_score=1.3456
+  -> Doc 4: retrieval_score=0.16666667 | rerank_score=1.3453
+  -> Doc 5: retrieval_score=0.21978024 | rerank_score=1.1328
+INFO:     127.0.0.1:57750 - "GET /health HTTP/1.1" 200 OK
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 3
+INFO:     127.0.0.1:60329 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60329 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59877 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56716 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51146 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58696 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65076 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54095 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62409 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49295 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54412 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59938 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62482 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56314 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63375 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58710 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52824 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50682 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49611 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60529 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60435 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57148 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60472 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60843 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54106 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60351 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51400 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63388 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61360 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53117 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61960 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57069 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64990 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64175 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64175 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65081 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55417 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49976 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56609 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49211 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53922 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63713 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56215 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63369 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53457 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58632 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51983 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50394 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58391 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58391 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53540 - "OPTIONS /ask HTTP/1.1" 200 OK
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|##########| 1/1 [00:00<00:00, 4136.39it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.57it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.56it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 5...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|##########| 3/3 [00:00<00:00, 831.93it/s]
+INFO:     127.0.0.1:60711 - "GET /health HTTP/1.1" 200 OK
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]Compute Scores:  33%|###3      | 1/3 [00:04<00:09,  4.96s/it]INFO:     127.0.0.1:58378 - "GET /health HTTP/1.1" 200 OK
+Compute Scores:  67%|######6   | 2/3 [00:07<00:03,  3.67s/it]Compute Scores: 100%|##########| 3/3 [00:08<00:00,  2.54s/it]Compute Scores: 100%|##########| 3/3 [00:08<00:00,  2.97s/it]
+[Reranker] Kept 5 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=2.3510
+  -> Doc 2: retrieval_score=0.32142857 | rerank_score=1.4811
+  -> Doc 3: retrieval_score=0.33333334 | rerank_score=1.3456
+  -> Doc 4: retrieval_score=0.16666667 | rerank_score=1.3453
+  -> Doc 5: retrieval_score=0.21978024 | rerank_score=1.1328
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 3
+INFO:     127.0.0.1:53540 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53540 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56631 - "GET /health HTTP/1.1" 200 OK
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: RELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: RELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+INFO:     127.0.0.1:62844 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: RELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: RELEVANT
+[Final Combined] Kept 7 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 4
+INFO:     127.0.0.1:56631 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56631 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64857 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57346 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62309 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52999 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62179 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49188 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55362 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60454 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56821 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59935 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52123 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58050 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54096 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52267 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59521 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64324 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53726 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64858 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59216 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58737 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56477 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51952 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56317 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56107 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56193 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50607 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53838 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59390 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50690 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53991 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50805 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56506 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63168 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62471 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58701 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61321 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61854 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56048 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63757 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65503 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54221 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58182 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58448 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60095 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49380 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63902 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53640 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56983 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61368 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50226 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62176 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56285 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64990 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64990 - "OPTIONS /ask HTTP/1.1" 200 OK
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+INFO:     127.0.0.1:50421 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 1 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+INFO:     127.0.0.1:64990 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64990 - "GET /health HTTP/1.1" 200 OK
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|##########| 1/1 [00:00<00:00, 251.82it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.21it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.20it/s]
+INFO:     127.0.0.1:58742 - "GET /health HTTP/1.1" 200 OK
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 5...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|##########| 3/3 [00:00<00:00, 269.57it/s]
+INFO:     127.0.0.1:57736 - "GET /health HTTP/1.1" 200 OK
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]INFO:     127.0.0.1:58823 - "GET /health HTTP/1.1" 200 OK
+Compute Scores:  33%|###3      | 1/3 [00:12<00:25, 12.80s/it]Compute Scores:  67%|######6   | 2/3 [00:16<00:07,  7.30s/it]INFO:     127.0.0.1:62955 - "GET /health HTTP/1.1" 200 OK
+Compute Scores: 100%|##########| 3/3 [00:17<00:00,  4.53s/it]Compute Scores: 100%|##########| 3/3 [00:17<00:00,  5.83s/it]
+[Reranker] Kept 5 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=5.1351
+  -> Doc 2: retrieval_score=0.3611111 | rerank_score=1.0808
+  -> Doc 3: retrieval_score=0.6666667 | rerank_score=-0.0585
+  -> Doc 4: retrieval_score=0.13574661 | rerank_score=-0.5284
+  -> Doc 5: retrieval_score=0.1534091 | rerank_score=-0.7779
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+INFO:     127.0.0.1:50516 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50516 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61287 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50727 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54512 - "GET /health HTTP/1.1" 200 OK
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|##########| 1/1 [00:00<00:00, 223.82it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.72it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.71it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 5...
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s]pre tokenize: 100%|##########| 3/3 [00:00<00:00, 370.98it/s]
+INFO:     127.0.0.1:51441 - "GET /health HTTP/1.1" 200 OK
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s]INFO:     127.0.0.1:50160 - "GET /health HTTP/1.1" 200 OK
+Compute Scores:  33%|###3      | 1/3 [00:10<00:20, 10.03s/it]Compute Scores:  67%|######6   | 2/3 [00:13<00:06,  6.34s/it]Compute Scores: 100%|##########| 3/3 [00:14<00:00,  3.95s/it]Compute Scores: 100%|##########| 3/3 [00:14<00:00,  4.96s/it]
+[Reranker] Kept 5 reranked docs.
+  -> Doc 1: retrieval_score=0.5833334 | rerank_score=3.9732
+  -> Doc 2: retrieval_score=1.0 | rerank_score=2.8426
+  -> Doc 3: retrieval_score=0.36666667 | rerank_score=2.5367
+  -> Doc 4: retrieval_score=0.45833334 | rerank_score=2.4647
+  -> Doc 5: retrieval_score=0.19166666 | rerank_score=1.2658
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 5
+INFO:     127.0.0.1:55538 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54512 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54512 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58716 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57650 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62578 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65300 - "GET /health HTTP/1.1" 200 OK
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+INFO:     127.0.0.1:61587 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 0 / 19 docs.
+[Final Combined] Fallback: grader rejected all docs, keeping original candidates.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+INFO:     127.0.0.1:49976 - "GET /health HTTP/1.1" 200 OK
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|##########| 1/1 [00:00<00:00, 481.16it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.41it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.39it/s]
+
+[Final Combined] Grading 23 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+INFO:     127.0.0.1:59333 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: IRRELEVANT
+  -> Doc 21: IRRELEVANT
+  -> Doc 22: IRRELEVANT
+  -> Doc 23: IRRELEVANT
+[Final Combined] Kept 0 / 23 docs.
+[Final Combined] Fallback: grader rejected all docs, keeping original candidates.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|##########| 1/1 [00:00<00:00, 5645.09it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.83it/s]Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.81it/s]
+
+[Final Combined] Grading 23 candidate docs...
+  -> Groq model: gpt-4o-mini
+INFO:     127.0.0.1:63865 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+INFO:     127.0.0.1:50277 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+  -> Doc 20: IRRELEVANT
+  -> Doc 21: IRRELEVANT
+  -> Doc 22: IRRELEVANT
+  -> Doc 23: IRRELEVANT
+[Final Combined] Kept 0 / 23 docs.
+[Final Combined] Fallback: grader rejected all docs, keeping original candidates.
+INFO:     127.0.0.1:65300 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65300 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51978 - "GET /health HTTP/1.1" 200 OK
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+INFO:     127.0.0.1:58919 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: RELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: RELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+INFO:     127.0.0.1:63327 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 19: RELEVANT
+[Final Combined] Kept 5 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 5
+INFO:     127.0.0.1:51959 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60135 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57799 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59847 - "GET /health HTTP/1.1" 200 OK
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+INFO:     127.0.0.1:58379 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+INFO:     127.0.0.1:49619 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 0 / 19 docs.
+[Final Combined] Fallback: grader rejected all docs, keeping original candidates.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 4
+INFO:     127.0.0.1:59885 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56913 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56913 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63376 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49512 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55416 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63926 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49476 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61413 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57909 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50169 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51748 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56774 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62436 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62460 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62460 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49474 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65071 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57686 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51061 - "GET /health HTTP/1.1" 200 OK
 
 [Final Combined] Grading 19 candidate docs...
   -> Groq model: gpt-4o-mini
@@ -19,39 +653,250 @@ INFO:     127.0.0.1:63947 - "GET / HTTP/1.1" 200 OK
   -> Doc 4: RELEVANT
   -> Doc 5: RELEVANT
   -> Doc 6: IRRELEVANT
-  -> Doc 7: RELEVANT
+  -> Doc 7: IRRELEVANT
   -> Doc 8: IRRELEVANT
-  -> Doc 9: IRRELEVANT
+  -> Doc 9: RELEVANT
   -> Doc 10: IRRELEVANT
-  -> Doc 11: RELEVANT
+INFO:     127.0.0.1:52295 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 11: IRRELEVANT
   -> Doc 12: IRRELEVANT
   -> Doc 13: IRRELEVANT
-  -> Doc 14: RELEVANT
+  -> Doc 14: IRRELEVANT
   -> Doc 15: IRRELEVANT
   -> Doc 16: IRRELEVANT
   -> Doc 17: IRRELEVANT
   -> Doc 18: IRRELEVANT
   -> Doc 19: RELEVANT
-[Final Combined] Kept 7 / 19 docs.
+[Final Combined] Kept 5 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 5
+INFO:     127.0.0.1:62880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51061 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64857 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59935 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58618 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50348 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59136 - "OPTIONS /ask HTTP/1.1" 200 OK
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+INFO:     127.0.0.1:62505 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: RELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: RELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+INFO:     127.0.0.1:63540 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: RELEVANT
+[Final Combined] Kept 5 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 5
+INFO:     127.0.0.1:61231 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59136 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53480 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59493 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63619 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57424 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59298 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53830 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65452 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59130 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54822 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52950 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50164 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63589 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63087 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63369 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54669 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50426 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58379 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62214 - "GET /health HTTP/1.1" 200 OK
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+INFO:     127.0.0.1:49564 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 0 / 19 docs.
+[Final Combined] Fallback: grader rejected all docs, keeping original candidates.
 
 [Claim Verifier] Verifying answer claim by claim...
   -> Groq model: gpt-4o-mini
   -> Claims to verify: 4
-INFO:     127.0.0.1:55454 - "POST /ask HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57240 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56463 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56648 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63120 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61094 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53673 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51726 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62580 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53391 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62808 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63925 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59528 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59527 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52101 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58617 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55252 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62032 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58775 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54449 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54449 - "GET /health HTTP/1.1" 200 OK
+
+[Final Combined] Grading 19 candidate docs...
+  -> Groq model: gpt-4o-mini
+INFO:     127.0.0.1:57667 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: RELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+INFO:     127.0.0.1:64858 - "GET /health HTTP/1.1" 200 OK
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+  -> Doc 16: IRRELEVANT
+  -> Doc 17: IRRELEVANT
+  -> Doc 18: IRRELEVANT
+  -> Doc 19: IRRELEVANT
+[Final Combined] Kept 4 / 19 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 3
+INFO:     127.0.0.1:50800 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51174 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57235 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50350 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55409 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63250 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62748 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63121 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52669 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51072 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51139 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59016 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59582 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53131 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61297 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61865 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64860 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51691 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57835 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58716 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56242 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60587 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64324 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58719 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65410 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58964 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55373 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59176 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53088 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53194 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53194 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51937 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52751 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63976 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65510 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64992 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55527 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61775 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63900 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59205 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52770 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56685 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52003 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57649 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60062 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52408 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52686 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51919 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65294 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53586 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54250 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62151 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54197 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52665 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53243 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55243 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49662 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61247 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53176 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51555 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50899 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62170 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53631 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63373 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58835 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62920 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52983 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56003 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52400 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54747 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55478 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57396 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54654 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51607 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50779 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61207 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57027 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57905 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53954 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64105 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51134 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49976 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60158 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54095 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49552 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51572 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51572 - "OPTIONS /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51572 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50368 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57975 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52765 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53540 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60343 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54095 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53193 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65050 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52083 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60783 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60982 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56501 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60636 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54235 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52286 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49976 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61170 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52778 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54309 - "GET /health HTTP/1.1" 200 OK

@@ -1,0 +1,5 @@
+### BATCH 1: hotpotqa final_arch + maddpg_ceb ###
+### BATCH 2: hotpotqa simple_hybrid_rag + maddpg_noceb ###
+### BATCH 3: 2wiki final_arch + maddpg_ceb ###
+### BATCH 4: 2wiki simple_hybrid_rag + maddpg_noceb ###
+### ALL 8 MULTIHOP EVALS DONE ###

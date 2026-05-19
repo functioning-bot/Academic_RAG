@@ -1,0 +1,9 @@
+### NOCEB EVAL run2 ###
+
+-- Summary ---------------------------------------------------------
+  maddpg_no_ceb             pass=93.3%  cit=0.86  steps=4.4  latency=28.0s
+### NOCEB EVAL run3 ###
+
+-- Summary ---------------------------------------------------------
+  maddpg_no_ceb             pass=96.7%  cit=0.88  steps=4.3  latency=28.3s
+### NOCEB 2 EVALS DONE ###

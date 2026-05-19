@@ -26,6 +26,7 @@ Then open web_app/index.html — the frontend talks to port 8000 by default.
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 import threading
 from pathlib import Path
@@ -68,6 +69,12 @@ ARCHITECTURE_NAME = "maddpg_stage_conditioned"
 # best_reward.pt is saved at the highest single-episode *training reward*, which
 # is noisy and can land on an early, barely-trained (even untrained) episode.
 _DEFAULT_CKPT = _BRAIN_ROOT / "maddpg" / "results" / "maddpg_v4" / "checkpoints" / "ep_0200.pt"
+
+# Serve-time generator token floor. continuous_action_mapper caps the generator
+# at 384 tokens during *training* (to protect the Groq free-tier TPM budget);
+# that ceiling truncates served answers mid-sentence. We lift max_tokens to this
+# floor for inference only — the training mapper and checkpoint are untouched.
+_SERVE_MIN_TOKENS = int(os.getenv("MADDPG_SERVE_MIN_TOKENS", "1024"))
 
 # ── Global state (loaded once at startup) ────────────────────────────────────
 _trainer: StageConditionedMADDPGTrainer | None = None
@@ -131,6 +138,13 @@ def _run_episode(query: str) -> Dict[str, Any]:
         raw, params, discrete = _trainer.select_action(
             active_agent, obs, valid_actions, explore=False)   # greedy: no noise
 
+        # Serve-time only: lift the generator's training-time 384-token cap so
+        # answers are not truncated mid-sentence. Floored, not fixed, so the
+        # actor can still ask for more than the floor if it ever learns to.
+        if active_agent == "generator" and isinstance(params, dict):
+            floored = max(int(params.get("max_tokens", 0)), _SERVE_MIN_TOKENS)
+            params = {**params, "max_tokens": floored}
+
         try:
             new_state, _reward, done, _info = _env.step(active_agent, discrete, params=params)
             state = new_state
@@ -145,6 +159,115 @@ def _run_episode(query: str) -> Dict[str, Any]:
         "final_status":      state.final_status,
         "selected_evidence": state.selected_evidence or [],
     }
+
+
+# Words too generic to signal that an evidence chunk actually grounds the answer.
+_STOPWORDS = {
+    "the", "a", "an", "and", "or", "of", "to", "in", "is", "are", "was", "were",
+    "be", "been", "being", "for", "on", "at", "by", "with", "as", "that", "this",
+    "these", "those", "it", "its", "from", "which", "what", "when", "where", "how",
+    "why", "who", "will", "would", "can", "could", "should", "may", "might", "do",
+    "does", "did", "has", "have", "had", "not", "but", "if", "than", "then", "into",
+    "out", "also", "such", "more", "most", "other", "based", "using", "used",
+    "their", "there", "they", "them", "while", "between", "both", "each", "any",
+}
+_WORD_RE = re.compile(r"[a-z][a-z-]{2,}")
+
+
+def _content_words(text: str) -> set:
+    return {w for w in _WORD_RE.findall((text or "").lower()) if w not in _STOPWORDS}
+
+
+def _relevant_evidence(query: str, evidence: List[Dict[str, Any]],
+                       max_keep: int = 6) -> List[Dict[str, Any]]:
+    """Keep only the evidence chunks actually relevant to the question.
+
+    The MADDPG retriever pulls a broad top-k across every indexed paper, and
+    the grader keeps a *ratio* of them — so the kept pack can carry chunks from
+    unrelated papers that the generator never used. Those would otherwise show
+    up as nonsensical citations.
+
+    Two signals, combined:
+      1. `retrieval_score` (hybrid dense+sparse RRF) — a genuinely relevant
+         chunk matches the query well in both retrievers and scores high;
+         off-topic filler that only made the top-k scores low. This is the
+         primary ranking, and we cap at `max_keep`.
+      2. Question-keyword overlap — a guard that drops any surviving chunk that
+         shares fewer than two of the question's content words (clearly a
+         different topic), in case scores are unavailable or anomalous.
+    """
+    if not evidence:
+        return evidence
+    q = _content_words(query)
+    scores = [float(e.get("retrieval_score", 0.0)) for e in evidence]
+
+    if any(s > 0 for s in scores):
+        ranked = sorted(evidence,
+                        key=lambda e: float(e.get("retrieval_score", 0.0)),
+                        reverse=True)
+    elif q:   # no usable scores — rank by question-keyword overlap instead
+        ranked = sorted(evidence,
+                        key=lambda e: len(q & _content_words(e.get("text", ""))),
+                        reverse=True)
+    else:
+        ranked = list(evidence)
+
+    top = ranked[:max_keep]
+    if not q:
+        return top
+    kept = [e for e in top if len(q & _content_words(e.get("text", ""))) >= 2]
+    return kept or ranked[:1]   # never strip everything
+
+
+def _attribute_citations(answer: str,
+                         evidence: List[Dict[str, Any]]) -> tuple:
+    """Insert inline [n] markers into the answer and return the numbered sources.
+
+    The generator is prompted to produce no inline citations (so answer text
+    stays clean for evaluation). Here, post-hoc, each answer sentence is matched
+    to the evidence chunk(s) it overlaps most, and a [n] marker is appended.
+    `n` is the 1-based index into the returned (de-duplicated) source list, so
+    the markers line up with the "Sources" footer the frontend renders.
+
+    Returns (marked_answer, ordered_unique_evidence).
+    """
+    if not evidence or not answer.strip():
+        return answer, evidence
+
+    # De-duplicate by (source, page, section) -> the numbered source list.
+    seen: Dict[tuple, Dict[str, Any]] = {}
+    ordered: List[Dict[str, Any]] = []
+    for e in evidence:
+        key = (e.get("source"), str(e.get("page")), e.get("section"))
+        if key in seen:
+            seen[key]["text"] = (seen[key].get("text", "") + " "
+                                 + e.get("text", "")).strip()
+            continue
+        item = dict(e)
+        seen[key] = item
+        ordered.append(item)
+
+    cit_words = [_content_words(e.get("text", "")) for e in ordered]
+    sentences = re.split(r"(?<=[.!?])\s+", answer.strip())
+
+    marked: List[str] = []
+    for sent in sentences:
+        sw = _content_words(sent)
+        picks: List[int] = []
+        if sw:
+            scores = sorted(((len(sw & cw), i) for i, cw in enumerate(cit_words)),
+                            reverse=True)
+            if scores and scores[0][0] >= 2:
+                picks.append(scores[0][1])
+                # include a close second source if it also clearly supports it
+                for ov, i in scores[1:]:
+                    if ov >= 2 and ov >= scores[0][0] - 1:
+                        picks.append(i)
+                        break
+        marker = "".join(f"[{i + 1}]" for i in sorted(picks))
+        marked.append(f"{sent} {marker}".strip() if marker else sent)
+
+    return " ".join(marked), ordered
 
 
 def _citations(evidence: List[Dict[str, Any]]) -> List[CitationItem]:
@@ -226,7 +349,11 @@ def ask(request: QueryRequest):
         })
 
     answer = result["answer"] or "I could not produce a grounded answer for this question."
-    evidence = result["selected_evidence"]
+    # Show only the evidence relevant to the question — not the whole broad
+    # retrieved pack, which can include chunks from unrelated papers.
+    evidence = _relevant_evidence(request.query.strip(), result["selected_evidence"])
+    # Insert inline [n] markers tying each answer sentence to its source(s).
+    answer, evidence = _attribute_citations(answer, evidence)
     return QueryResponse(
         answer=answer,
         context_used=[f"[EVIDENCE] {e.get('text', '')}" for e in evidence],

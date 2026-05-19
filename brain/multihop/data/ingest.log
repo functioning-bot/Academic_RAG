@@ -1,0 +1,13 @@
+### ingest hotpotqa ###
+[mh-ingest] 300 paragraphs -> 'hotpotqa_corpus'
+[mh-ingest] created collection 'hotpotqa_corpus'
+[mh-ingest] loading embedding models...
+[mh-ingest] embedding 300 paragraphs...
+[mh-ingest] done. 'hotpotqa_corpus' holds 300 points
+### ingest 2wiki ###
+[mh-ingest] 259 paragraphs -> '2wiki_corpus'
+[mh-ingest] created collection '2wiki_corpus'
+[mh-ingest] loading embedding models...
+[mh-ingest] embedding 259 paragraphs...
+[mh-ingest] done. '2wiki_corpus' holds 259 points
+### INGEST DONE ###

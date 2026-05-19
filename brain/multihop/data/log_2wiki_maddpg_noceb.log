@@ -1,0 +1,1206 @@
+
+------------------------------------------------------------
+  Mode: maddpg_no_ceb  (CEB=False, state_dim=14)
+  Checkpoint: maddpg/results/maddpg_v4_noceb/checkpoints/ep_0200.pt  exists=True  trained_updates=233
+------------------------------------------------------------
+maddpg_no_ceb:   0%|          | 0/30 [00:00<?, ?it/s]
+Fetching 30 files:   0%|          | 0/30 [00:00<?, ?it/s][AFetching 30 files: 100%|##########| 30/30 [00:00<00:00, 272357.40it/s]
+[32m2026-05-18 02:07:49.168[0m | [33m[1mWARNING [0m | [36mfastembed.common.model_management[0m:[36mdownload_files_from_huggingface[0m:[36m225[0m - [33m[1mLocal file sizes do not match the metadata.[0m
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 1211.88it/s]
+You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 11.15it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+[*] Loading reranker model: BAAI/bge-reranker-v2-m3 ...
+[OK] Reranker loaded.
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][AYou're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+pre tokenize: 100%|##########| 3/3 [00:00<00:00, 601.79it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:04<00:09,  4.65s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:06<00:02,  2.85s/it][A
+Compute Scores: 100%|##########| 3/3 [00:06<00:00,  1.69s/it][ACompute Scores: 100%|##########| 3/3 [00:06<00:00,  2.18s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=7.1583
+  -> Doc 2: retrieval_score=0.5909091 | rerank_score=-2.5453
+  -> Doc 3: retrieval_score=0.4 | rerank_score=-4.1565
+  -> Doc 4: retrieval_score=0.4166667 | rerank_score=-4.3293
+  -> Doc 5: retrieval_score=0.5833334 | rerank_score=-5.3261
+  -> Doc 6: retrieval_score=0.11111111 | rerank_score=-6.1879
+  -> Doc 7: retrieval_score=0.13333334 | rerank_score=-6.6572
+  -> Doc 8: retrieval_score=0.07692308 | rerank_score=-6.7689
+  -> Doc 9: retrieval_score=0.2361111 | rerank_score=-7.0616
+  -> Doc 10: retrieval_score=0.09090909 | rerank_score=-7.1887
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2674.94it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.35it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.35it/s]
+maddpg_no_ceb:   3%|3         | 1/30 [00:25<12:06, 25.06s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2828.26it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 10.08it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 789.74it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:08<00:17,  8.90s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:10<00:04,  4.38s/it][A
+Compute Scores: 100%|##########| 3/3 [00:10<00:00,  2.53s/it][ACompute Scores: 100%|##########| 3/3 [00:10<00:00,  3.48s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=6.2014
+  -> Doc 2: retrieval_score=0.6666667 | rerank_score=4.7384
+  -> Doc 3: retrieval_score=0.31111112 | rerank_score=-5.9449
+  -> Doc 4: retrieval_score=0.16666667 | rerank_score=-6.5269
+  -> Doc 5: retrieval_score=0.12698413 | rerank_score=-6.5846
+  -> Doc 6: retrieval_score=0.16666667 | rerank_score=-6.6513
+  -> Doc 7: retrieval_score=0.1 | rerank_score=-7.0716
+  -> Doc 8: retrieval_score=0.083333336 | rerank_score=-7.0888
+  -> Doc 9: retrieval_score=0.25 | rerank_score=-7.6079
+  -> Doc 10: retrieval_score=0.09090909 | rerank_score=-7.8585
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3167.90it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.71it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.70it/s]
+maddpg_no_ceb:   7%|6         | 2/30 [00:48<11:17, 24.19s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 4466.78it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.77it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.75it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 9...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 711.14it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:06<00:13,  6.53s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:07<00:03,  3.47s/it][A
+Compute Scores: 100%|##########| 3/3 [00:08<00:00,  2.07s/it][ACompute Scores: 100%|##########| 3/3 [00:08<00:00,  2.75s/it]
+[Reranker] Kept 9 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=3.0510
+  -> Doc 2: retrieval_score=0.16374269 | rerank_score=-3.4818
+  -> Doc 3: retrieval_score=0.2 | rerank_score=-4.4224
+  -> Doc 4: retrieval_score=0.26785713 | rerank_score=-4.8848
+  -> Doc 5: retrieval_score=0.4166667 | rerank_score=-5.1251
+  -> Doc 6: retrieval_score=0.1 | rerank_score=-5.3428
+  -> Doc 7: retrieval_score=0.33333334 | rerank_score=-5.5979
+  -> Doc 8: retrieval_score=0.2 | rerank_score=-5.9821
+  -> Doc 9: retrieval_score=0.09090909 | rerank_score=-6.3614
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 4140.48it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.11it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.10it/s]
+maddpg_no_ceb:  10%|#         | 3/30 [01:06<09:34, 21.29s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3851.52it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 10.12it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 633.74it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:09<00:19,  9.53s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:10<00:04,  4.64s/it][A
+Compute Scores: 100%|##########| 3/3 [00:11<00:00,  2.66s/it][ACompute Scores: 100%|##########| 3/3 [00:11<00:00,  3.69s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=4.8641
+  -> Doc 2: retrieval_score=0.16666667 | rerank_score=-2.5239
+  -> Doc 3: retrieval_score=0.09090909 | rerank_score=-3.7684
+  -> Doc 4: retrieval_score=0.125 | rerank_score=-4.2795
+  -> Doc 5: retrieval_score=0.33333334 | rerank_score=-4.4508
+  -> Doc 6: retrieval_score=0.11111111 | rerank_score=-4.7222
+  -> Doc 7: retrieval_score=0.11111111 | rerank_score=-4.8494
+  -> Doc 8: retrieval_score=0.25 | rerank_score=-5.2351
+  -> Doc 9: retrieval_score=0.10644258 | rerank_score=-5.2788
+  -> Doc 10: retrieval_score=0.5833334 | rerank_score=-5.5457
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3539.50it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.18it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.17it/s]
+maddpg_no_ceb:  13%|#3        | 4/30 [01:31<09:46, 22.58s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3521.67it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 10.45it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 9...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 662.54it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:05<00:10,  5.10s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:07<00:03,  3.50s/it][A
+Compute Scores: 100%|##########| 3/3 [00:08<00:00,  2.15s/it][ACompute Scores: 100%|##########| 3/3 [00:08<00:00,  2.67s/it]
+[Reranker] Kept 9 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=5.2077
+  -> Doc 2: retrieval_score=0.8333334 | rerank_score=4.3067
+  -> Doc 3: retrieval_score=0.4 | rerank_score=-6.7567
+  -> Doc 4: retrieval_score=0.06666667 | rerank_score=-7.0442
+  -> Doc 5: retrieval_score=0.25 | rerank_score=-7.4493
+  -> Doc 6: retrieval_score=0.09090909 | rerank_score=-7.9468
+  -> Doc 7: retrieval_score=0.071428575 | rerank_score=-8.8150
+  -> Doc 8: retrieval_score=0.2916667 | rerank_score=-9.0338
+  -> Doc 9: retrieval_score=0.13574661 | rerank_score=-9.1492
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 778.45it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  1.69it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  1.69it/s]
+maddpg_no_ceb:  17%|#6        | 5/30 [01:52<09:16, 22.26s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2721.81it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.55it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.54it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 432.37it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:04<00:09,  4.84s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:06<00:03,  3.02s/it][A
+Compute Scores: 100%|##########| 3/3 [00:07<00:00,  1.84s/it][ACompute Scores: 100%|##########| 3/3 [00:07<00:00,  2.34s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.6666667 | rerank_score=7.6568
+  -> Doc 2: retrieval_score=1.0 | rerank_score=7.5086
+  -> Doc 3: retrieval_score=0.39285713 | rerank_score=-3.2711
+  -> Doc 4: retrieval_score=0.2 | rerank_score=-5.0892
+  -> Doc 5: retrieval_score=0.25 | rerank_score=-5.6083
+  -> Doc 6: retrieval_score=0.16666667 | rerank_score=-5.7121
+  -> Doc 7: retrieval_score=0.1 | rerank_score=-6.4607
+  -> Doc 8: retrieval_score=0.1 | rerank_score=-6.6540
+  -> Doc 9: retrieval_score=0.11904763 | rerank_score=-6.7961
+  -> Doc 10: retrieval_score=0.09090909 | rerank_score=-6.9259
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2031.14it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.32it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.32it/s]
+maddpg_no_ceb:  20%|##        | 6/30 [02:12<08:36, 21.54s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 4185.93it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.16it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.15it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 9...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 1103.47it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:06<00:13,  6.77s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:08<00:03,  3.61s/it][A
+Compute Scores: 100%|##########| 3/3 [00:08<00:00,  2.21s/it][ACompute Scores: 100%|##########| 3/3 [00:08<00:00,  2.90s/it]
+[Reranker] Kept 9 reranked docs.
+  -> Doc 1: retrieval_score=0.45 | rerank_score=1.3324
+  -> Doc 2: retrieval_score=1.0 | rerank_score=0.5770
+  -> Doc 3: retrieval_score=0.4761905 | rerank_score=0.4404
+  -> Doc 4: retrieval_score=0.44444445 | rerank_score=-0.3806
+  -> Doc 5: retrieval_score=0.45 | rerank_score=-0.8895
+  -> Doc 6: retrieval_score=0.26785713 | rerank_score=-0.9402
+  -> Doc 7: retrieval_score=0.2916667 | rerank_score=-0.9976
+  -> Doc 8: retrieval_score=0.16666667 | rerank_score=-6.5773
+  -> Doc 9: retrieval_score=0.18253969 | rerank_score=-7.1632
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 6523.02it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 10.21it/s]
+
+[Final Combined] Grading 14 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: RELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+[Final Combined] Kept 2 / 14 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3548.48it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.48it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.48it/s]
+maddpg_no_ceb:  23%|##3       | 7/30 [02:46<09:48, 25.60s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2966.27it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.99it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.98it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 953.47it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:05<00:11,  5.65s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:07<00:03,  3.37s/it][A
+Compute Scores: 100%|##########| 3/3 [00:07<00:00,  2.06s/it][ACompute Scores: 100%|##########| 3/3 [00:07<00:00,  2.64s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=8.1710
+  -> Doc 2: retrieval_score=0.6666667 | rerank_score=5.0174
+  -> Doc 3: retrieval_score=0.31666666 | rerank_score=-3.8426
+  -> Doc 4: retrieval_score=0.2 | rerank_score=-5.3973
+  -> Doc 5: retrieval_score=0.4166667 | rerank_score=-5.9553
+  -> Doc 6: retrieval_score=0.16666667 | rerank_score=-6.8527
+  -> Doc 7: retrieval_score=0.125 | rerank_score=-7.1827
+  -> Doc 8: retrieval_score=0.1625 | rerank_score=-7.3548
+  -> Doc 9: retrieval_score=0.14285715 | rerank_score=-7.6975
+  -> Doc 10: retrieval_score=0.20168068 | rerank_score=-8.0634
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2347.12it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.64it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.64it/s]
+maddpg_no_ceb:  27%|##6       | 8/30 [03:09<09:00, 24.57s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3331.46it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.24it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.23it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 976.63it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:04<00:08,  4.28s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:05<00:02,  2.42s/it][A
+Compute Scores: 100%|##########| 3/3 [00:05<00:00,  1.50s/it][ACompute Scores: 100%|##########| 3/3 [00:05<00:00,  1.94s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=-0.0587
+  -> Doc 2: retrieval_score=0.121323526 | rerank_score=-2.1659
+  -> Doc 3: retrieval_score=0.6111111 | rerank_score=-3.9944
+  -> Doc 4: retrieval_score=0.20168068 | rerank_score=-4.8204
+  -> Doc 5: retrieval_score=0.083333336 | rerank_score=-4.8468
+  -> Doc 6: retrieval_score=0.125 | rerank_score=-5.4199
+  -> Doc 7: retrieval_score=0.083333336 | rerank_score=-6.3139
+  -> Doc 8: retrieval_score=0.2 | rerank_score=-6.3533
+  -> Doc 9: retrieval_score=0.375 | rerank_score=-6.4485
+  -> Doc 10: retrieval_score=0.2020202 | rerank_score=-6.5975
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3214.03it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.77it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.77it/s]
+maddpg_no_ceb:  30%|###       | 9/30 [03:22<07:24, 21.16s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3506.94it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.85it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.83it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 718.61it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:11<00:22, 11.25s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:12<00:05,  5.52s/it][A
+Compute Scores: 100%|##########| 3/3 [00:13<00:00,  3.17s/it][ACompute Scores: 100%|##########| 3/3 [00:13<00:00,  4.38s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=7.7423
+  -> Doc 2: retrieval_score=0.25 | rerank_score=-5.2973
+  -> Doc 3: retrieval_score=0.1 | rerank_score=-5.7348
+  -> Doc 4: retrieval_score=0.33333334 | rerank_score=-5.9135
+  -> Doc 5: retrieval_score=0.11111111 | rerank_score=-6.1000
+  -> Doc 6: retrieval_score=0.30952382 | rerank_score=-7.2874
+  -> Doc 7: retrieval_score=0.25 | rerank_score=-8.0461
+  -> Doc 8: retrieval_score=0.14285715 | rerank_score=-8.1305
+  -> Doc 9: retrieval_score=0.25 | rerank_score=-8.2211
+  -> Doc 10: retrieval_score=0.16666667 | rerank_score=-8.8192
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2229.83it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.90it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.89it/s]
+maddpg_no_ceb:  33%|###3      | 10/30 [03:51<07:51, 23.56s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 1821.23it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.74it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.72it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 720.30it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:06<00:13,  6.73s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:08<00:03,  3.63s/it][A
+Compute Scores: 100%|##########| 3/3 [00:08<00:00,  2.17s/it][ACompute Scores: 100%|##########| 3/3 [00:08<00:00,  2.87s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=7.0638
+  -> Doc 2: retrieval_score=0.8333334 | rerank_score=6.8764
+  -> Doc 3: retrieval_score=0.16666667 | rerank_score=-6.1532
+  -> Doc 4: retrieval_score=0.31111112 | rerank_score=-7.2293
+  -> Doc 5: retrieval_score=0.325 | rerank_score=-8.0537
+  -> Doc 6: retrieval_score=0.14285715 | rerank_score=-8.4018
+  -> Doc 7: retrieval_score=0.14285715 | rerank_score=-8.4933
+  -> Doc 8: retrieval_score=0.13025211 | rerank_score=-8.5827
+  -> Doc 9: retrieval_score=0.09090909 | rerank_score=-8.8047
+  -> Doc 10: retrieval_score=0.31666666 | rerank_score=-9.1703
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 1965.47it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.10it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.10it/s]
+maddpg_no_ceb:  37%|###6      | 11/30 [04:15<07:25, 23.46s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 4524.60it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 10.52it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 9...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 823.33it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:05<00:10,  5.41s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:06<00:03,  3.15s/it][A
+Compute Scores: 100%|##########| 3/3 [00:07<00:00,  1.90s/it][ACompute Scores: 100%|##########| 3/3 [00:07<00:00,  2.47s/it]
+[Reranker] Kept 9 reranked docs.
+  -> Doc 1: retrieval_score=0.6666667 | rerank_score=0.7209
+  -> Doc 2: retrieval_score=0.45 | rerank_score=-0.5907
+  -> Doc 3: retrieval_score=0.64285713 | rerank_score=-0.6493
+  -> Doc 4: retrieval_score=0.33333334 | rerank_score=-1.1755
+  -> Doc 5: retrieval_score=0.64285713 | rerank_score=-2.1083
+  -> Doc 6: retrieval_score=0.45 | rerank_score=-3.7861
+  -> Doc 7: retrieval_score=0.125 | rerank_score=-6.2601
+  -> Doc 8: retrieval_score=0.17424244 | rerank_score=-6.9038
+  -> Doc 9: retrieval_score=0.1 | rerank_score=-6.9154
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 4946.11it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.90it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.89it/s]
+
+[Final Combined] Grading 14 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: RELEVANT
+  -> Doc 3: RELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: RELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+[Final Combined] Kept 4 / 14 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3637.73it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.56it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.54it/s]
+maddpg_no_ceb:  40%|####      | 12/30 [04:41<07:18, 24.36s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3741.57it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 10.19it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 765.10it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:06<00:12,  6.34s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:08<00:03,  3.63s/it][A
+Compute Scores: 100%|##########| 3/3 [00:08<00:00,  2.15s/it][ACompute Scores: 100%|##########| 3/3 [00:08<00:00,  2.82s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.44444445 | rerank_score=8.0907
+  -> Doc 2: retrieval_score=1.0 | rerank_score=6.9794
+  -> Doc 3: retrieval_score=0.29761904 | rerank_score=-3.8591
+  -> Doc 4: retrieval_score=0.2 | rerank_score=-5.1105
+  -> Doc 5: retrieval_score=0.16666667 | rerank_score=-5.7219
+  -> Doc 6: retrieval_score=0.14285715 | rerank_score=-6.0759
+  -> Doc 7: retrieval_score=0.125 | rerank_score=-6.2740
+  -> Doc 8: retrieval_score=0.083333336 | rerank_score=-6.6150
+  -> Doc 9: retrieval_score=0.083333336 | rerank_score=-6.9965
+  -> Doc 10: retrieval_score=0.1 | rerank_score=-7.1843
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2493.64it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.26it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.26it/s]
+maddpg_no_ceb:  43%|####3     | 13/30 [05:00<06:28, 22.85s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2839.75it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 10.09it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 899.81it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:10<00:21, 10.70s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:12<00:05,  5.27s/it][A
+Compute Scores: 100%|##########| 3/3 [00:12<00:00,  3.02s/it][ACompute Scores: 100%|##########| 3/3 [00:12<00:00,  4.17s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=8.2289
+  -> Doc 2: retrieval_score=0.8333334 | rerank_score=7.6462
+  -> Doc 3: retrieval_score=0.16233766 | rerank_score=-4.7270
+  -> Doc 4: retrieval_score=0.1 | rerank_score=-5.2108
+  -> Doc 5: retrieval_score=0.2 | rerank_score=-6.1950
+  -> Doc 6: retrieval_score=0.125 | rerank_score=-6.8810
+  -> Doc 7: retrieval_score=0.25 | rerank_score=-7.0772
+  -> Doc 8: retrieval_score=0.16666667 | rerank_score=-7.0809
+  -> Doc 9: retrieval_score=0.21929824 | rerank_score=-7.9448
+  -> Doc 10: retrieval_score=0.14285715 | rerank_score=-8.3297
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 1700.85it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.85it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.84it/s]
+maddpg_no_ceb:  47%|####6     | 14/30 [05:32<06:46, 25.40s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3366.22it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.76it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.74it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 783.59it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:06<00:12,  6.37s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:07<00:03,  3.20s/it][A
+Compute Scores: 100%|##########| 3/3 [00:07<00:00,  1.88s/it][ACompute Scores: 100%|##########| 3/3 [00:07<00:00,  2.55s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=3.8734
+  -> Doc 2: retrieval_score=0.2 | rerank_score=-3.0590
+  -> Doc 3: retrieval_score=0.14285715 | rerank_score=-3.9401
+  -> Doc 4: retrieval_score=0.10526316 | rerank_score=-4.2983
+  -> Doc 5: retrieval_score=0.116666675 | rerank_score=-4.5854
+  -> Doc 6: retrieval_score=0.1 | rerank_score=-5.1951
+  -> Doc 7: retrieval_score=0.25 | rerank_score=-5.8177
+  -> Doc 8: retrieval_score=0.39583334 | rerank_score=-6.6684
+  -> Doc 9: retrieval_score=0.14285715 | rerank_score=-6.9598
+  -> Doc 10: retrieval_score=0.18253969 | rerank_score=-7.6902
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3524.63it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.44it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.44it/s]
+maddpg_no_ceb:  50%|#####     | 15/30 [05:49<05:46, 23.13s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3211.57it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.93it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.92it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 918.26it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:03<00:07,  3.71s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:05<00:02,  2.38s/it][A
+Compute Scores: 100%|##########| 3/3 [00:05<00:00,  1.53s/it][ACompute Scores: 100%|##########| 3/3 [00:05<00:00,  1.90s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=8.7568
+  -> Doc 2: retrieval_score=0.6666667 | rerank_score=7.5222
+  -> Doc 3: retrieval_score=0.25 | rerank_score=-3.4022
+  -> Doc 4: retrieval_score=0.2 | rerank_score=-4.5926
+  -> Doc 5: retrieval_score=0.16666667 | rerank_score=-5.2841
+  -> Doc 6: retrieval_score=0.125 | rerank_score=-5.4866
+  -> Doc 7: retrieval_score=0.2 | rerank_score=-6.3904
+  -> Doc 8: retrieval_score=0.083333336 | rerank_score=-6.5755
+  -> Doc 9: retrieval_score=0.1 | rerank_score=-7.6698
+  -> Doc 10: retrieval_score=0.14285715 | rerank_score=-7.7150
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2837.82it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.71it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.70it/s]
+maddpg_no_ceb:  53%|#####3    | 16/30 [06:06<04:54, 21.03s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 4215.38it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.73it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.71it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 1159.07it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:05<00:10,  5.11s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:06<00:02,  2.66s/it][A
+Compute Scores: 100%|##########| 3/3 [00:06<00:00,  1.62s/it][ACompute Scores: 100%|##########| 3/3 [00:06<00:00,  2.15s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=3.7788
+  -> Doc 2: retrieval_score=0.18803419 | rerank_score=-4.0664
+  -> Doc 3: retrieval_score=0.09090909 | rerank_score=-5.2363
+  -> Doc 4: retrieval_score=0.18253969 | rerank_score=-5.6389
+  -> Doc 5: retrieval_score=0.2254902 | rerank_score=-5.9267
+  -> Doc 6: retrieval_score=0.17424244 | rerank_score=-6.1047
+  -> Doc 7: retrieval_score=0.4761905 | rerank_score=-6.1153
+  -> Doc 8: retrieval_score=0.083333336 | rerank_score=-6.1665
+  -> Doc 9: retrieval_score=0.25 | rerank_score=-6.1969
+  -> Doc 10: retrieval_score=0.15263158 | rerank_score=-6.7233
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2649.59it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.48it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.47it/s]
+maddpg_no_ceb:  57%|#####6    | 17/30 [06:22<04:14, 19.58s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2593.88it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.44it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.43it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 696.34it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:11<00:23, 11.75s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:13<00:06,  6.05s/it][A
+Compute Scores: 100%|##########| 3/3 [00:14<00:00,  3.49s/it][ACompute Scores: 100%|##########| 3/3 [00:14<00:00,  4.75s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=9.1324
+  -> Doc 2: retrieval_score=0.53333336 | rerank_score=4.4512
+  -> Doc 3: retrieval_score=0.30952382 | rerank_score=-1.4847
+  -> Doc 4: retrieval_score=0.35 | rerank_score=-2.0835
+  -> Doc 5: retrieval_score=0.3611111 | rerank_score=-2.7310
+  -> Doc 6: retrieval_score=0.2916667 | rerank_score=-2.9910
+  -> Doc 7: retrieval_score=0.53333336 | rerank_score=-3.0257
+  -> Doc 8: retrieval_score=0.26785713 | rerank_score=-3.7295
+  -> Doc 9: retrieval_score=0.110119045 | rerank_score=-5.7184
+  -> Doc 10: retrieval_score=0.09090909 | rerank_score=-7.4313
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 1489.98it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.76it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.76it/s]
+maddpg_no_ceb:  60%|######    | 18/30 [06:54<04:39, 23.33s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2770.35it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.88it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.87it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 542.13it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:09<00:18,  9.06s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:10<00:04,  4.41s/it][A
+Compute Scores: 100%|##########| 3/3 [00:10<00:00,  2.59s/it][ACompute Scores: 100%|##########| 3/3 [00:10<00:00,  3.55s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.75 | rerank_score=8.2721
+  -> Doc 2: retrieval_score=0.8333334 | rerank_score=5.5232
+  -> Doc 3: retrieval_score=0.4 | rerank_score=3.7444
+  -> Doc 4: retrieval_score=0.5 | rerank_score=1.4994
+  -> Doc 5: retrieval_score=0.4166667 | rerank_score=-5.1942
+  -> Doc 6: retrieval_score=0.11111111 | rerank_score=-5.4844
+  -> Doc 7: retrieval_score=0.19642857 | rerank_score=-6.5082
+  -> Doc 8: retrieval_score=0.1 | rerank_score=-6.8570
+  -> Doc 9: retrieval_score=0.11111111 | rerank_score=-7.2654
+  -> Doc 10: retrieval_score=0.09090909 | rerank_score=-7.4015
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 5833.52it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.83it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.81it/s]
+
+[Final Combined] Grading 15 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+[Final Combined] Kept 1 / 15 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2437.13it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.80it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.80it/s]
+maddpg_no_ceb:  63%|######3   | 19/30 [07:43<05:41, 31.06s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3819.95it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 10.04it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 726.45it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:05<00:11,  5.71s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:06<00:02,  3.00s/it][A
+Compute Scores: 100%|##########| 3/3 [00:07<00:00,  1.79s/it][ACompute Scores: 100%|##########| 3/3 [00:07<00:00,  2.38s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=6.0680
+  -> Doc 2: retrieval_score=0.27142859 | rerank_score=-0.9202
+  -> Doc 3: retrieval_score=0.53333336 | rerank_score=-0.9715
+  -> Doc 4: retrieval_score=0.25396827 | rerank_score=-1.9532
+  -> Doc 5: retrieval_score=0.1 | rerank_score=-3.6781
+  -> Doc 6: retrieval_score=0.25 | rerank_score=-4.3489
+  -> Doc 7: retrieval_score=0.25396827 | rerank_score=-4.4299
+  -> Doc 8: retrieval_score=0.114379086 | rerank_score=-5.0113
+  -> Doc 9: retrieval_score=0.375 | rerank_score=-5.0314
+  -> Doc 10: retrieval_score=0.09090909 | rerank_score=-6.0295
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3387.97it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.24it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.23it/s]
+maddpg_no_ceb:  67%|######6   | 20/30 [07:59<04:24, 26.50s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3975.64it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00, 11.51it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 9...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 1057.30it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:04<00:09,  4.52s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:05<00:02,  2.47s/it][A
+Compute Scores: 100%|##########| 3/3 [00:05<00:00,  1.54s/it][ACompute Scores: 100%|##########| 3/3 [00:05<00:00,  2.00s/it]
+[Reranker] Kept 9 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=2.0072
+  -> Doc 2: retrieval_score=0.4166667 | rerank_score=-0.7599
+  -> Doc 3: retrieval_score=0.53333336 | rerank_score=-2.8930
+  -> Doc 4: retrieval_score=0.09090909 | rerank_score=-3.8123
+  -> Doc 5: retrieval_score=0.11111111 | rerank_score=-5.7573
+  -> Doc 6: retrieval_score=0.45 | rerank_score=-6.2265
+  -> Doc 7: retrieval_score=0.1 | rerank_score=-6.7574
+  -> Doc 8: retrieval_score=0.083333336 | rerank_score=-6.9853
+  -> Doc 9: retrieval_score=0.11764706 | rerank_score=-7.3316
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3806.08it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.21it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.20it/s]
+maddpg_no_ceb:  70%|#######   | 21/30 [08:14<03:26, 22.97s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3307.81it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.89it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  7.88it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 763.06it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:06<00:12,  6.35s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:08<00:03,  3.78s/it][A
+Compute Scores: 100%|##########| 3/3 [00:08<00:00,  2.26s/it][ACompute Scores: 100%|##########| 3/3 [00:08<00:00,  2.93s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=8.3351
+  -> Doc 2: retrieval_score=0.6666667 | rerank_score=8.1714
+  -> Doc 3: retrieval_score=0.1 | rerank_score=-5.2418
+  -> Doc 4: retrieval_score=0.32142857 | rerank_score=-6.1486
+  -> Doc 5: retrieval_score=0.16666667 | rerank_score=-6.3600
+  -> Doc 6: retrieval_score=0.17763159 | rerank_score=-6.6383
+  -> Doc 7: retrieval_score=0.1904762 | rerank_score=-6.9641
+  -> Doc 8: retrieval_score=0.26666668 | rerank_score=-7.6036
+  -> Doc 9: retrieval_score=0.25 | rerank_score=-7.8343
+  -> Doc 10: retrieval_score=0.15 | rerank_score=-8.0203
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 5133.79it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.95it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.93it/s]
+
+[Final Combined] Grading 15 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: RELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+[Final Combined] Kept 2 / 15 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2652.94it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.44it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.44it/s]
+maddpg_no_ceb:  73%|#######3  | 22/30 [09:06<04:15, 31.89s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2830.16it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.18it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.17it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 742.49it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:10<00:21, 10.51s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:12<00:05,  5.27s/it][A
+Compute Scores: 100%|##########| 3/3 [00:12<00:00,  3.09s/it][ACompute Scores: 100%|##########| 3/3 [00:12<00:00,  4.20s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.75 | rerank_score=8.8274
+  -> Doc 2: retrieval_score=0.8333334 | rerank_score=6.3142
+  -> Doc 3: retrieval_score=0.5 | rerank_score=1.1407
+  -> Doc 4: retrieval_score=0.18803419 | rerank_score=-1.9958
+  -> Doc 5: retrieval_score=0.33333334 | rerank_score=-3.0626
+  -> Doc 6: retrieval_score=0.25 | rerank_score=-4.0915
+  -> Doc 7: retrieval_score=0.125 | rerank_score=-4.2159
+  -> Doc 8: retrieval_score=0.11145511 | rerank_score=-5.3823
+  -> Doc 9: retrieval_score=0.16666667 | rerank_score=-5.4683
+  -> Doc 10: retrieval_score=0.09090909 | rerank_score=-5.5244
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2695.57it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.38it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.37it/s]
+maddpg_no_ceb:  77%|#######6  | 23/30 [09:34<03:34, 30.68s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 4112.06it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.77it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.75it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 920.01it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:10<00:21, 10.56s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:12<00:05,  5.26s/it][A
+Compute Scores: 100%|##########| 3/3 [00:12<00:00,  3.12s/it][ACompute Scores: 100%|##########| 3/3 [00:12<00:00,  4.23s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.6666667 | rerank_score=8.6240
+  -> Doc 2: retrieval_score=0.75 | rerank_score=7.3554
+  -> Doc 3: retrieval_score=0.75 | rerank_score=-2.8657
+  -> Doc 4: retrieval_score=0.16666667 | rerank_score=-4.9389
+  -> Doc 5: retrieval_score=0.19444445 | rerank_score=-5.3453
+  -> Doc 6: retrieval_score=0.1904762 | rerank_score=-5.7339
+  -> Doc 7: retrieval_score=0.19444445 | rerank_score=-6.0281
+  -> Doc 8: retrieval_score=0.13852814 | rerank_score=-6.4941
+  -> Doc 9: retrieval_score=0.09090909 | rerank_score=-6.5167
+  -> Doc 10: retrieval_score=0.22222222 | rerank_score=-6.8486
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 3
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 4202.71it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.92it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.89it/s]
+
+[Final Combined] Grading 15 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: IRRELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: RELEVANT
+  -> Doc 6: IRRELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: RELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+[Final Combined] Kept 2 / 15 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2489.20it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.45it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.44it/s]
+maddpg_no_ceb:  80%|########  | 24/30 [10:14<03:20, 33.34s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2449.94it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.65it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.63it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 673.21it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:07<00:14,  7.02s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:08<00:03,  3.95s/it][A
+Compute Scores: 100%|##########| 3/3 [00:09<00:00,  2.44s/it][ACompute Scores: 100%|##########| 3/3 [00:09<00:00,  3.15s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=6.9723
+  -> Doc 2: retrieval_score=0.45 | rerank_score=2.7469
+  -> Doc 3: retrieval_score=0.4761905 | rerank_score=0.3277
+  -> Doc 4: retrieval_score=0.45 | rerank_score=-0.8865
+  -> Doc 5: retrieval_score=0.225 | rerank_score=-1.0047
+  -> Doc 6: retrieval_score=0.2916667 | rerank_score=-1.0540
+  -> Doc 7: retrieval_score=0.5 | rerank_score=-1.0745
+  -> Doc 8: retrieval_score=0.17692308 | rerank_score=-3.1594
+  -> Doc 9: retrieval_score=0.19444445 | rerank_score=-3.7817
+  -> Doc 10: retrieval_score=0.0625 | rerank_score=-3.9739
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3021.83it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.22it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  6.21it/s]
+maddpg_no_ceb:  83%|########3 | 25/30 [10:33<02:25, 29.15s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3024.01it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.11it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.09it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 1020.18it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:04<00:09,  4.88s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:06<00:02,  2.93s/it][A
+Compute Scores: 100%|##########| 3/3 [00:06<00:00,  1.77s/it][ACompute Scores: 100%|##########| 3/3 [00:06<00:00,  2.28s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=8.6349
+  -> Doc 2: retrieval_score=0.5 | rerank_score=8.2398
+  -> Doc 3: retrieval_score=0.5 | rerank_score=5.9140
+  -> Doc 4: retrieval_score=0.5 | rerank_score=4.6974
+  -> Doc 5: retrieval_score=0.4 | rerank_score=1.3578
+  -> Doc 6: retrieval_score=0.15882353 | rerank_score=-5.9347
+  -> Doc 7: retrieval_score=0.125 | rerank_score=-6.2555
+  -> Doc 8: retrieval_score=0.083333336 | rerank_score=-7.3114
+  -> Doc 9: retrieval_score=0.09090909 | rerank_score=-7.4672
+  -> Doc 10: retrieval_score=0.125 | rerank_score=-7.5476
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2649.59it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.15it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  4.14it/s]
+maddpg_no_ceb:  87%|########6 | 26/30 [10:53<01:45, 26.42s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3063.77it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.39it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.38it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 798.41it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:06<00:13,  6.58s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:08<00:03,  3.69s/it][A
+Compute Scores: 100%|##########| 3/3 [00:08<00:00,  2.17s/it][ACompute Scores: 100%|##########| 3/3 [00:08<00:00,  2.87s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.64285713 | rerank_score=8.8280
+  -> Doc 2: retrieval_score=0.8333334 | rerank_score=6.8964
+  -> Doc 3: retrieval_score=0.43333334 | rerank_score=-0.3549
+  -> Doc 4: retrieval_score=0.3026316 | rerank_score=-1.4754
+  -> Doc 5: retrieval_score=0.1625 | rerank_score=-5.0198
+  -> Doc 6: retrieval_score=0.09090909 | rerank_score=-5.5109
+  -> Doc 7: retrieval_score=0.083333336 | rerank_score=-6.1203
+  -> Doc 8: retrieval_score=0.23809525 | rerank_score=-7.1293
+  -> Doc 9: retrieval_score=0.11428572 | rerank_score=-7.4173
+  -> Doc 10: retrieval_score=0.1534091 | rerank_score=-7.6434
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 1662.43it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.93it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  3.93it/s]
+maddpg_no_ceb:  90%|######### | 27/30 [11:20<01:19, 26.59s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3795.75it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.48it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.46it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 926.24it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:05<00:11,  5.62s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:07<00:03,  3.18s/it][A
+Compute Scores: 100%|##########| 3/3 [00:07<00:00,  1.93s/it][ACompute Scores: 100%|##########| 3/3 [00:07<00:00,  2.51s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=7.5787
+  -> Doc 2: retrieval_score=0.53333336 | rerank_score=0.8334
+  -> Doc 3: retrieval_score=0.4166667 | rerank_score=-0.0699
+  -> Doc 4: retrieval_score=0.35 | rerank_score=-2.5879
+  -> Doc 5: retrieval_score=0.19642857 | rerank_score=-3.9435
+  -> Doc 6: retrieval_score=0.26666668 | rerank_score=-3.9480
+  -> Doc 7: retrieval_score=0.16233766 | rerank_score=-4.0083
+  -> Doc 8: retrieval_score=0.1875 | rerank_score=-5.2004
+  -> Doc 9: retrieval_score=0.083333336 | rerank_score=-5.2852
+  -> Doc 10: retrieval_score=0.5 | rerank_score=-5.7730
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3294.82it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.68it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.67it/s]
+maddpg_no_ceb:  93%|#########3| 28/30 [11:37<00:47, 23.60s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3986.98it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.79it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.77it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 988.60it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:09<00:18,  9.06s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:10<00:04,  4.65s/it][A
+Compute Scores: 100%|##########| 3/3 [00:11<00:00,  2.73s/it][ACompute Scores: 100%|##########| 3/3 [00:11<00:00,  3.69s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=0.8333334 | rerank_score=-1.4552
+  -> Doc 2: retrieval_score=0.75 | rerank_score=-2.7028
+  -> Doc 3: retrieval_score=0.12698413 | rerank_score=-3.3279
+  -> Doc 4: retrieval_score=0.34285715 | rerank_score=-3.5893
+  -> Doc 5: retrieval_score=0.36666667 | rerank_score=-4.6561
+  -> Doc 6: retrieval_score=0.24285716 | rerank_score=-4.9407
+  -> Doc 7: retrieval_score=0.44444445 | rerank_score=-5.1253
+  -> Doc 8: retrieval_score=0.1 | rerank_score=-5.4245
+  -> Doc 9: retrieval_score=0.3 | rerank_score=-5.6288
+  -> Doc 10: retrieval_score=0.083333336 | rerank_score=-6.9490
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3916.25it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.10it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.09it/s]
+
+[Final Combined] Grading 15 candidate docs...
+  -> Groq model: gpt-4o-mini
+  -> Doc 1: RELEVANT
+  -> Doc 2: IRRELEVANT
+  -> Doc 3: IRRELEVANT
+  -> Doc 4: IRRELEVANT
+  -> Doc 5: IRRELEVANT
+  -> Doc 6: RELEVANT
+  -> Doc 7: IRRELEVANT
+  -> Doc 8: IRRELEVANT
+  -> Doc 9: IRRELEVANT
+  -> Doc 10: IRRELEVANT
+  -> Doc 11: IRRELEVANT
+  -> Doc 12: IRRELEVANT
+  -> Doc 13: IRRELEVANT
+  -> Doc 14: IRRELEVANT
+  -> Doc 15: IRRELEVANT
+[Final Combined] Kept 2 / 15 docs.
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 2
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3410.00it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.10it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  8.09it/s]
+maddpg_no_ceb:  97%|#########6| 29/30 [12:12<00:27, 27.11s/it]
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 3734.91it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.98it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  9.96it/s]
+
+[Reranker] Reranking top 20 retrieved docs -> keeping top 10...
+
+pre tokenize:   0%|          | 0/3 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 3/3 [00:00<00:00, 1276.03it/s]
+
+Compute Scores:   0%|          | 0/3 [00:00<?, ?it/s][A
+Compute Scores:  33%|###3      | 1/3 [00:03<00:06,  3.11s/it][A
+Compute Scores:  67%|######6   | 2/3 [00:03<00:01,  1.75s/it][A
+Compute Scores: 100%|##########| 3/3 [00:04<00:00,  1.11s/it][ACompute Scores: 100%|##########| 3/3 [00:04<00:00,  1.42s/it]
+[Reranker] Kept 10 reranked docs.
+  -> Doc 1: retrieval_score=1.0 | rerank_score=8.1686
+  -> Doc 2: retrieval_score=0.12454213 | rerank_score=-2.9588
+  -> Doc 3: retrieval_score=0.14835165 | rerank_score=-3.5700
+  -> Doc 4: retrieval_score=0.14285715 | rerank_score=-4.1632
+  -> Doc 5: retrieval_score=0.26785713 | rerank_score=-4.9973
+  -> Doc 6: retrieval_score=0.25 | rerank_score=-5.2148
+  -> Doc 7: retrieval_score=0.33333334 | rerank_score=-5.2273
+  -> Doc 8: retrieval_score=0.2 | rerank_score=-5.4701
+  -> Doc 9: retrieval_score=0.45833334 | rerank_score=-5.4845
+  -> Doc 10: retrieval_score=0.35 | rerank_score=-5.9545
+
+[Claim Verifier] Verifying answer claim by claim...
+  -> Groq model: gpt-4o-mini
+  -> Claims to verify: 1
+
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s][Apre tokenize: 100%|##########| 1/1 [00:00<00:00, 2781.37it/s]
+
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s][A
+Inference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.32it/s][AInference Embeddings: 100%|##########| 1/1 [00:00<00:00,  5.32it/s]
+maddpg_no_ceb: 100%|##########| 30/30 [12:23<00:00, 22.18s/it]maddpg_no_ceb: 100%|##########| 30/30 [12:23<00:00, 24.77s/it]
+  -> 30 questions evaluated.
+
+Aggregate metrics -> multihop\data\eval_2wiki_maddpg_noceb\aggregate_metrics.json
+
+-- Summary ---------------------------------------------------------
+  maddpg_no_ceb             pass=100.0%  cit=0.83  steps=5.4  latency=24.3s

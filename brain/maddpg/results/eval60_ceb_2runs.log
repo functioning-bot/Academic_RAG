@@ -1,0 +1,9 @@
+### RUN 1 ###
+
+-- Summary ---------------------------------------------------------
+  maddpg_ceb                pass=95.0%  cit=0.89  steps=4.5  latency=29.9s
+### RUN 2 ###
+
+-- Summary ---------------------------------------------------------
+  maddpg_ceb                pass=95.0%  cit=0.92  steps=4.7  latency=25.9s
+### BOTH RUNS DONE ###

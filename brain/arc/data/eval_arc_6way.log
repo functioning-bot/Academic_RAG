@@ -1,0 +1,14 @@
+### closed-book + retrieval ###
+  Mode: closed-book
+  overall: 0.9500  (57/60)
+  Mode: retrieval
+  overall: 0.9000  (54/60)
+### simple_hybrid_rag ###
+  accuracy: 0.9000  (54/60)
+### final_arch ###
+  accuracy: 0.8833  (53/60)
+### maddpg ceb ###
+  accuracy: 0.9333  (56/60)
+### maddpg no-ceb ###
+  accuracy: 0.9000  (54/60)
+### ALL 6 DONE ###

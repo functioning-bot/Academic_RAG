@@ -1,0 +1,7 @@
+### simple_hybrid_rag ###
+[arc-arch] arch=simple_hybrid_rag  questions=30  collection=arc_corpus
+  accuracy: 0.8333  (25/30)
+### final_arch ###
+[arc-arch] arch=final_arch  questions=30  collection=arc_corpus
+  accuracy: 0.8667  (26/30)
+### ARC ARCH EVALS DONE ###

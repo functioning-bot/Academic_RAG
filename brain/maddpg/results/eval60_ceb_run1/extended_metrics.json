@@ -1,0 +1,990 @@
+{
+  "source_eval_jsonl": "maddpg\\results\\eval60_ceb_run1\\eval_maddpg_ceb.jsonl",
+  "source_benchmark": "maddpg\\results\\benchmark_splits\\eval60.jsonl",
+  "aggregate": {
+    "n_questions": 60,
+    "mean_token_f1": 0.414,
+    "mean_rouge_l_f1": 0.2728,
+    "mean_source_precision": 0.0,
+    "mean_source_recall": 0.0,
+    "mean_citation_support": 0.8917
+  },
+  "per_question": [
+    {
+      "question_id": "Q001",
+      "question": "How do technical indicators and short-term predictions contribute to effective stock market analysis and decision-making for traders and investors?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.416,
+      "rouge_l_f1": 0.2767,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.8,
+      "expected_sources": [
+        "ijfs-13-00028-v2.pdf",
+        "s41598-025-88734-6.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q002",
+      "question": "What procedures were utilized to prepare and organize the historical data for Apple and Tesla in the study?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.5676,
+      "rouge_l_f1": 0.4778,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "A Multi-Agent Deep Learning and Reinforcement.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q003",
+      "question": "What are the potential environmental impacts of hydrogen production methods discussed in the paper, and how do these methods relate to hydrogen storage technologies and their advancements?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3478,
+      "rouge_l_f1": 0.2094,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "zkae112.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q004",
+      "question": "How does the pre-training methodology of BERT differ from traditional language models, and what significance does this have in the context of deep learning models referenced in the literature surrounding language modeling?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.5366,
+      "rouge_l_f1": 0.2485,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.75,
+      "expected_sources": [
+        "BERT.pdf",
+        "TabNet.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q005",
+      "question": "Why does the RAG survey claim retrieval helps reduce hallucination in LLMs?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3467,
+      "rouge_l_f1": 0.2796,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "RAGSurvey.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q006",
+      "question": "How does the SQuAD 2.0 task extend the SQuAD 1.1 problem definition and what implications does this have for the model's predictions?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.6412,
+      "rouge_l_f1": 0.4947,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "BERT.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q007",
+      "question": "How do the challenges of document retrieval in RAG relate to the preprocessing techniques required for filtering relevant information in high-frequency trading scenarios, particularly during volatile market conditions?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.5286,
+      "rouge_l_f1": 0.2921,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.8,
+      "expected_sources": [
+        "RAGSurvey.pdf",
+        "ijfs-13-00028-v2.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q008",
+      "question": "According to Figure 1 in the TabNet paper, how does sparse feature selection work during prediction?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.382,
+      "rouge_l_f1": 0.2478,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "TabNet.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q009",
+      "question": "According to Figure 1 in the Transformer paper, how are shifted outputs used on the decoder side?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4412,
+      "rouge_l_f1": 0.25,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "AttentionIsAllYouNeed.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q010",
+      "question": "What are the implications of target-language extramural activities on students' written production as explored in the research by Kaatari et al.?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4035,
+      "rouge_l_f1": 0.2252,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "English.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q011",
+      "question": "What mechanisms are employed in training the residual models described in the passage, and how do they compare to their plain counterparts?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.2636,
+      "rouge_l_f1": 0.173,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "ImgRecog.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q012",
+      "question": "How does BERT represent input sequences for various tasks?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.55,
+      "rouge_l_f1": 0.3351,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "BERT.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q013",
+      "question": "How do the English paper and the RAG survey each connect broad theory to practical application?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.2917,
+      "rouge_l_f1": 0.2256,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "English.pdf",
+        "RAGSurvey.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q014",
+      "question": "What key advancements does the paper highlight regarding RAG technologies and their integration with artificial intelligence methods?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4724,
+      "rouge_l_f1": 0.3718,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "RAGSurvey.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q015",
+      "question": "Why does the RAG survey argue that Advanced RAG and Modular RAG emerged after Naive RAG?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.2245,
+      "rouge_l_f1": 0.1481,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "RAGSurvey.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q016",
+      "question": "How do plain networks differ from residual networks in the ResNet paper's framing of the optimization problem?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3265,
+      "rouge_l_f1": 0.1985,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "ImgRecog.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q017",
+      "question": "What methodologies were employed in the literature review of the paper, and how do the findings on decision trees relate to the use of advanced search strategies in predicting stock prices?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4058,
+      "rouge_l_f1": 0.2807,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.8,
+      "expected_sources": [
+        "ijfs-13-00028-v2.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q018",
+      "question": "Why does TabNet argue that tabular data is difficult for standard deep neural networks?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4,
+      "rouge_l_f1": 0.3226,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "TabNet.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q019",
+      "question": "According to the RAG survey, what are the three main RAG paradigms?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 1.0,
+      "rouge_l_f1": 0.96,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "RAGSurvey.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q020",
+      "question": "What insights can be drawn regarding the viability and techniques of storing hydrogen in subterranean environments based on various studies?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3622,
+      "rouge_l_f1": 0.2703,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "zkae112.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q021",
+      "question": "How do multimodal AI approaches enhance clinical decision-making and patient outcomes in pathology, and what role do rigorous performance evaluations and regulatory compliance play in ensuring the effectiveness of these AI systems?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.517,
+      "rouge_l_f1": 0.2727,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "Future of Artificial IntelligencedMachine Learning Trends in Pathology.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q022",
+      "question": "What mechanisms are employed in the Transformer model to facilitate attention across different layers and positions in both the encoder and decoder?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.7009,
+      "rouge_l_f1": 0.5806,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "AttentionIsAllYouNeed.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q023",
+      "question": "What are the implications of adjusting the model parameters such as $N_{steps}$ and $B$ on the performance and size of TabNet models, and how do these adjustments relate to the feature importance rankings observed in the analysis of the Adult Census Income dataset?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4699,
+      "rouge_l_f1": 0.2403,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.6667,
+      "expected_sources": [
+        "TabNet.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q024",
+      "question": "What core mechanism does TabNet use to choose which features to reason from at each decision step?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.5,
+      "rouge_l_f1": 0.3019,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "TabNet.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q025",
+      "question": "What are the common inclusion and exclusion criteria for studies on gingival recession prevalence, and how do these criteria relate to the minimum cut-off scores for measuring distance from the cementoenamel junction to the free gingival margin as indicated in the research findings?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4962,
+      "rouge_l_f1": 0.375,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "Systematic review and meta-analysis on prevalence and risk factors for.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q026",
+      "question": "How do the factors influencing stock market stability in Passage A relate to the predictive indicators discussed in Passage B, particularly regarding the integration of technical indicators and macroeconomic factors?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4031,
+      "rouge_l_f1": 0.2564,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "s41598-025-88734-6.pdf",
+        "ijfs-13-00028-v2.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q027",
+      "question": "What are the advantages of using bottleneck architectures in deeper residual networks for image recognition tasks, according to the findings in the paper?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.1649,
+      "rouge_l_f1": 0.1562,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "ImgRecog.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q028",
+      "question": "How do the methods of teaching English in Norway, as described in the educational framework, relate to the advancements in NLP that enhance language representations, particularly in the context of word embeddings and sentence embeddings?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3433,
+      "rouge_l_f1": 0.1782,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.8,
+      "expected_sources": [
+        "English.pdf",
+        "BERT.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q029",
+      "question": "What are the different approaches to representation learning discussed in both passages, and how do they relate to the challenges of natural language processing and computer vision tasks?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3125,
+      "rouge_l_f1": 0.1391,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.8571,
+      "expected_sources": [
+        "BERT.pdf",
+        "RAGSurvey.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q030",
+      "question": "How do the mechanisms of positional encoding and masking in the transformer architecture contribute to the model's ability to process sequential information and predict outputs based on prior tokens?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4511,
+      "rouge_l_f1": 0.1919,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "AttentionIsAllYouNeed.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q031",
+      "question": "How does the architecture of the decoder in the transformer model utilize self-attention mechanisms while ensuring the model can handle longer sequences through positional encoding, and what implications does this have on the complexity of the model compared to other architectures?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4397,
+      "rouge_l_f1": 0.2553,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "AttentionIsAllYouNeed.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q032",
+      "question": "Why can making a neural network deeper actually make optimization worse even when overfitting is not the main issue?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3455,
+      "rouge_l_f1": 0.2174,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "ImgRecog.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q033",
+      "question": "What do the variations in mean scores and standard deviations across different teachers indicate about student experiences in classrooms?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4248,
+      "rouge_l_f1": 0.2685,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "English.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q034",
+      "question": "How do the Transformer and BERT papers use attention differently in their main contributions?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.2574,
+      "rouge_l_f1": 0.1752,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "AttentionIsAllYouNeed.pdf",
+        "BERT.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q035",
+      "question": "What are the four main subject areas of the current Norwegian national English curriculum?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3889,
+      "rouge_l_f1": 0.35,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "English.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q036",
+      "question": "What are some of the methodologies employed in recent studies for stock market prediction as indicated in the references?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4173,
+      "rouge_l_f1": 0.2299,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "s41598-025-88734-6.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q037",
+      "question": "What BLEU score did the Transformer achieve on the WMT 2014 English-to-German translation task?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.8276,
+      "rouge_l_f1": 0.7333,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "AttentionIsAllYouNeed.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q038",
+      "question": "What specific items were included in the LISE project's adaptation of the Tripod survey, and how did the survey's structure facilitate the analysis of students' perceptions of their English teacher's effectiveness as a language role model?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.5825,
+      "rouge_l_f1": 0.359,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "English.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q039",
+      "question": "How do the evaluation metrics for retrieval-augmented QA systems compare with the performance metrics used for market trend detection in terms of accuracy and adaptability?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3974,
+      "rouge_l_f1": 0.2613,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.8,
+      "expected_sources": [
+        "RAGSurvey.pdf",
+        "s41598-025-88734-6.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q040",
+      "question": "Which paper introduces masked language modeling and next sentence prediction, and how is that different from the paper that proposes the Transformer for translation?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4304,
+      "rouge_l_f1": 0.2667,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "BERT.pdf",
+        "AttentionIsAllYouNeed.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q041",
+      "question": "What is the degradation problem described in the ResNet paper?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3232,
+      "rouge_l_f1": 0.1364,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "ImgRecog.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q042",
+      "question": "What insights can be drawn regarding the influence of investor emotions on market fluctuations and stock performance based on recent studies in various regions?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3913,
+      "rouge_l_f1": 0.2781,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "s41598-025-88734-6.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q043",
+      "question": "How does BERT compare feature-based transfer approaches with fine-tuning approaches?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.367,
+      "rouge_l_f1": 0.1795,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "BERT.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q044",
+      "question": "How does Advanced RAG differ from Naive RAG according to the survey?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4,
+      "rouge_l_f1": 0.2778,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "RAGSurvey.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q045",
+      "question": "How do the approaches to pre-training and fine-tuning in BERT and TabNet illustrate the impact of unsupervised learning on subsequent supervised tasks?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.6018,
+      "rouge_l_f1": 0.3766,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.6667,
+      "expected_sources": [
+        "BERT.pdf",
+        "TabNet.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q046",
+      "question": "What were the findings regarding the necessity of the next sentence prediction task in BERT's architecture compared to models using only masked language modeling or left-to-right language modeling during their training and evaluation?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3604,
+      "rouge_l_f1": 0.2329,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "BERT.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q047",
+      "question": "What are some of the key findings regarding periodontal manifestations of systemic diseases as discussed in the systematic review?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4082,
+      "rouge_l_f1": 0.2817,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.3333,
+      "expected_sources": [
+        "Systematic review and meta-analysis on prevalence and risk factors for.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q048",
+      "question": "What advancements in machine learning techniques are highlighted in recent financial forecasting research, as discussed in the paper?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3425,
+      "rouge_l_f1": 0.2538,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "A Multi-Agent Deep Learning and Reinforcement.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q049",
+      "question": "What are the specific configurations and parameters used for the TabNet model in the context of the Forest Cover Type and Poker Hands datasets in the study?",
+      "final_status": "timeout",
+      "verification_pass": 0,
+      "token_f1": 0.0,
+      "rouge_l_f1": 0.0,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.0,
+      "expected_sources": [
+        "TabNet.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q050",
+      "question": "What mechanisms do the proposed models in the referenced papers utilize to enhance retrieval-augmented generation for various applications?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.2656,
+      "rouge_l_f1": 0.1437,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.75,
+      "expected_sources": [
+        "RAGSurvey.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q051",
+      "question": "What are the key hyperparameters and architectural components used in the TabNet-S and TabNet-M models, and how do these models differ in terms of their configurations and feature importance rankings compared to other models like XGBoost and SHAP?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3308,
+      "rouge_l_f1": 0.2065,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.9286,
+      "expected_sources": [
+        "TabNet.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q052",
+      "question": "How do the self-attention mechanisms discussed in both passages contribute to the understanding of complex linguistic tasks such as anaphora resolution and question answering?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3636,
+      "rouge_l_f1": 0.1762,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.75,
+      "expected_sources": [
+        "AttentionIsAllYouNeed.pdf",
+        "BERT.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q053",
+      "question": "What factors are essential for enhancing the effectiveness of predictive models in sustainable investment strategies?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4615,
+      "rouge_l_f1": 0.4161,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "ijfs-13-00028-v2.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q054",
+      "question": "What approaches are explored in recent studies to enhance information retrieval and generation in various tasks?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.2857,
+      "rouge_l_f1": 0.1546,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "RAGSurvey.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q055",
+      "question": "According to Figure 2 in the RAG survey, what are the three main steps in a representative RAG pipeline?",
+      "final_status": "timeout",
+      "verification_pass": 0,
+      "token_f1": 0.0,
+      "rouge_l_f1": 0.0,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.0,
+      "expected_sources": [
+        "RAGSurvey.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q056",
+      "question": "How do the techniques used for object detection in Passage A compare to the machine reading comprehension approaches referenced in Passage B in terms of their underlying methodologies?",
+      "final_status": "rejected",
+      "verification_pass": 0,
+      "token_f1": 0.4049,
+      "rouge_l_f1": 0.2081,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.4,
+      "expected_sources": [
+        "ImgRecog.pdf",
+        "BERT.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q057",
+      "question": "How does BERT address the limitations of earlier unidirectional language-model pre-training approaches?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3784,
+      "rouge_l_f1": 0.2128,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "BERT.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q058",
+      "question": "What are the implications of pharmacological approaches to smoking cessation and their effectiveness compared to individual behavioral counseling based on recent findings?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.4286,
+      "rouge_l_f1": 0.2123,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 0.4,
+      "expected_sources": [
+        "Systematic review and meta-analysis on prevalence and risk factors for.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q059",
+      "question": "What are the proposed methods for improving the adaptability and accuracy of predictive models in financial markets as discussed in both passages?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.3867,
+      "rouge_l_f1": 0.1982,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "A Multi-Agent Deep Learning and Reinforcement.pdf",
+        "ijfs-13-00028-v2.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    },
+    {
+      "question_id": "Q060",
+      "question": "Which paper discusses Naive, Advanced, and Modular RAG rather than introducing a new encoder architecture?",
+      "final_status": "accepted",
+      "verification_pass": 1,
+      "token_f1": 0.5614,
+      "rouge_l_f1": 0.3291,
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "citation_support": 1.0,
+      "expected_sources": [
+        "RAGSurvey.pdf",
+        "AttentionIsAllYouNeed.pdf",
+        "BERT.pdf"
+      ],
+      "cited_in_answer": [],
+      "_note": "source_precision/recall based on PDF names cited in answer text; re-run with --save-sources for exact chunk-level source tracking."
+    }
+  ]
+}

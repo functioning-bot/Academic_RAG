@@ -1,0 +1,667 @@
+Fetching 30 files:   0%|          | 0/30 [00:00<?, ?it/s]Fetching 30 files: 100%|██████████| 30/30 [00:00<00:00, 455902.61it/s]
+[32m2026-05-18 02:07:49.168[0m | [33m[1mWARNING [0m | [36mfastembed.common.model_management[0m:[36mdownload_files_from_huggingface[0m:[36m225[0m - [33m[1mLocal file sizes do not match the metadata.[0m
+[eval] arch=simple_hybrid_rag  on 30 questions
+
+[Shared Retriever] Retrieving context for query: 'Where does the founder of Les Films Du Losange work at?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 1113.43it/s]
+You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.35it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.34it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.5909
+  -> Doc 3: score=0.5833
+  -> Doc 4: score=0.4167
+  -> Doc 5: score=0.4000
+  -> Doc 6: score=0.2361
+  -> Doc 7: score=0.2250
+  -> Doc 8: score=0.2143
+  -> Doc 9: score=0.1667
+  -> Doc 10: score=0.1429
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q001  accepted          tf1=0.091  lat=3.1s
+
+[Shared Retriever] Retrieving context for query: 'Are director of film Susanna Whipped Cream and director of film Le Salamandre both from the same country?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2039.04it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  7.32it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  7.30it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.3111
+  -> Doc 4: score=0.2500
+  -> Doc 5: score=0.2500
+  -> Doc 6: score=0.2000
+  -> Doc 7: score=0.1667
+  -> Doc 8: score=0.1667
+  -> Doc 9: score=0.1429
+  -> Doc 10: score=0.1429
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q002  accepted          tf1=0.000  lat=1.4s
+
+[Shared Retriever] Retrieving context for query: 'Who is Wisigard's father-in-law?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 4675.92it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.70it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.69it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.4167
+  -> Doc 3: score=0.3333
+  -> Doc 4: score=0.3333
+  -> Doc 5: score=0.2679
+  -> Doc 6: score=0.2500
+  -> Doc 7: score=0.2143
+  -> Doc 8: score=0.2000
+  -> Doc 9: score=0.2000
+  -> Doc 10: score=0.1637
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q003  accepted          tf1=0.118  lat=1.3s
+
+[Shared Retriever] Retrieving context for query: 'Which country the director of film Hotel By The Hour is from?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3266.59it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  9.14it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  9.12it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5833
+  -> Doc 3: score=0.3333
+  -> Doc 4: score=0.2500
+  -> Doc 5: score=0.2000
+  -> Doc 6: score=0.2000
+  -> Doc 7: score=0.1667
+  -> Doc 8: score=0.1667
+  -> Doc 9: score=0.1429
+  -> Doc 10: score=0.1429
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q004  accepted          tf1=0.000  lat=1.3s
+
+[Shared Retriever] Retrieving context for query: 'Who lived longer, Friedrich Paschen or Ernst Bessey?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3256.45it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.47it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.46it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.8333
+  -> Doc 3: score=0.4000
+  -> Doc 4: score=0.3929
+  -> Doc 5: score=0.2917
+  -> Doc 6: score=0.2917
+  -> Doc 7: score=0.2500
+  -> Doc 8: score=0.2429
+  -> Doc 9: score=0.2020
+  -> Doc 10: score=0.1603
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q005  accepted          tf1=0.148  lat=1.6s
+
+[Shared Retriever] Retrieving context for query: 'Which film has the director born later, The Fighting Demon or Blood Of The Losers?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2732.45it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.07it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.06it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.3929
+  -> Doc 4: score=0.2500
+  -> Doc 5: score=0.2000
+  -> Doc 6: score=0.2000
+  -> Doc 7: score=0.1667
+  -> Doc 8: score=0.1667
+  -> Doc 9: score=0.1429
+  -> Doc 10: score=0.1303
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q006  accepted          tf1=0.286  lat=1.4s
+
+[Shared Retriever] Retrieving context for query: 'Who is Ieuan Ab Owain Glyndŵr's paternal grandfather?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3216.49it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.31it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.31it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5333
+  -> Doc 3: score=0.5000
+  -> Doc 4: score=0.3929
+  -> Doc 5: score=0.3750
+  -> Doc 6: score=0.3429
+  -> Doc 7: score=0.2917
+  -> Doc 8: score=0.2000
+  -> Doc 9: score=0.1778
+  -> Doc 10: score=0.1623
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q007  accepted          tf1=0.273  lat=1.9s
+
+[Shared Retriever] Retrieving context for query: 'Which film has the director died later, The Life And Loves Of Tschaikovsky or Dokuz Dağın Efesi?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3264.05it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  9.64it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  9.63it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.3667
+  -> Doc 4: score=0.3167
+  -> Doc 5: score=0.2526
+  -> Doc 6: score=0.2500
+  -> Doc 7: score=0.1984
+  -> Doc 8: score=0.1667
+  -> Doc 9: score=0.1603
+  -> Doc 10: score=0.1429
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q008  accepted          tf1=0.194  lat=1.8s
+
+[Shared Retriever] Retrieving context for query: 'What is the date of birth of Frederick Of Liege's father?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3916.25it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 11.02it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.6111
+  -> Doc 3: score=0.3750
+  -> Doc 4: score=0.3333
+  -> Doc 5: score=0.2500
+  -> Doc 6: score=0.2338
+  -> Doc 7: score=0.2020
+  -> Doc 8: score=0.2017
+  -> Doc 9: score=0.2000
+  -> Doc 10: score=0.2000
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q009  accepted          tf1=0.000  lat=1.3s
+
+[Shared Retriever] Retrieving context for query: 'Where did the director of film Nalini By Day, Nancy By Night graduate from?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 4583.94it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 10.90it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.4167
+  -> Doc 3: score=0.3333
+  -> Doc 4: score=0.3095
+  -> Doc 5: score=0.2556
+  -> Doc 6: score=0.2500
+  -> Doc 7: score=0.2500
+  -> Doc 8: score=0.2500
+  -> Doc 9: score=0.2000
+  -> Doc 10: score=0.1678
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q010  accepted          tf1=0.182  lat=1.4s
+
+[Shared Retriever] Retrieving context for query: 'Which film has the director born later, Brutti Di Notte or Bir Türk'E Gönül Verdim?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2843.60it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  7.71it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  7.70it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.3214
+  -> Doc 4: score=0.2833
+  -> Doc 5: score=0.2500
+  -> Doc 6: score=0.2500
+  -> Doc 7: score=0.2255
+  -> Doc 8: score=0.2000
+  -> Doc 9: score=0.1667
+  -> Doc 10: score=0.1429
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q011  accepted          tf1=0.312  lat=1.8s
+
+[Shared Retriever] Retrieving context for query: 'Who is Rostislav I Of Kiev's paternal grandfather?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 4624.37it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.50it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.49it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.6667
+  -> Doc 2: score=0.6429
+  -> Doc 3: score=0.6429
+  -> Doc 4: score=0.4500
+  -> Doc 5: score=0.4500
+  -> Doc 6: score=0.3333
+  -> Doc 7: score=0.2222
+  -> Doc 8: score=0.1964
+  -> Doc 9: score=0.1742
+  -> Doc 10: score=0.1538
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q012  accepted          tf1=0.429  lat=0.9s
+
+[Shared Retriever] Retrieving context for query: 'Which film has the director born later, Life Hits or It'S In The Air?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3634.58it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.37it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.35it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.4444
+  -> Doc 3: score=0.3333
+  -> Doc 4: score=0.2976
+  -> Doc 5: score=0.2500
+  -> Doc 6: score=0.2000
+  -> Doc 7: score=0.2000
+  -> Doc 8: score=0.1667
+  -> Doc 9: score=0.1667
+  -> Doc 10: score=0.1625
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q013  accepted          tf1=0.154  lat=1.7s
+
+[Shared Retriever] Retrieving context for query: 'Which film whose director is younger, A Night'S Adventure or Insaciable?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2892.62it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.38it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.37it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.8333
+  -> Doc 3: score=0.2500
+  -> Doc 4: score=0.2500
+  -> Doc 5: score=0.2193
+  -> Doc 6: score=0.2000
+  -> Doc 7: score=0.2000
+  -> Doc 8: score=0.1880
+  -> Doc 9: score=0.1667
+  -> Doc 10: score=0.1623
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q014  accepted          tf1=0.077  lat=1.3s
+
+[Shared Retriever] Retrieving context for query: 'What is the place of birth of the composer of film Men With Brooms?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3297.41it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.08it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.06it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.3958
+  -> Doc 3: score=0.3333
+  -> Doc 4: score=0.2500
+  -> Doc 5: score=0.2500
+  -> Doc 6: score=0.2333
+  -> Doc 7: score=0.2000
+  -> Doc 8: score=0.2000
+  -> Doc 9: score=0.1825
+  -> Doc 10: score=0.1825
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q015  accepted          tf1=0.111  lat=1.4s
+
+[Shared Retriever] Retrieving context for query: 'Which film has the director born later, Battle Of Memories or The Wedding Of Lilli Marlene?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2801.81it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  6.29it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  6.28it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.2500
+  -> Doc 4: score=0.2500
+  -> Doc 5: score=0.2000
+  -> Doc 6: score=0.2000
+  -> Doc 7: score=0.1667
+  -> Doc 8: score=0.1667
+  -> Doc 9: score=0.1534
+  -> Doc 10: score=0.1429
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q016  accepted          tf1=0.250  lat=2.0s
+
+[Shared Retriever] Retrieving context for query: 'Where was the director of film Aylwin (Film) born?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3545.48it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  6.00it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.99it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.4762
+  -> Doc 3: score=0.3333
+  -> Doc 4: score=0.2500
+  -> Doc 5: score=0.2500
+  -> Doc 6: score=0.2255
+  -> Doc 7: score=0.2000
+  -> Doc 8: score=0.2000
+  -> Doc 9: score=0.1880
+  -> Doc 10: score=0.1825
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q017  accepted          tf1=0.000  lat=1.1s
+
+[Shared Retriever] Retrieving context for query: 'Which film has the director who was born first, Hanuman Patal Vijay or Young And Dangerous: The Prequel?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2389.92it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  3.69it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  3.69it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5333
+  -> Doc 3: score=0.5333
+  -> Doc 4: score=0.3611
+  -> Doc 5: score=0.3500
+  -> Doc 6: score=0.3095
+  -> Doc 7: score=0.2917
+  -> Doc 8: score=0.2679
+  -> Doc 9: score=0.1880
+  -> Doc 10: score=0.1176
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q018  accepted          tf1=0.200  lat=2.0s
+
+[Shared Retriever] Retrieving context for query: 'Were Gotthilf Heinrich Ernst Muhlenberg and Todd Williams of the same nationality?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2331.46it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.34it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.34it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.7500
+  -> Doc 3: score=0.5000
+  -> Doc 4: score=0.4167
+  -> Doc 5: score=0.4000
+  -> Doc 6: score=0.1964
+  -> Doc 7: score=0.1833
+  -> Doc 8: score=0.1429
+  -> Doc 9: score=0.1429
+  -> Doc 10: score=0.1394
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q019  accepted          tf1=0.000  lat=1.4s
+
+[Shared Retriever] Retrieving context for query: 'What is the date of death of Peter Dale Scott's mother?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2809.31it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  3.43it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  3.42it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.5333
+  -> Doc 4: score=0.3750
+  -> Doc 5: score=0.2714
+  -> Doc 6: score=0.2540
+  -> Doc 7: score=0.2540
+  -> Doc 8: score=0.2500
+  -> Doc 9: score=0.1726
+  -> Doc 10: score=0.1667
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q020  accepted          tf1=0.429  lat=1.3s
+
+[Shared Retriever] Retrieving context for query: 'Where did the founder of Ford Australia die?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2964.17it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.15it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.14it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5333
+  -> Doc 3: score=0.5000
+  -> Doc 4: score=0.4500
+  -> Doc 5: score=0.4167
+  -> Doc 6: score=0.2857
+  -> Doc 7: score=0.2019
+  -> Doc 8: score=0.1736
+  -> Doc 9: score=0.1250
+  -> Doc 10: score=0.1176
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q021  accepted          tf1=0.000  lat=0.8s
+
+[Shared Retriever] Retrieving context for query: 'Which film has the director who is older than the other, Rolling In Money or A Fine, Windy Day? '
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3187.16it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.99it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.98it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.6667
+  -> Doc 3: score=0.3214
+  -> Doc 4: score=0.2667
+  -> Doc 5: score=0.2500
+  -> Doc 6: score=0.2381
+  -> Doc 7: score=0.2000
+  -> Doc 8: score=0.1905
+  -> Doc 9: score=0.1776
+  -> Doc 10: score=0.1667
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q022  accepted          tf1=0.222  lat=2.1s
+
+[Shared Retriever] Retrieving context for query: 'Which film has the director born later, Best Of The Best 3: No Turning Back or Ven Mi Corazón Te Llama?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2167.60it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.90it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.89it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.7500
+  -> Doc 3: score=0.5000
+  -> Doc 4: score=0.3333
+  -> Doc 5: score=0.2526
+  -> Doc 6: score=0.2198
+  -> Doc 7: score=0.2111
+  -> Doc 8: score=0.2000
+  -> Doc 9: score=0.1667
+  -> Doc 10: score=0.1429
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q023  accepted          tf1=0.368  lat=2.0s
+
+[Shared Retriever] Retrieving context for query: 'Which film has the director who died later, The Death Kiss or Her Luck In London?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 4378.19it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  9.99it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  9.97it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.7500
+  -> Doc 2: score=0.7500
+  -> Doc 3: score=0.6667
+  -> Doc 4: score=0.2222
+  -> Doc 5: score=0.2000
+  -> Doc 6: score=0.2000
+  -> Doc 7: score=0.1944
+  -> Doc 8: score=0.1944
+  -> Doc 9: score=0.1929
+  -> Doc 10: score=0.1905
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q024  accepted          tf1=0.308  lat=1.5s
+
+[Shared Retriever] Retrieving context for query: 'When did Joanna Of Aragon, Countess Of Foix's mother die?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 4424.37it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00, 10.38it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5000
+  -> Doc 3: score=0.4762
+  -> Doc 4: score=0.4500
+  -> Doc 5: score=0.4500
+  -> Doc 6: score=0.2917
+  -> Doc 7: score=0.2250
+  -> Doc 8: score=0.2198
+  -> Doc 9: score=0.2020
+  -> Doc 10: score=0.1944
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q025  accepted          tf1=0.000  lat=1.0s
+
+[Shared Retriever] Retrieving context for query: 'Which film whose director is younger, Hell To Pay (2014 Film) or Darwin'S Nightmare?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3294.82it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.62it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  8.61it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5000
+  -> Doc 3: score=0.5000
+  -> Doc 4: score=0.5000
+  -> Doc 5: score=0.4000
+  -> Doc 6: score=0.2857
+  -> Doc 7: score=0.1588
+  -> Doc 8: score=0.1436
+  -> Doc 9: score=0.1250
+  -> Doc 10: score=0.1250
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q026  accepted          tf1=0.182  lat=1.9s
+
+[Shared Retriever] Retrieving context for query: 'Which film has the director who was born later, Así En El Cielo Como En La Tierra or Buck And The Preacher?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 2375.03it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.51it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.50it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.6429
+  -> Doc 3: score=0.4333
+  -> Doc 4: score=0.3269
+  -> Doc 5: score=0.3214
+  -> Doc 6: score=0.2778
+  -> Doc 7: score=0.2625
+  -> Doc 8: score=0.2193
+  -> Doc 9: score=0.2000
+  -> Doc 10: score=0.1588
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q027  accepted          tf1=0.359  lat=2.0s
+
+[Shared Retriever] Retrieving context for query: 'What is the date of death of Philibert I, Duke Of Savoy's mother?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3106.89it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  4.83it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  4.82it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.5333
+  -> Doc 3: score=0.5000
+  -> Doc 4: score=0.4167
+  -> Doc 5: score=0.3500
+  -> Doc 6: score=0.2667
+  -> Doc 7: score=0.2054
+  -> Doc 8: score=0.1964
+  -> Doc 9: score=0.1875
+  -> Doc 10: score=0.1699
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q028  accepted          tf1=0.353  lat=1.6s
+
+[Shared Retriever] Retrieving context for query: 'Which country Count Of St. Germain's father is from?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3307.81it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.52it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.52it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=0.8333
+  -> Doc 2: score=0.7500
+  -> Doc 3: score=0.4444
+  -> Doc 4: score=0.3667
+  -> Doc 5: score=0.3429
+  -> Doc 6: score=0.3000
+  -> Doc 7: score=0.2429
+  -> Doc 8: score=0.2255
+  -> Doc 9: score=0.1750
+  -> Doc 10: score=0.1726
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q029  accepted          tf1=0.000  lat=1.5s
+
+[Shared Retriever] Retrieving context for query: 'Where was the director of film He'S A Cockeyed Wonder born?'
+pre tokenize:   0%|          | 0/1 [00:00<?, ?it/s]pre tokenize: 100%|██████████| 1/1 [00:00<00:00, 3253.92it/s]
+Inference Embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.21it/s]Inference Embeddings: 100%|██████████| 1/1 [00:00<00:00,  5.21it/s]
+[Shared Retriever] Retrieved 20 docs.
+  -> Doc 1: score=1.0000
+  -> Doc 2: score=0.4583
+  -> Doc 3: score=0.3500
+  -> Doc 4: score=0.3333
+  -> Doc 5: score=0.3125
+  -> Doc 6: score=0.2909
+  -> Doc 7: score=0.2679
+  -> Doc 8: score=0.2500
+  -> Doc 9: score=0.2020
+  -> Doc 10: score=0.2000
+
+[Simple Hybrid RAG] Selecting top 8 retrieved docs directly for generation...
+
+[Simple Hybrid RAG] Generating answer using 8 retrieved docs...
+  -> Groq model: gpt-4o-mini
+[Simple Hybrid RAG] Answer generation complete.
+  Q030  accepted          tf1=0.000  lat=1.3s
+
+[eval] simple_hybrid_rag: wrote 30 rows -> multihop\data\eval_2wiki_simple_hybrid_rag.jsonl
+[eval] mean token_f1=0.1681  mean rouge_l=0.1377  failures=0/30
